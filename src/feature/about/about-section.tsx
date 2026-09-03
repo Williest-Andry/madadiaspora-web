@@ -7,7 +7,7 @@ export default function AboutSection() {
     <section className="bg-foreground relative flex w-100 flex-col items-center justify-between gap-10 pt-23.5 min-[1700px]:w-[1656px] md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5">
       <AboutImagesFigure />
 
-      <article className="flex w-100 flex-col items-center gap-25.5 min-[1700px]:w-204 md:w-150 xl:items-start">
+      <article className="flex w-100 flex-col items-center gap-15 min-[1700px]:w-204 md:w-150 xl:items-start xl:gap-25.5">
         <article className="flex flex-col items-center xl:items-start">
           <figure className="mb-6.75 flex gap-2.25">
             <div className="relative h-5 w-5">
