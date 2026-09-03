@@ -28,7 +28,7 @@ export function InfiniteCarousel() {
     >
       <CarouselContent className="mt-20 flex gap-8 xl:mt-0">
         {allEvents.map((event, index) => (
-          <CarouselItem key={index} className="basis-65">
+          <CarouselItem key={index} className="basis-65 first:ml-8">
             <CustomCarouselItem
               title={event.title}
               description={event.description}
