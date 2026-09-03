@@ -11,12 +11,13 @@ export default function CTAButton({ title, className }: CTAButtonProps) {
   return (
     <Button
       className={cn(
-        "bg-secondary text-secondary-foreground hover:bg-secondary flex h-14.5 w-93 rounded-[50px] p-1 pl-6 text-[18px] leading-5 font-semibold"
+        "bg-secondary text-secondary-foreground hover:bg-secondary flex h-14.5 w-93 rounded-[50px] p-1 pl-6 text-[18px] leading-5 font-semibold",
+        className
       )}
     >
       <p>{title}</p>
 
-      <div className="bg-foreground flex h-full w-19 items-center justify-center rounded-[60px]">
+      <div className="bg-foreground text-primary flex h-full w-19 items-center justify-center rounded-[60px]">
         <MoveRight />
       </div>
     </Button>

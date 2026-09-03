@@ -3,7 +3,7 @@ import WorldGlobe from "@/components/world-globe";
 
 export default function HeroSection() {
   return (
-    <main className="relative flex h-[calc(100vh-93px)] flex-col-reverse items-center overflow-x-hidden pl-33 xl:flex-row">
+    <main className="relative flex hidden h-[calc(100vh-93px)] flex-col-reverse items-center overflow-x-hidden pl-33 xl:flex-row">
       <article className="flex flex-col items-center gap-6 text-center xl:items-start xl:text-left">
         <div className="flex flex-col text-[34px] leading-[110%] font-bold xl:text-[64px]">
           <h1 className="text-secondary">{"Malagasy,"}</h1>
