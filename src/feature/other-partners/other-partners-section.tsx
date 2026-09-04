@@ -3,7 +3,7 @@ import FourImagesCard from "./four-images-card";
 
 export default function OtherPartnersSection() {
   return (
-    <section className="flex flex-col items-center justify-center gap-[60px] xl:flex-row xl:gap-[10px] 2xl:gap-[171px]">
+    <section className="my-[185px] flex flex-col items-center justify-center gap-[60px] xl:flex-row xl:gap-[10px] 2xl:gap-[171px]">
       <article className="flex w-[378px] flex-col items-center xl:items-start min-[109.375rem]:w-[678px]">
         <figure className="mb-6.75 flex gap-2.25">
           <div className="relative h-5 w-5">
