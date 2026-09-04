@@ -5,7 +5,7 @@ import CTAButton from "@/components/cta-button";
 
 export default function DiasporalbumSection() {
   return (
-    <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px]">
+    <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px] pb-[197px]">
       <article className="flex w-[330px] flex-col items-center justify-between gap-[17px] lg:w-[958px]">
         <article className="flex w-full flex-col items-center sm:w-126.25 2xl:w-[819.5px]">
           <figure className="mb-6.75 flex gap-2.25">
