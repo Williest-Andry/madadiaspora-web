@@ -15,7 +15,7 @@ export default function PartnersSection() {
       </article>
 
       <figure className="h-35 w-90 sm:h-55 sm:w-150 2xl:h-75 2xl:w-200">
-        <DoubleImagesCard rightImage="/afo.png" leftImage="/paositra.png" />
+        <DoubleImagesCard rightImage="/paositra.png" leftImage="/afo.png" />
       </figure>
     </section>
   );
