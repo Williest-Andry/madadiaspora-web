@@ -2,6 +2,9 @@ import Image from "next/image";
 import ContactForm from "./contact-form";
 import ApprouvedText from "./approuved-text";
 import SocialMediaCard from "./social-media-card";
+import { CONTACT } from "@/constant/contact/data";
+import ContactCard from "./contact-card";
+import MapSection from "./map-section";
 
 export default function ContactSection() {
   const APPROUVED_TEXT = [
@@ -17,7 +20,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section className="bg-foreground text-popover flex flex-col items-center justify-center pt-[150px] xl:pt-[198px]">
+    <section className="bg-foreground text-popover flex flex-col items-center justify-center pt-[150px] pb-[57px] xl:pt-[198px]">
       <article className="flex flex-col items-center justify-center gap-[50px] xl:flex-row 2xl:gap-[165px]">
         <article className="flex w-[60%] flex-col items-center gap-[47px] xl:w-[378px] xl:items-start xl:gap-[27px] min-[106.25rem]:w-[678px]">
           <figure className="mb-6.75 flex gap-2.25">
@@ -60,6 +63,14 @@ export default function ContactSection() {
 
         <ContactForm />
       </article>
+
+      <article className="mt-[27px] flex w-[88%] flex-col items-center gap-[20px] md:flex-row md:items-start">
+        {CONTACT.map((contact, index) => (
+          <ContactCard data={contact} key={index} />
+        ))}
+      </article>
+
+      <MapSection />
     </section>
   );
 }
