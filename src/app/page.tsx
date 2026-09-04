@@ -3,6 +3,7 @@ import AboutAndInfoSection from "@/feature/about/about-and-info-section";
 import HeroSection from "@/feature/hero/hero-section";
 import PartnersSection from "@/feature/partners/partners-section";
 import ServicesSection from "@/feature/services/services-section";
+import DiasporalbumSection from "@/feature/diasporalbum/diasporablum-section";
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
       <AboutAndInfoSection />
 
       <ServicesSection />
+
+      <DiasporalbumSection />
     </>
   );
 }
