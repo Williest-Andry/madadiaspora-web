@@ -4,6 +4,7 @@ import HeroSection from "@/feature/hero/hero-section";
 import PartnersSection from "@/feature/partners/partners-section";
 import ServicesSection from "@/feature/services/services-section";
 import DiasporalbumSection from "@/feature/diasporalbum/diasporablum-section";
+import OtherPartnersSection from "@/feature/other-partners/other-partners-section";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       <ServicesSection />
 
       <DiasporalbumSection />
+
+      <OtherPartnersSection />
     </>
   );
 }
