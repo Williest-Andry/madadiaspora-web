@@ -13,7 +13,7 @@ import Footer from "@/feature/footer/footer";
 export default function Home() {
   return (
     <>
-      {/* <HeroSection /> */}
+      <HeroSection />
 
       <InfiniteCarousel />
 
@@ -29,7 +29,7 @@ export default function Home() {
 
       <ContactSection />
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
