@@ -9,6 +9,8 @@ import {
 import { locations } from "@/constant/earth-globe/data";
 import { LocationData } from "@/constant/earth-globe/type";
 import { cn } from "@/lib/utils";
+import { createRoot } from "react-dom/client";
+import { GlobeMarker } from "@/feature/earth-globe/globe-marker";
 
 const GLOBE_PROPERTIES = {
   IMAGE: "//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg",
@@ -29,10 +31,6 @@ export default function EarthGlobe({ className }: EarthGlobeProps) {
 
   const globeRef = useRef<HTMLDivElement>(null);
 
-  const [hoveredLocation, setHoveredLocation] = useState<LocationData | null>(
-    null
-  );
-
   const [globeSize, setGlobeSize] = useState(
     getEarthGlobeSize(window.innerWidth)
   );
@@ -46,7 +44,6 @@ export default function EarthGlobe({ className }: EarthGlobeProps) {
 
     const handleGlobeSize = () => {
       location.reload();
-      // router.refresh();
       setGlobeSize(getEarthGlobeSize(window.innerWidth));
       setGlobeOffset(getEarthGlobeOffset(window.innerWidth));
     };
@@ -62,19 +59,24 @@ export default function EarthGlobe({ className }: EarthGlobeProps) {
       .globeOffset(globeOffset)
       .backgroundColor(GLOBE_PROPERTIES.BACKGROUND_COLOR)
       .showAtmosphere(false)
-      .pointsData(locations)
-      .pointColor(() => GLOBE_PROPERTIES.POINTS_COLOR)
-      .pointRadius(0.8)
-      .pointAltitude(0.05)
-      .pointOfView(GLOBE_PROPERTIES.INITAL_POINT_OF_VIEW)
-      .onPointHover((point) => {
-        setHoveredLocation(point as LocationData);
+      .htmlElementsData(locations)
+      .htmlLat("lat")
+      .htmlLng("lng")
+      .htmlElement((data) => {
+        const element = document.createElement("div");
+        element.style.pointerEvents = "auto";
+        createRoot(element).render(<GlobeMarker data={data as LocationData} />);
+
+        return element;
       });
 
     globe.controls().enableZoom = false;
+    globe.controls().autoRotate = true;
+    globe.controls().autoRotateSpeed = 0.5;
 
     return () => {
       globe.renderer().dispose();
+      globe._destructor();
       globeRef.current = null;
     };
   }, [globeSize]);
@@ -88,11 +90,6 @@ export default function EarthGlobe({ className }: EarthGlobeProps) {
           className
         )}
       />
-      {hoveredLocation && (
-        <div className="bg-background/95 h pointer-events-none absolute top-60 left-140 h-[300px] w-[300px] rounded-xl border p-4 shadow-lg">
-          <p className="font-semibold">{hoveredLocation.name} ... mock data</p>
-        </div>
-      )}
 
       <div className="via-background/70 to-background pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent" />
     </section>
