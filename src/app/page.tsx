@@ -1,3 +1,5 @@
+"use client";
+
 import { InfiniteCarousel } from "@/feature/events-carousel/events-infinite-carousel";
 import AboutAndInfoSection from "@/feature/about/about-and-info-section";
 import HeroSection from "@/feature/hero/hero-section";

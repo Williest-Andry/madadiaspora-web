@@ -20,6 +20,7 @@
     "cn": "^0.2.5",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "globe.gl": "^2.46.2",
     "leaflet": "^1.9.4",
     "leaflet-draw": "^1.0.4",
     "leaflet.fullscreen": "^5.3.3",
