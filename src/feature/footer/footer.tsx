@@ -10,7 +10,7 @@ import {
 import NewsLetter from "./news-letter";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import EarthGlobe from "@/components/earth-globe";
+import EarthGlobe from "@/feature/earth-globe/earth-globe";
 
 export default function Footer() {
   return (

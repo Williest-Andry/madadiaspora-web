@@ -51,6 +51,7 @@
   /* custom breakpoints */
   --breakpoint-3xl: 106.25rem; /* 1700px */
   --breakpoint-xs: 26.875rem; /* 430px */
+  --breakpoint-globe-huge: 150rem; /* 2400px */
 
   /* custom fonts */
   --text-title-xl: 64px;

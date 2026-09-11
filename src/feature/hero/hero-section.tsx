@@ -4,7 +4,7 @@ import CustomButton from "@/components/cta-button";
 import dynamic from "next/dynamic";
 
 const Globe = dynamic(
-  () => import("@/components/earth-globe").then((m) => m.default),
+  () => import("@/feature/earth-globe/earth-globe").then((m) => m.default),
   {
     ssr: false,
   }
