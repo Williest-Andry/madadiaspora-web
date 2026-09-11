@@ -1,6 +1,7 @@
 import CTAButton from "@/components/cta-button";
 import AboutImagesFigure from "./about-images-figure";
 import Image from "next/image";
+import MobileCTAButton from "@/components/mobile-cta-button";
 
 export default function AboutSection() {
   return (
@@ -30,10 +31,7 @@ export default function AboutSection() {
           <p className="text-popover 3xl:text-p-xl text-p-sm sm:text-p-md text-center leading-8 max-sm:w-full xl:text-justify">{`La culture malagasy s'ancre profondément dans une valeur fondamentale : le "Fihavanana". Ce lien fort qui unit les malagasy repose sur l'entraide, la solidarité et le respect mutuel, constituant ainsi l'essence même de notre identité. Cependant, dans le tumulte de la vie quotidienne, entre les défis personnels et professionnels, ce précieux esprit du Fihavanana peut parfois être mis à l'épreuve.`}</p>
         </article>
 
-        <CTAButton
-          title="Voir plus"
-          className="text-foreground bg-popover hover:bg-popover max-sm:text-p-sm h-14.5 w-47.25 justify-between p-1 pl-5 max-sm:w-35"
-        />
+        <MobileCTAButton />
       </article>
     </section>
   );
