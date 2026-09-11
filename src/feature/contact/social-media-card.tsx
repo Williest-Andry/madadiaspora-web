@@ -15,7 +15,7 @@ export default function SocialMediaCard({
 }: SocialMediaCardProps) {
   return (
     <figure className="flex flex-col-reverse items-center gap-[32px] sm:flex-row">
-      <p className="text-[18px] leading-[100%] min-[106.25rem]:text-[24px]">
+      <p className="text-p-sm sm:text-p-md 3xl:text-title-sm leading-[100%]">
         {"Suivez-nous"}
       </p>
 

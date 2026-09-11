@@ -17,9 +17,9 @@ export default function Home() {
 
       <InfiniteCarousel />
 
-      <PartnersSection />
+      {/* <PartnersSection /> */}
 
-      <AboutAndInfoSection />
+      {/* <AboutAndInfoSection /> */}
 
       <ServicesSection />
 
