@@ -4,7 +4,7 @@ import FourImagesCard from "./four-images-card";
 export default function OtherPartnersSection() {
   return (
     <section className="my-[185px] flex flex-col items-center justify-center gap-[60px] xl:flex-row xl:gap-[10px] 2xl:gap-[171px]">
-      <article className="flex w-[378px] flex-col items-center xl:items-start min-[109.375rem]:w-[678px]">
+      <article className="3xl:w-[678px] flex w-[378px] flex-col items-center max-xl:w-full xl:items-start">
         <figure className="mb-6.75 flex gap-2.25">
           <div className="relative h-5 w-5">
             <Image
@@ -18,12 +18,12 @@ export default function OtherPartnersSection() {
           </span>
         </figure>
 
-        <article className="flex flex-col gap-[32px]">
-          <div className="flex flex-col text-center text-[24px] leading-[110%] font-bold sm:text-[34px] xl:text-left min-[109.375rem]:text-[64px]">
+        <article className="flex flex-col gap-[32px] max-xl:w-[80%]">
+          <div className="text-title-sm sm:text-title-md 3xl:text-title-xl flex flex-col text-center leading-[110%] font-bold xl:text-left">
             <h2>{"Un réseau de"} </h2>
             <h2 className="text-secondary">{"partenaires engagés"}</h2>
           </div>
-          <p className="text-center text-[14px] leading-[32px] sm:text-[18px] xl:text-left min-[109.375rem]:text-[28px]">
+          <p className="3xl:text-p-xl text-p-sm sm:text-p-md text-center leading-[32px] xl:text-left">
             {
               "Découvrez les partenaires qui nous accompagnent dans nos actions et participent au rayonnement de la diaspora à travers différentes collaborations."
             }

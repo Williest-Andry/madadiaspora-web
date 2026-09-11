@@ -10,7 +10,7 @@ export default function MapSection() {
   return (
     <Map
       center={[-18.924452151089834, 47.54911092698423]}
-      className="mt-[20px] h-[1271px] w-[90%] rounded-[50px]"
+      className="z-1 mt-[20px] h-[1271px] w-[90%] rounded-[50px]"
     >
       <MapTileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

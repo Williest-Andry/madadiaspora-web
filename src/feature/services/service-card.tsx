@@ -9,7 +9,7 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ data }: ServiceCardProps) {
   return (
-    <article className="relative h-100 w-97.25 rounded-[38px] min-[1700px]:h-148.75 min-[1700px]:w-134.75">
+    <article className="3xl:h-148.75 3xl:w-134.75 xs:w-97.25 relative h-100 w-78 rounded-[38px]">
       <figure className="relative h-full w-full">
         <Image
           src={data.image}
@@ -19,12 +19,12 @@ export default function ServiceCard({ data }: ServiceCardProps) {
         />
       </figure>
 
-      <article className="bg-secondary-foreground/90 absolute top-49.75 right-2.75 left-2.75 flex h-46.25 flex-col gap-2 rounded-[29px] p-3.5 min-[1700px]:top-99.75 min-[1700px]:w-129.25">
+      <article className="bg-secondary-foreground/90 3xl:top-99.75 3xl:w-129.25 absolute top-49.75 right-2.75 left-2.75 flex h-46.25 flex-col gap-2 rounded-[29px] p-3.5">
         <div className="flex flex-col gap-3">
-          <h3 className="text-[20px] leading-7 font-bold uppercase min-[1700px]:text-[26px]">
+          <h3 className="3xl:text-title-sm text-p-md leading-7 font-bold uppercase">
             {data.title}
           </h3>
-          <p className="line-clamp-2 h-9.5 text-[18px] leading-[100%]">
+          <p className="max-xs:text-p-sm text-p-md max-xs:h-12 line-clamp-2 h-9.5 leading-[100%]">
             {data.description}
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function ServiceCard({ data }: ServiceCardProps) {
           href={"#"}
           className="bg-foreground/20 mt-6.25 flex h-12 w-[99%] items-center justify-between rounded-[14px] px-5 py-1"
         >
-          <p>Voir plus</p>
+          <p className="max-xs:text-p-sm">Voir plus</p>
           <MoveRight />
         </Link>
       </article>

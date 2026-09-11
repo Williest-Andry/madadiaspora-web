@@ -60,7 +60,7 @@ export default function ContactForm() {
         <Button
           type="submit"
           className={
-            "bg-popover mt-6 h-[58px] w-[189px] rounded-[50px] p-[4px] text-[20px]"
+            "bg-popover text-p-sm sm:text-p-md text-foreground mt-6 h-[58px] w-[139px] rounded-[50px] p-[4px] sm:w-[189px]"
           }
         >
           Envoyer
