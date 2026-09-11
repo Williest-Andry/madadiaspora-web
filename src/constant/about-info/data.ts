@@ -1,6 +1,6 @@
-import { InfosData } from "./type";
+import { InfoData } from "./type";
 
-export const INFOS_DATA: InfosData[] = [
+export const INFO_DATA: InfoData[] = [
   {
     icon: "/infos-key.png",
     title: "Plateforme sécurisée",

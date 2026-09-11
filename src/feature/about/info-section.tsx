@@ -1,8 +1,8 @@
-import { INFOS_DATA } from "@/constant/about-infos/data";
+import { INFO_DATA } from "@/constant/about-info/data";
 import Image from "next/image";
-import InfosCard from "./infos-card";
+import InfoCard from "./info-card";
 
-export default function InfosSection() {
+export default function InfoSection() {
   return (
     <section className="mt-30 flex w-full flex-col items-center justify-between gap-22.25 xl:mt-62.5 xl:w-250 2xl:w-364 min-[109.375rem]:w-[1656px]">
       <article className="3xl:gap-34 2xl:max-3xl:justify-center flex w-full flex-col items-center justify-between gap-10 xl:flex-row xl:gap-0">
@@ -29,8 +29,8 @@ export default function InfosSection() {
       </article>
 
       <article className="grid grid-cols-1 gap-4.75 lg:grid-cols-2 min-[109.375rem]:grid-cols-4">
-        {INFOS_DATA.map((info, index) => (
-          <InfosCard data={info} key={index} />
+        {INFO_DATA.map((info, index) => (
+          <InfoCard data={info} key={index} />
         ))}
       </article>
     </section>
