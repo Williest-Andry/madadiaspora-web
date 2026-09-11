@@ -22,7 +22,7 @@ export default function ContactSection() {
   return (
     <section className="bg-foreground text-popover flex flex-col items-center justify-center pt-[150px] pb-[57px] xl:pt-[198px]">
       <article className="flex flex-col items-center justify-center gap-[50px] xl:flex-row 2xl:gap-[165px]">
-        <article className="flex w-[60%] flex-col items-center gap-[47px] xl:w-[378px] xl:items-start xl:gap-[27px] min-[106.25rem]:w-[678px]">
+        <article className="3xl:w-[678px] flex w-[60%] flex-col items-center gap-[47px] max-xl:w-[80%] xl:w-[378px] xl:items-start xl:gap-[27px]">
           <figure className="mb-6.75 flex gap-2.25">
             <div className="relative h-5 w-5">
               <Image
@@ -37,13 +37,13 @@ export default function ContactSection() {
           </figure>
 
           <article className="flex flex-col gap-[32px]">
-            <div className="flex w-full flex-col text-center text-[24px] leading-[110%] font-bold sm:text-[34px] xl:text-left min-[106.25rem]:text-[64px]">
+            <div className="text-title-sm sm:text-title-md 3xl:text-title-xl flex w-full flex-col text-center leading-[110%] font-bold xl:text-left">
               <h2>
                 {"Nous sommes"}{" "}
                 <span className="text-secondary">{"à votre écoute"}</span>
               </h2>
             </div>
-            <p className="text-center text-[14px] leading-[32px] sm:text-[18px] xl:text-left min-[106.25rem]:text-[24px]">
+            <p className="text-p-sm 3xl:text-title-sm sm:text-p-md text-center leading-[32px] xl:text-left">
               {
                 "Une question, une suggestion ou besoin d'informations ? Notre équipe est disponible pour vous accompagner et répondre à vos demandes."
               }

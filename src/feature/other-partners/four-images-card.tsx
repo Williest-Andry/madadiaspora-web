@@ -14,7 +14,7 @@ export default function FourImagesCard({
   rightSecondImage,
 }: FourImagesCardProps) {
   return (
-    <figure className="flex h-[250px] w-[390px] flex-col gap-1 sm:h-[300px] sm:w-[600px] sm:gap-3 lg:h-[500px] lg:w-[800px]">
+    <figure className="max-xs:w-[320px] max-xs:h-[230px] flex h-[250px] w-[390px] flex-col gap-1 sm:h-[300px] sm:w-[600px] sm:gap-3 lg:h-[500px] lg:w-[800px]">
       <DoubleImagesCard
         leftImage={leftFirstImage}
         rightImage={rightFirstImage}

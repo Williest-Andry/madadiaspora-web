@@ -35,7 +35,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="ml-0 min-[106.25rem]:ml-[175px]">
+          <div className="3xl:ml-[175px] ml-0">
             <FooterLinks links={USEFUL_LINKS} title="Liens utiles" />
           </div>
 

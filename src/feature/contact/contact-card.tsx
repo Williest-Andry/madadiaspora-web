@@ -14,7 +14,7 @@ export default function ContactCard({ data }: ContactCardProps) {
         <h3 className="text-[24px] leading-8 font-bold xl:text-[32px]">
           {data.title}
         </h3>
-        <p className="text-popover text-[14px] leading-[110%] xl:text-[20px] min-[106.25rem]:text-[26px]">
+        <p className="text-popover 3xl:text-[26px] text-[14px] leading-[110%] xl:text-[20px]">
           {data.value}
         </p>
       </article>

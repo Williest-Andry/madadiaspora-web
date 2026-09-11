@@ -1,13 +1,10 @@
 import Image from "next/image";
-import CTAButton from "@/components/cta-button";
+import MobileCTAButton from "@/components/mobile-cta-button";
 
 export default function AlbumCenter() {
   return (
     <figure className="flex flex-col items-center justify-center">
-      <CTAButton
-        title="Voir plus"
-        className="text-foreground bg-popover hover:bg-popover mb-[60px] h-14.5 w-47.25 justify-between p-1 pl-5"
-      />
+      <MobileCTAButton className="mb-[60px] hidden xl:flex" />
 
       <figure className="flex gap-[20px]">
         <div className="relative h-[412px] w-[280px] rounded-[48px] min-[109.375rem]:h-[512.5px] min-[109.375rem]:w-[399px]">
