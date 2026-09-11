@@ -1,7 +1,6 @@
 import Image from "next/image";
 import AlbumSection from "./album-section";
 import AlbumCarouselMobile from "./album-carousel-mobile";
-import CTAButton from "@/components/cta-button";
 import MobileCTAButton from "@/components/mobile-cta-button";
 
 export default function DiasporalbumSection() {
@@ -36,7 +35,7 @@ export default function DiasporalbumSection() {
 
       <AlbumSection />
 
-      <MobileCTAButton />
+      <MobileCTAButton className="mb-[60px] flex xl:hidden" />
 
       <AlbumCarouselMobile />
     </section>
