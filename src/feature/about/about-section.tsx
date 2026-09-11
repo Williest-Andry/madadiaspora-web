@@ -5,10 +5,10 @@ import MobileCTAButton from "@/components/mobile-cta-button";
 
 export default function AboutSection() {
   return (
-    <section className="bg-foreground 3xl:w-[1656px] relative flex w-100 flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5">
+    <section className="bg-foreground 3xl:w-[1656px] relative flex w-full flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5">
       <AboutImagesFigure />
 
-      <article className="3xl:w-204 flex w-100 flex-col items-center gap-15 max-sm:gap-8 md:w-150 xl:items-start xl:gap-25.5">
+      <article className="3xl:w-204 flex w-full flex-col items-center gap-15 max-sm:gap-8 md:w-150 xl:items-start xl:gap-25.5">
         <article className="flex flex-col items-center max-md:w-[90vw] md:max-xl:w-[70vw] xl:items-start">
           <figure className="mb-6.75 flex gap-2.25">
             <div className="relative h-5 w-5">
