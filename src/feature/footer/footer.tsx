@@ -10,12 +10,12 @@ import {
 import NewsLetter from "./news-letter";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import EarthGlobe from "@/components/earth-globe";
+import EarthGlobe from "@/feature/earth-globe/earth-globe";
 
 export default function Footer() {
   return (
     <footer className="relative mb-33 flex h-[1350px] w-[99vw] flex-col gap-10 sm:h-[1500px] lg:h-[850px] xl:h-[1000px]">
-      <EarthGlobe className="xl:top-125! xl:left-300! 2xl:w-full! min-[131.25rem]:top-150! min-[131.25rem]:left-250! min-[150rem]:top-190! min-[150rem]:left-350! min-[187.5rem]:top-100! min-[187.5rem]:left-900!" />
+      <EarthGlobe className="globe-huge:absolute globe-huge:top-55! globe-huge:left-100! xl:top-125! xl:left-300! 2xl:w-full! min-[125rem]:left-400! min-[187.5rem]:top-55! min-[187.5rem]:left-100!" />
 
       <article className="flex flex-col items-center justify-center gap-10">
         <article className="flex flex-col items-center gap-[40px] lg:flex-row lg:items-start lg:gap-[10px] xl:gap-[25px] 2xl:gap-[55px]">

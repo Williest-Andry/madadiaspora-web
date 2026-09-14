@@ -82,11 +82,11 @@ export default function EarthGlobe({ className }: EarthGlobeProps) {
   }, [globeSize]);
 
   return (
-    <section className="relative h-full w-full overflow-hidden xl:h-full">
+    <section className="relative h-full w-full items-center justify-center overflow-hidden xl:h-full">
       <section
         ref={globeRef}
         className={cn(
-          "absolute top-1/2 left-1/2 m-auto h-full -translate-x-1/2 -translate-y-1/2 xl:top-125 xl:left-220 2xl:left-130 2xl:w-full min-[112.5rem]:left-180 min-[131.25rem]:top-160 min-[131.25rem]:left-250 min-[150rem]:top-190 min-[150rem]:left-350 min-[187.5rem]:top-100 min-[187.5rem]:left-900",
+          "globe-huge:top-190 globe-huge:left-350 max-globe-huge:absolute max-globe-huge:top-1/2 max-globe-huge:left-1/2 max-globe-huge:-translate-x-1/2 max-globe-huge:-translate-y-1/2 globe-huge:w-[50%] globe-huge:items-center globe-huge:justify-center globe-huge:mt-100 m-auto flex h-full xl:top-125 xl:left-220 2xl:left-130 2xl:w-full min-[112.5rem]:left-180 min-[131.25rem]:top-160 min-[131.25rem]:left-250",
           className
         )}
       />
