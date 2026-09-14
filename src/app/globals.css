@@ -51,6 +51,7 @@
   /* custom breakpoints */
   --breakpoint-3xl: 106.25rem; /* 1700px */
   --breakpoint-xs: 26.875rem; /* 430px */
+  --breakpoint-globe-huge: 150rem; /* 2400px */
 
   /* custom fonts */
   --text-title-xl: 64px;
@@ -74,7 +75,7 @@
 
   --popover: oklch(33.5% 0.06 222.9);
   --popover-foreground: oklch(100% 0 0);
-  --muted: oklch(0.97 0 0);
+  /* --muted: oklch(0.97 0 0); */
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
