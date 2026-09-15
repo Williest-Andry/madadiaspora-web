@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { preload } from "react-dom";
 import "./globals.css";
 import NavBar from "../feature/navbar/navbar";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -21,6 +22,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  preload("/earth-night.webp", { as: "image" });
+
   return (
     <html
       lang="en"

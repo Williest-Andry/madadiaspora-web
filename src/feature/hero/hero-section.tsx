@@ -1,14 +1,7 @@
 "use client";
 
 import CustomButton from "@/components/cta-button";
-import dynamic from "next/dynamic";
-
-const Globe = dynamic(
-  () => import("@/feature/earth-globe/earth-globe").then((m) => m.default),
-  {
-    ssr: false,
-  }
-);
+import { GlobeWithLoader } from "../earth-globe/globe-with-loader";
 
 export default function HeroSection() {
   return (
@@ -34,8 +27,8 @@ export default function HeroSection() {
         />
       </article>
 
-      <figure className="h-full w-full xl:flex-1">
-        <Globe />
+      <figure className="relative h-full w-full xl:flex-1">
+        <GlobeWithLoader />
       </figure>
     </main>
   );
