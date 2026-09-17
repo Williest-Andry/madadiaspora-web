@@ -1,9 +1,9 @@
-import { NewsImage } from "@/interfaces/news/news-types";
+import { ImageType } from "@/interfaces/global";
 import { getImageUrl } from "@/lib/get-image-url";
 import Image from "next/image";
 
 type CustomCarouselItemProps = {
-  image: NewsImage;
+  image: ImageType;
   title: string;
   summary: string;
   country: string;

@@ -1,12 +1,4 @@
-import { ContentType, ImageExtension } from "../global";
-
-export interface NewsImage {
-  url: string;
-  name: string;
-  extension: ImageExtension;
-  contentType?: ContentType;
-  size?: number;
-}
+import { ContentType, ImageExtension, ImageType } from "../global";
 
 type NewsType = "NEWS" | "EVENTS";
 
@@ -14,7 +6,7 @@ export interface News {
   id: string;
   title: string;
   summary: string;
-  image: NewsImage;
+  image: ImageType;
   type: NewsType;
   country: string;
 }
