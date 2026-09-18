@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Globe from "globe.gl";
 import {
   getEarthGlobeOffset,
@@ -13,7 +13,7 @@ import { createRoot } from "react-dom/client";
 import { GlobeMarker } from "@/feature/earth-globe/globe-marker";
 
 const GLOBE_PROPERTIES = {
-  IMAGE: "//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg",
+  IMAGE: "/earth-night.webp",
   BACKGROUND_COLOR: "#021D2C",
   POINTS_COLOR: "#FBB03B",
   INITAL_POINT_OF_VIEW: {
@@ -24,39 +24,25 @@ const GLOBE_PROPERTIES = {
 
 type EarthGlobeProps = {
   className?: string;
+  onReady?: () => void;
 };
 
-export default function EarthGlobe({ className }: EarthGlobeProps) {
-  if (typeof window === "undefined") return;
-
+export default function EarthGlobe({ className, onReady }: EarthGlobeProps) {
   const globeRef = useRef<HTMLDivElement>(null);
-
-  const [globeSize, setGlobeSize] = useState(
-    getEarthGlobeSize(window.innerWidth)
-  );
-  const [globeOffset, setGlobeOffset] = useState(
-    getEarthGlobeOffset(window.innerWidth)
-  );
 
   useEffect(() => {
     if (!globeRef.current) return;
-    if (typeof window === "undefined") return;
 
-    const handleGlobeSize = () => {
-      location.reload();
-      setGlobeSize(getEarthGlobeSize(window.innerWidth));
-      setGlobeOffset(getEarthGlobeOffset(window.innerWidth));
-    };
-
-    window.addEventListener("resize", handleGlobeSize);
+    const initialSize = getEarthGlobeSize(window.innerWidth);
+    const initialOffset = getEarthGlobeOffset(window.innerWidth);
 
     const globe = new Globe(globeRef.current);
 
     globe
-      .width(globeSize)
-      .height(globeSize)
+      .width(initialSize)
+      .height(initialSize)
       .globeImageUrl(GLOBE_PROPERTIES.IMAGE)
-      .globeOffset(globeOffset)
+      .globeOffset(initialOffset)
       .backgroundColor(GLOBE_PROPERTIES.BACKGROUND_COLOR)
       .showAtmosphere(false)
       .htmlElementsData(locations)
@@ -68,18 +54,33 @@ export default function EarthGlobe({ className }: EarthGlobeProps) {
         createRoot(element).render(<GlobeMarker data={data as LocationData} />);
 
         return element;
-      });
+      })
+      .onGlobeReady(() => onReady?.());
 
     globe.controls().enableZoom = false;
     globe.controls().autoRotate = true;
     globe.controls().autoRotateSpeed = 0.5;
 
+    let resizeTimeout: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        const newSize = getEarthGlobeSize(window.innerWidth);
+        const newOffset = getEarthGlobeOffset(window.innerWidth);
+        globe.width(newSize).height(newSize).globeOffset(newOffset);
+      }, 150);
+    };
+
+    window.addEventListener("resize", handleResize);
+
     return () => {
+      clearTimeout(resizeTimeout);
+      window.removeEventListener("resize", handleResize);
       globe.renderer().dispose();
       globe._destructor();
       globeRef.current = null;
     };
-  }, [globeSize]);
+  }, []);
 
   return (
     <section className="relative h-full w-full items-center justify-center overflow-hidden xl:h-full">
