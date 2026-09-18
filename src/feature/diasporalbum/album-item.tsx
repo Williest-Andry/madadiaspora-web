@@ -1,15 +1,17 @@
+import { Album } from "@/interfaces/album/album-types";
+import { getAlbumFallback } from "@/lib/get-image-url";
 import Image from "next/image";
 
 type CustomCarouselItemProps = {
-  image: string;
+  image: Album;
 };
 
 export default function CarouselAlbumItem({ image }: CustomCarouselItemProps) {
   return (
     <figure className="relative h-[512.5px] w-[350px] rounded-[27px]">
       <Image
-        src={image}
-        alt={image}
+        src={getAlbumFallback(image).image}
+        alt={getAlbumFallback(image).alt}
         fill
         className="rounded-[27px] object-cover"
       />

@@ -1,4 +1,4 @@
-import { ApiResponse, GenericParams } from "@/interfaces/global";
+import { ApiResponse } from "@/interfaces/global";
 import { catchError, prodApi } from "@/lib/axios";
 import { AxiosRequestConfig, AxiosResponse } from "axios";
 
