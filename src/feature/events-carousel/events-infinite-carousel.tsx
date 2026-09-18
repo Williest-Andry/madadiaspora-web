@@ -5,14 +5,15 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import { eventsData } from "@/constant/events-carousel/data";
 import CustomCarouselItem from "./carousel-item";
+import { useNews } from "@/hooks/news/use-news";
 
 export function InfiniteCarousel() {
-  const allEvents = [...eventsData, ...eventsData];
+  const { news, error, isLoading } = useNews();
+
+  if (error) return <p>ERREUR</p>;
+  if (isLoading) return <p>Chargement...</p>;
 
   return (
     <Carousel
@@ -20,30 +21,25 @@ export function InfiniteCarousel() {
       plugins={[
         AutoScroll({
           speed: 2,
-          direction: "backward",
+          direction: "forward",
           stopOnInteraction: false,
           stopOnMouseEnter: true,
+          startDelay: 0,
         }),
       ]}
     >
-      <CarouselContent className="mt-20 flex gap-8 xl:mt-0">
-        {allEvents.map((event, index) => (
-          <CarouselItem key={index} className="basis-65 first:ml-8">
+      <CarouselContent className="mt-20 flex gap-4 xl:mt-0">
+        {[...news, ...news].map((event, index) => (
+          <CarouselItem key={index} className="basis-65 first:ml-4">
             <CustomCarouselItem
               title={event.title}
-              description={event.description}
+              summary={event.summary}
               country={event.country}
               image={event.image}
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* <div className={"absolute top-35 left-50 h-10 w-10"}>
-        <CarouselPrevious className={"h-full w-full bg-red-500"} />
-      </div>
-      <div className={"absolute top-35 right-50 h-10 w-10"}>
-        <CarouselNext className={"h-full w-full bg-red-500"} />
-      </div> */}
     </Carousel>
   );
 }
