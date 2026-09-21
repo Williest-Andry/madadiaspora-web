@@ -20,7 +20,7 @@ export default function ContactSection() {
   ];
 
   return (
-    <section className="bg-foreground text-popover flex flex-col items-center justify-center pt-[150px] pb-[57px] xl:pt-[198px]">
+    <section className="bg-foreground text-popover flex flex-col items-center justify-center pt-[150px] pb-[57px] max-sm:gap-30 xl:pt-[198px]">
       <article className="flex flex-col items-center justify-center gap-[50px] xl:flex-row 2xl:gap-[165px]">
         <article className="3xl:w-[678px] flex w-[60%] flex-col items-center gap-[47px] max-xl:w-[80%] xl:w-[378px] xl:items-start xl:gap-[27px]">
           <figure className="mb-6.75 flex gap-2.25">
