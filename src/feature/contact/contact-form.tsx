@@ -10,7 +10,7 @@ import ControlledTextArea from "./controlled-text-area";
 import ControlledPhoneInput from "./controlled-phone-input";
 
 export default function ContactForm() {
-  const { control, handleSubmit } = useForm<SendMail>({
+  const { control, handleSubmit, reset, formState } = useForm<SendMail>({
     resolver: zodResolver(sendMailSchema),
     defaultValues: {
       email: "",
@@ -29,6 +29,8 @@ export default function ContactForm() {
     if (event) event.preventDefault();
 
     sendMail(data);
+
+    reset();
   };
 
   return (
@@ -68,6 +70,7 @@ export default function ContactForm() {
           className="flex items-center justify-center"
         >
           <Button
+            disabled={!formState.isDirty || isPending}
             type="submit"
             className={
               "bg-popover text-p-sm sm:text-p-md text-foreground mt-6 h-[58px] w-[139px] rounded-[50px] p-[4px] sm:w-[189px]"
