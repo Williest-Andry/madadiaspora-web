@@ -18,3 +18,16 @@ export async function genericGetList<T, TParams = AxiosRequestConfig["params"]>(
     catchError(e);
   }
 }
+
+export async function genericCreate<T, TResponse>(
+  url: string,
+  body: T
+): Promise<TResponse | undefined> {
+  try {
+    const response: AxiosResponse<TResponse> = await prodApi.post(url, body);
+
+    return response.data;
+  } catch (e) {
+    catchError(e);
+  }
+}
