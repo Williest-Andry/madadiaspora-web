@@ -83,7 +83,7 @@ export default function EarthGlobe({ className, onReady }: EarthGlobeProps) {
   }, []);
 
   return (
-    <section className="relative h-full w-full items-center justify-center overflow-hidden xl:h-full">
+    <section className="relative h-[450px] w-full items-center justify-center overflow-hidden xl:h-full">
       <section
         ref={globeRef}
         className={cn(
