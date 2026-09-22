@@ -7,20 +7,15 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import CarouselAlbumItem from "./album-item";
+import { Album } from "@/interfaces/album/album-types";
 
-export default function AlbumCarouselMobile() {
-  const data = [
-    "/maki.jpg",
-    "/album-baoba-taxi.jpg",
-    "/album-road.jpg",
-    "/album-sea.jpg",
-    "/album-sunset.jpg",
-    "/album-baobab.jpg",
-    "/album-womens-children.jpg",
-  ];
+type AlbumCarouselMobileProps = {
+  album: Album[];
+};
 
-  const album = [...data, ...data];
-
+export default function AlbumCarouselMobile({
+  album,
+}: AlbumCarouselMobileProps) {
   return (
     <Carousel
       opts={{ loop: true, dragFree: true }}

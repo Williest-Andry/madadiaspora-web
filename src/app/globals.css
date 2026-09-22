@@ -52,6 +52,7 @@
   --breakpoint-3xl: 106.25rem; /* 1700px */
   --breakpoint-xs: 26.875rem; /* 430px */
   --breakpoint-globe-huge: 150rem; /* 2400px */
+  --breakpoint-globe-small: 37.5rem; /* 600px */
 
   /* custom fonts */
   --text-title-xl: 64px;
@@ -131,6 +132,28 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 @layer base {

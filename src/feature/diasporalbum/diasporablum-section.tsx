@@ -2,8 +2,20 @@ import Image from "next/image";
 import AlbumSection from "./album-section";
 import AlbumCarouselMobile from "./album-carousel-mobile";
 import MobileCTAButton from "@/components/mobile-cta-button";
+import { useAblum } from "@/hooks/album/use-album";
+import { AlbumParams } from "@/interfaces/album/album-types";
 
 export default function DiasporalbumSection() {
+  const params: AlbumParams = {
+    limit: 10,
+    page: 1,
+  };
+
+  const { album, error, isLoading } = useAblum(params);
+
+  if (error) return <p>ERREUR</p>;
+  if (isLoading) return <p>Chargement ...</p>;
+
   return (
     <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px] pb-[197px]">
       <article className="flex w-full flex-col items-center justify-between gap-[17px] lg:w-[958px]">
@@ -33,11 +45,11 @@ export default function DiasporalbumSection() {
         <p className="text-p-sm md:text-p-md 3xl:text-p-xl w-[90%] text-center leading-8 sm:text-[17px]">{`Découvrez en images les événements, rencontres et instants marquants qui rassemblent notre communauté. Revivez et partagez les souvenirs qui renforcent les liens de la diaspora.`}</p>
       </article>
 
-      <AlbumSection />
+      <AlbumSection album={album} />
 
       <MobileCTAButton className="mb-[60px] flex xl:hidden" />
 
-      <AlbumCarouselMobile />
+      <AlbumCarouselMobile album={album} />
     </section>
   );
 }

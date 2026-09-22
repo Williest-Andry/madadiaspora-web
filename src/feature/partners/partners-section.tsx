@@ -1,21 +1,32 @@
-import DoubleImagesCard from "@/feature/partners/double-images-card";
+import { usePartners } from "@/hooks/partners/use-partners";
+import OfficialPartnersCarousel from "./official-partners-carousel";
 
 export default function PartnersSection() {
+  const { partners, error, isLoading } = usePartners({ isOfficial: true });
+
   return (
-    <section className="mt-45.25 mb-40.75 flex flex-col items-center justify-around gap-10 xl:flex-row xl:gap-0">
-      <article className="text-title-sm sm:text-title-md 2xl:text-title-xl flex w-[90%] flex-col gap-3.75 text-center leading-[110%] font-bold sm:w-120 xl:text-left 2xl:w-151.25">
-        <h2>
-          Nos <span className="text-secondary">partenaires</span> officiels
-        </h2>
-        <p className="text-p-sm sm:text-p-md 2xl:text-p-xl leading-8 font-normal">
+    <section className="mt-45.25 mb-40.75 flex flex-col items-center justify-around gap-10">
+      <article className="3xl:w-[1656px] 3xl:gap-34.75 flex flex-col items-center justify-between gap-10 max-2xl:w-[90%] xl:flex-row xl:gap-10">
+        <article className="flex w-full flex-col items-center sm:w-126.25 xl:items-start 2xl:w-[819.5px]">
+          <figure className="text-title-sm sm:text-title-md 3xl:text-title-xl mb-4.25 w-full text-center leading-[110%] font-bold xl:w-186.25 xl:text-left">
+            <h2>
+              Nos <span className="text-secondary">partenaires</span> officiels
+            </h2>
+          </figure>
+        </article>
+        <p className="text-p-sm sm:text-p-md md:text-p-md 3xl:text-p-xl 3xl:w-203 w-[90%] text-center leading-8 xl:text-start 2xl:w-120">
           {
             "Nos partenaires officiels sont des acteurs engagés qui partagent notre vision d'une diaspora unie, dynamique et solidaire."
           }
         </p>
       </article>
 
-      <figure className="xs:w-90 h-35 w-80 sm:h-55 sm:w-150 2xl:h-75 2xl:w-200">
-        <DoubleImagesCard rightImage="/paositra.png" leftImage="/afo.png" />
+      <figure className="flex w-[50%] items-center justify-center">
+        <OfficialPartnersCarousel
+          partners={partners}
+          isInfinite={false}
+          itemClassName="max-xs:basis-[180px] max-sm:basis-[218px]"
+        />
       </figure>
     </section>
   );

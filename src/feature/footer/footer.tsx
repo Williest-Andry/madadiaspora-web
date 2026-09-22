@@ -10,12 +10,12 @@ import {
 import NewsLetter from "./news-letter";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import EarthGlobe from "@/feature/earth-globe/earth-globe";
+import { GlobeWithLoader } from "../earth-globe/globe-with-loader";
 
 export default function Footer() {
   return (
     <footer className="relative mb-33 flex h-[1350px] w-[99vw] flex-col gap-10 sm:h-[1500px] lg:h-[850px] xl:h-[1000px]">
-      <EarthGlobe className="globe-huge:absolute globe-huge:top-55! globe-huge:left-100! xl:top-125! xl:left-300! 2xl:w-full! min-[125rem]:left-400! min-[187.5rem]:top-55! min-[187.5rem]:left-100!" />
+      <GlobeWithLoader className="globe-huge:absolute globe-huge:top-55! globe-huge:left-100! xl:top-125! xl:left-300! 2xl:w-full! min-[125rem]:left-400! min-[187.5rem]:top-55! min-[187.5rem]:left-100!" />
 
       <article className="flex flex-col items-center justify-center gap-10">
         <article className="flex flex-col items-center gap-[40px] lg:flex-row lg:items-start lg:gap-[10px] xl:gap-[25px] 2xl:gap-[55px]">
@@ -56,6 +56,16 @@ export default function Footer() {
 
         <article className="tracking-0 flex w-[88%] flex-col justify-between gap-6 text-[16px] leading-[100%] lg:flex-row lg:gap-0">
           <p>{`© ${new Date().getFullYear()} MadaDiaspora — Tous droits réservés.`}</p>
+          <p>
+            Powered by{" "}
+            <Link
+              href={"https://allforone.mg/fr"}
+              target="_blank"
+              className="font-extrabold underline"
+            >
+              AllForOne
+            </Link>
+          </p>
 
           <div className="flex flex-col gap-6 text-[12px] sm:flex-row lg:justify-between lg:gap-10 xl:text-[16px]">
             <Link href={"#"}>{"Termes & Conditions"}</Link>
