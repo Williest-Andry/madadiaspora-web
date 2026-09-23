@@ -1,6 +1,7 @@
 import { INFO_DATA } from "@/constant/about-info/data";
 import Image from "next/image";
 import InfoCard from "./info-card";
+import CustomTitleSection from "@/components/custom-title-section";
 
 export default function InfoSection() {
   return (

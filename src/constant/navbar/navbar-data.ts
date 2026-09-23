@@ -1,7 +1,7 @@
 import { DataLinkType } from "./type";
 
 export const ABOUT_LINK: DataLinkType[] = [
-  { title: "Plateforme", link: "#" },
+  { title: "Plateforme", link: "/about/platform" },
   { title: "Qui sommes nous ?", link: "#" },
 ];
 
