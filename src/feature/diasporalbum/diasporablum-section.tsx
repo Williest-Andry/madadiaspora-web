@@ -13,8 +13,12 @@ export default function DiasporalbumSection() {
 
   const { album, error, isLoading } = useAblum(params);
 
-  if (error) return <p>ERREUR</p>;
-  if (isLoading) return <p>Chargement ...</p>;
+  if (error)
+    return <p className="text-title-xl text-center uppercase">ERREUR</p>;
+  if (isLoading)
+    return (
+      <p className="text-title-xl text-center uppercase">Chargement ...</p>
+    );
 
   return (
     <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px] pb-[197px]">
