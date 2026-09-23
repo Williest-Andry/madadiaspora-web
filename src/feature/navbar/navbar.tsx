@@ -29,7 +29,7 @@ export default function NavBar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        <Link href={"#"}>Contact</Link>
+        <Link href={"/contact"}>Contact</Link>
       </div>
 
       <SideDrawer />
