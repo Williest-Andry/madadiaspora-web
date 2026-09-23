@@ -20,7 +20,7 @@ export function GlobeWithLoader({ className }: GlobeWithLoaderProps) {
   const [isGlobeReady, setIsGlobeReady] = useState(false);
 
   return (
-    <>
+    <div className="relative h-full w-full">
       <Globe className={className} onReady={() => setIsGlobeReady(true)} />
 
       <div
@@ -32,6 +32,6 @@ export function GlobeWithLoader({ className }: GlobeWithLoaderProps) {
       >
         <GlobeLoader />
       </div>
-    </>
+    </div>
   );
 }

@@ -8,7 +8,6 @@ import ServicesSection from "@/feature/services/services-section";
 import DiasporalbumSection from "@/feature/diasporalbum/diasporablum-section";
 import OtherPartnersSection from "@/feature/other-partners/other-partners-section";
 import ContactSection from "@/feature/contact/contact-section";
-import Footer from "@/feature/footer/footer";
 
 export default function Home() {
   return (
@@ -28,8 +27,6 @@ export default function Home() {
       <OtherPartnersSection />
 
       <ContactSection />
-
-      <Footer />
     </>
   );
 }

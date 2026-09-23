@@ -5,9 +5,13 @@ import Link from "next/link";
 
 type ServiceCardProps = {
   data: ServicesData;
+  buttonLabel?: string;
 };
 
-export default function ServiceCard({ data }: ServiceCardProps) {
+export default function ServiceCard({
+  data,
+  buttonLabel = "Voir plus",
+}: ServiceCardProps) {
   return (
     <article className="3xl:h-148.75 3xl:w-134.75 xs:w-97.25 relative h-100 w-78 rounded-[38px]">
       <figure className="relative h-full w-full">
@@ -33,7 +37,7 @@ export default function ServiceCard({ data }: ServiceCardProps) {
           href={"#"}
           className="bg-foreground/20 mt-6.25 flex h-12 w-[99%] items-center justify-between rounded-[14px] px-5 py-1"
         >
-          <p className="max-xs:text-p-sm">Voir plus</p>
+          <p className="max-xs:text-p-sm">{buttonLabel}</p>
           <MoveRight />
         </Link>
       </article>

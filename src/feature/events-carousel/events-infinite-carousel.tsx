@@ -12,8 +12,10 @@ import { useNews } from "@/hooks/news/use-news";
 export function InfiniteCarousel() {
   const { news, error, isLoading } = useNews();
 
-  if (error) return <p>ERREUR</p>;
-  if (isLoading) return <p>Chargement...</p>;
+  if (error)
+    return <p className="text-title-xl text-center uppercase">ERREUR</p>;
+  if (isLoading)
+    return <p className="text-title-xl text-center uppercase">Chargement...</p>;
 
   return (
     <Carousel
