@@ -1,19 +1,28 @@
+import { ExpertiseData } from "@/constant/about-info/who-are-we/type";
 import { ServicesData } from "@/constant/services/type";
+import { cn } from "@/lib/utils";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 type ServiceCardProps = {
-  data: ServicesData;
+  data: ServicesData | ExpertiseData;
   buttonLabel?: string;
+  className?: string;
 };
 
 export default function ServiceCard({
   data,
   buttonLabel = "Voir plus",
+  className,
 }: ServiceCardProps) {
   return (
-    <article className="3xl:h-148.75 3xl:w-134.75 xs:w-97.25 relative h-100 w-78 rounded-[38px]">
+    <article
+      className={cn(
+        "3xl:h-148.75 3xl:w-134.75 xs:w-97.25 relative h-100 w-78 rounded-[38px]",
+        className
+      )}
+    >
       <figure className="relative h-full w-full">
         <Image
           src={data.image}

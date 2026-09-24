@@ -2,7 +2,7 @@ import { DataLinkType } from "./type";
 
 export const ABOUT_LINK: DataLinkType[] = [
   { title: "Plateforme", link: "/about/platform" },
-  { title: "Qui sommes nous ?", link: "#" },
+  { title: "Qui sommes nous ?", link: "/about/who-are-we" },
 ];
 
 export const RUBRIK_LINK: DataLinkType[] = [
