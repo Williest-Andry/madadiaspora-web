@@ -16,9 +16,9 @@ export default function ContactPage() {
         <div className="mb-[36px]">
           <ToggleGroupDemo
             leftLabel="Nous contacter"
-            leftLink="#"
+            leftLink="/contact"
             rightLabel="Nos correspondants"
-            rightLink="#"
+            rightLink="/contact/correspondents"
           />
         </div>
       </section>

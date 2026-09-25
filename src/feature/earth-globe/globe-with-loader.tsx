@@ -14,14 +14,22 @@ const Globe = dynamic(
 
 type GlobeWithLoaderProps = {
   className?: string;
+  backgroundColor?: "primary" | "footer-bg";
 };
 
-export function GlobeWithLoader({ className }: GlobeWithLoaderProps) {
+export function GlobeWithLoader({
+  className,
+  backgroundColor,
+}: GlobeWithLoaderProps) {
   const [isGlobeReady, setIsGlobeReady] = useState(false);
 
   return (
     <div className="relative h-full w-full">
-      <Globe className={className} onReady={() => setIsGlobeReady(true)} />
+      <Globe
+        className={className}
+        onReady={() => setIsGlobeReady(true)}
+        backgroundColor={backgroundColor}
+      />
 
       <div
         aria-hidden={isGlobeReady}

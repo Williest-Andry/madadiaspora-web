@@ -48,11 +48,20 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* custom breakpoints */
+  --color-text-badge: oklch(39.2% 0.028 238.4);
+  --color-text-card: oklch(57.5% 0.03 246.6);
+  --color-bg-gray: oklch(98.5% 0 0);
+  --color-footer-bg: oklch(17.6% 0.034 232.6);
+
+  /* custom global breakpoints */
   --breakpoint-3xl: 106.25rem; /* 1700px */
   --breakpoint-xs: 26.875rem; /* 430px */
   --breakpoint-globe-huge: 150rem; /* 2400px */
   --breakpoint-globe-small: 37.5rem; /* 600px */
+
+  /* custom correspondent grid breakpoints */
+  --breakpoint-grid-2xl: 103.563rem; /* 1657px */
+  --breakpoint-grid-xl: 80rem; /* 1280px */
 
   /* custom fonts */
   --text-title-xl: 64px;
@@ -62,6 +71,7 @@
   --text-p-xl: 28px;
   --text-p-md: 18px;
   --text-p-sm: 15px;
+  --text-p-xs: 12px;
 }
 
 :root {
