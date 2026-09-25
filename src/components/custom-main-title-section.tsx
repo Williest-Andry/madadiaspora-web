@@ -16,7 +16,7 @@ export default function CustomMainTitleSection({
   return (
     <article
       className={cn(
-        "mt-[77px] mb-[110px] flex w-full flex-col items-center justify-center gap-[17px]",
+        "mt-[30px] mb-[110px] flex w-full flex-col items-center justify-center gap-[17px] lg:mt-[77px]",
         className
       )}
     >
