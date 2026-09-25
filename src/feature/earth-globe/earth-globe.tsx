@@ -12,22 +12,27 @@ import { cn } from "@/lib/utils";
 import { createRoot } from "react-dom/client";
 import { GlobeMarker } from "@/feature/earth-globe/globe-marker";
 
-const GLOBE_PROPERTIES = {
-  IMAGE: "/earth-night.webp",
-  BACKGROUND_COLOR: "#021D2C",
-  POINTS_COLOR: "#FBB03B",
-  INITAL_POINT_OF_VIEW: {
-    lat: -13.9626,
-    lng: 33.7741,
-  },
-};
-
 type EarthGlobeProps = {
   className?: string;
   onReady?: () => void;
+  backgroundColor?: "primary" | "footer-bg";
 };
 
-export default function EarthGlobe({ className, onReady }: EarthGlobeProps) {
+export default function EarthGlobe({
+  className,
+  onReady,
+  backgroundColor = "primary",
+}: EarthGlobeProps) {
+  const GLOBE_PROPERTIES = {
+    IMAGE: "/earth-night.webp",
+    BACKGROUND_COLOR: backgroundColor == "primary" ? "#021D2C" : "#01131D",
+    POINTS_COLOR: "#FBB03B",
+    INITAL_POINT_OF_VIEW: {
+      lat: -13.9626,
+      lng: 33.7741,
+    },
+  };
+
   const globeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -92,7 +97,19 @@ export default function EarthGlobe({ className, onReady }: EarthGlobeProps) {
         )}
       />
 
-      <div className="via-background/70 to-background pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent" />
+      {backgroundColor == "primary" ? (
+        <div
+          className={
+            "via-primary/70 to-primary pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent"
+          }
+        />
+      ) : (
+        <div
+          className={
+            "via-footer-bg/70 to-footer-bg pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent"
+          }
+        />
+      )}
     </section>
   );
 }
