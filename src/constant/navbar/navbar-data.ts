@@ -9,7 +9,7 @@ export const RUBRIK_LINK: DataLinkType[] = [
   { title: "Actualité", link: "#" },
   { title: "Boîte à projet", link: "#" },
   { title: "Bonne à savoir", link: "#" },
-  { title: "Diaspor'album", link: "#" },
+  { title: "Diaspor'album", link: "/diasporalbum" },
   { title: "Evènement", link: "#" },
   { title: "Opportunité & Business", link: "#" },
 ];

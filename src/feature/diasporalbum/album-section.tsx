@@ -5,9 +5,13 @@ import { Album, AlbumParams } from "@/interfaces/album/album-types";
 
 type AlbumSectionProps = {
   album: Album[];
+  showCTAButton?: boolean;
 };
 
-export default function AlbumSection({ album }: AlbumSectionProps) {
+export default function AlbumSection({
+  album,
+  showCTAButton = true,
+}: AlbumSectionProps) {
   const leftImages = {
     up: album[0],
     down: album[1],
@@ -28,6 +32,7 @@ export default function AlbumSection({ album }: AlbumSectionProps) {
     <figure className="hidden gap-[20px] xl:flex">
       <AlbumSide upImage={leftImages.up} downImage={leftImages.down} />
       <AlbumCenter
+        showCTAButton={showCTAButton}
         leftUpImage={centerImages.leftUpImage}
         rightUpImage={centerImages.rightUpImage}
         centerDownImage={centerImages.centerDownImage}
