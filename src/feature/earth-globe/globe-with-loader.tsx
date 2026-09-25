@@ -38,7 +38,7 @@ export function GlobeWithLoader({
           isGlobeReady ? "opacity-0" : "opacity-100"
         )}
       >
-        <GlobeLoader />
+        <GlobeLoader backgroundColor={backgroundColor} />
       </div>
     </div>
   );

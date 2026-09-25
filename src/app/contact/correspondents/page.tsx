@@ -11,7 +11,7 @@ export default function CorrespondentsPage() {
 
   return (
     <div className="flex w-full flex-col">
-      <section className="mb-[60.5px] flex w-full flex-col">
+      <section className="mb-[60.5px] flex w-full flex-col max-sm:items-center max-sm:justify-center">
         <article className="mt-[30px] mb-[110px] flex w-full flex-col items-center justify-center gap-[17px] lg:mt-[77px]">
           <h1 className="max-xs:w-[70%] text-title-sm sm:text-title-md lg:text-title-xl text-center leading-[110%] font-bold tracking-normal">
             {"Nos"} <span className="text-secondary">{"correspondants"}</span>{" "}
@@ -25,7 +25,7 @@ export default function CorrespondentsPage() {
           </p>
         </article>
 
-        <div className="flex justify-between">
+        <div className="flex flex-col justify-between sm:flex-row sm:px-[132px]">
           <ToggleGroupDemo
             leftLabel="Nous contacter"
             leftLink="/contact"
