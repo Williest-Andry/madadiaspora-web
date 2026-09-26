@@ -1,12 +1,35 @@
+"use client";
+
 import Image from "next/image";
 import { usePartners } from "@/hooks/partners/use-partners";
 import OtherPartnersCarousel from "./other-partners-carousel";
+import { cn } from "@/lib/utils";
 
-export default function OtherPartnersSection() {
+type OtherPartnersSectionProps = {
+  backgroundColor?: "popover" | "foreground";
+};
+
+export default function OtherPartnersSection({
+  backgroundColor = "popover",
+}: OtherPartnersSectionProps) {
   const { partners, error, isLoading } = usePartners({ isOfficial: false });
 
+  if (error)
+    return <p className="text-title-xl text-center uppercase">ERREUR</p>;
+  if (isLoading)
+    return (
+      <p className="text-title-xl text-center uppercase">Chargement ...</p>
+    );
+
   return (
-    <section className="my-[185px] flex flex-col items-center justify-center gap-[60px] overflow-hidden xl:gap-[100px] 2xl:gap-[171px]">
+    <section
+      className={cn(
+        "flex flex-col items-center justify-center gap-[60px] overflow-hidden py-[185px] xl:gap-[100px] 2xl:gap-[171px]",
+        backgroundColor == "popover"
+          ? "bg-popover text-foreground"
+          : "bg-foreground text-popover"
+      )}
+    >
       <article className="3xl:w-[1656px] 3xl:gap-34.75 flex flex-col items-center justify-between gap-10 max-2xl:w-[90%] xl:flex-row xl:gap-10">
         <article className="flex w-full flex-col items-center sm:w-126.25 xl:items-start 2xl:w-[819.5px]">
           <figure className="mb-6.75 flex gap-2.25">
@@ -36,6 +59,7 @@ export default function OtherPartnersSection() {
 
       <figure className="flex overflow-hidden">
         <OtherPartnersCarousel
+          backgroundColor="foreground"
           partners={[...partners, ...partners, ...partners]}
           isInfinite
         />

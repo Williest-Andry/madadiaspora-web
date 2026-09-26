@@ -14,12 +14,14 @@ type OtherPartnersCarouselProps = {
   partners: Partner[];
   isInfinite: boolean;
   itemClassName?: string;
+  backgroundColor?: "popover" | "foreground";
 };
 
 export default function OtherPartnersCarousel({
   partners,
   isInfinite,
   itemClassName,
+  backgroundColor = "popover",
 }: OtherPartnersCarouselProps) {
   return (
     <Carousel
@@ -46,9 +48,20 @@ export default function OtherPartnersCarousel({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <div className="from-primary pointer-events-none absolute inset-0 z-10 h-full w-[40%] bg-linear-to-r from-80% to-transparent"></div>
 
-      <div className="from-primary pointer-events-none absolute inset-y-0 right-0 z-10 h-full w-[40%] bg-linear-to-l from-80% to-transparent" />
+      {backgroundColor == "popover" ? (
+        <>
+          <div className="from-primary pointer-events-none absolute inset-0 z-10 h-full w-[40%] bg-linear-to-r from-80% to-transparent"></div>
+
+          <div className="from-primary pointer-events-none absolute inset-y-0 right-0 z-10 h-full w-[40%] bg-linear-to-l from-80% to-transparent" />
+        </>
+      ) : (
+        <>
+          <div className="pointer-events-none absolute inset-0 z-10 h-full w-[40%] bg-linear-to-r from-black/40 from-80% to-transparent"></div>
+
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 h-full w-[40%] bg-linear-to-l from-black/40 from-80% to-transparent" />
+        </>
+      )}
     </Carousel>
   );
 }

@@ -34,7 +34,7 @@ export default function ServiceCard({
 
       <article className="bg-secondary-foreground/90 3xl:top-99.75 3xl:w-129.25 absolute top-49.75 right-2.75 left-2.75 flex h-46.25 flex-col gap-2 rounded-[29px] p-3.5">
         <div className="flex flex-col gap-3">
-          <h3 className="3xl:text-title-sm text-p-md leading-7 font-bold uppercase">
+          <h3 className="3xl:text-title-sm text-p-md line-clamp-1 leading-7 font-bold uppercase">
             {data.title}
           </h3>
           <p className="max-xs:text-p-sm text-p-md max-xs:h-12 line-clamp-2 h-9.5 leading-[100%]">
