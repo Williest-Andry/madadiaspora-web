@@ -15,6 +15,6 @@ export const RUBRIK_LINK: DataLinkType[] = [
 ];
 
 export const DIRECTORY_LINK: DataLinkType[] = [
-  { title: "Diaspora", link: "#" },
+  { title: "Diaspora", link: "/directory" },
   { title: "Professionnel Madagascar", link: "#" },
 ];
