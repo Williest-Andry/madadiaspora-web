@@ -26,7 +26,8 @@ export default function PartnerLogo({
     >
       <figure className="relative h-[60%] w-[60%] object-cover">
         <Image
-          src={getImageUrl(partner.logo.url)}
+          // src={getImageUrl(partner.logo.url)}
+          src={partner.logo.url}
           alt={partner.logo.name}
           fill
         />

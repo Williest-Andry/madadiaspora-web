@@ -1,6 +1,8 @@
+import { ImageType } from "@/interfaces/global";
+
 export type EventData = {
-  image: string;
+  image: ImageType;
   title: string;
-  description: string;
+  summary: string;
   country: string;
 };

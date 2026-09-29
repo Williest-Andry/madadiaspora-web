@@ -8,14 +8,17 @@ import {
 } from "@/components/ui/carousel";
 import CustomCarouselItem from "./carousel-item";
 import { useNews } from "@/hooks/news/use-news";
+import { eventsData } from "@/constant/events-carousel/data";
 
 export function InfiniteCarousel() {
-  const { news, error, isLoading } = useNews();
+  // const { news, error, isLoading } = useNews();
 
-  if (error)
-    return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  if (isLoading)
-    return <p className="text-title-xl text-center uppercase">Chargement...</p>;
+  // if (error)
+  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
+  // if (isLoading)
+  //   return <p className="text-title-xl text-center uppercase">Chargement...</p>;
+
+  const MOCK_DATA = [...eventsData, ...eventsData];
 
   return (
     <Carousel
@@ -31,7 +34,7 @@ export function InfiniteCarousel() {
       ]}
     >
       <CarouselContent className="mt-20 flex gap-4 xl:mt-0">
-        {[...news, ...news].map((event, index) => (
+        {MOCK_DATA.map((event, index) => (
           <CarouselItem key={index} className="basis-65 first:ml-4">
             <CustomCarouselItem
               title={event.title}

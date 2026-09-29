@@ -2,37 +2,67 @@ import { EventData } from "./type";
 
 export const eventsData: EventData[] = [
   {
-    image: "/event-south-africa.jpg",
+    image: {
+      url: "/event-south-africa.jpg",
+      name: "mock south africa",
+      extension: ".jpeg",
+      contentType: "image/jpeg",
+      size: 0,
+    },
     title: "Art culinaire",
-    description:
+    summary:
       "Madagascar remporte la sélection africaine de l’International Catering...",
     country: "Afrique du Sud",
   },
   {
-    image: "/event-poland.jpg",
+    image: {
+      url: "/event-poland.jpg",
+      name: "mock poland",
+      extension: ".jpeg",
+      contentType: "image/jpeg",
+      size: 0,
+    },
     title: "Art culinaire",
-    description:
+    summary:
       "Madagascar remporte la sélection africaine de l’International Catering...",
     country: "Pologne",
   },
   {
-    image: "/event-italy.jpg",
+    image: {
+      url: "/event-italy.jpg",
+      name: "mock italy",
+      extension: ".jpeg",
+      contentType: "image/jpeg",
+      size: 0,
+    },
     title: "Art culinaire",
-    description:
+    summary:
       "La cuisine italienne célèbre la diversité régionale avec ses pâtes artisanales et ses sauces riches.",
     country: "Italie",
   },
   {
-    image: "/event-japan.jpg",
+    image: {
+      url: "/event-japan.jpg",
+      name: "mock japan",
+      extension: ".jpeg",
+      contentType: "image/jpeg",
+      size: 0,
+    },
     title: "Art culinaire",
-    description:
+    summary:
       "La cuisine italienne célèbre la diversité régionale avec ses pâtes artisanales et ses sauces riches.",
     country: "Japon",
   },
   {
-    image: "/event-madagascar.jpg",
+    image: {
+      url: "/event-madagascar.jpg",
+      name: "mock japan",
+      extension: ".jpeg",
+      contentType: "image/jpeg",
+      size: 0,
+    },
     title: "Art culinaire",
-    description:
+    summary:
       "Madagascar remporte la sélection africaine de l’International Catering...",
     country: "Madagascar",
   },

@@ -11,14 +11,14 @@ export default function DiasporalbumSection() {
     page: 1,
   };
 
-  const { album, error, isLoading } = useAblum(params);
+  // const { album, error, isLoading } = useAblum(params);
 
-  if (error)
-    return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  if (isLoading)
-    return (
-      <p className="text-title-xl text-center uppercase">Chargement ...</p>
-    );
+  // if (error)
+  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
+  // if (isLoading)
+  //   return (
+  //     <p className="text-title-xl text-center uppercase">Chargement ...</p>
+  //   );
 
   return (
     <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px] pb-[197px]">
@@ -49,11 +49,11 @@ export default function DiasporalbumSection() {
         <p className="text-p-sm md:text-p-md 3xl:text-p-xl w-[90%] text-center leading-8 sm:text-[17px]">{`Découvrez en images les événements, rencontres et instants marquants qui rassemblent notre communauté. Revivez et partagez les souvenirs qui renforcent les liens de la diaspora.`}</p>
       </article>
 
-      <AlbumSection album={album} />
+      <AlbumSection  />
 
       <MobileCTAButton className="mb-[60px] flex xl:hidden" />
 
-      <AlbumCarouselMobile album={album} />
+      <AlbumCarouselMobile  />
     </section>
   );
 }

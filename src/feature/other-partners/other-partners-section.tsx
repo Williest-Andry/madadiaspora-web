@@ -4,30 +4,31 @@ import Image from "next/image";
 import { usePartners } from "@/hooks/partners/use-partners";
 import OtherPartnersCarousel from "./other-partners-carousel";
 import { cn } from "@/lib/utils";
+import { MOCK_PARTNERS_DATA } from "@/constant/partners/data";
 
 type OtherPartnersSectionProps = {
-  backgroundColor?: "popover" | "foreground";
+  backgroundColor?: "primary" | "foreground";
 };
 
 export default function OtherPartnersSection({
-  backgroundColor = "popover",
+  backgroundColor = "primary",
 }: OtherPartnersSectionProps) {
-  const { partners, error, isLoading } = usePartners({ isOfficial: false });
+  // const { partners, error, isLoading } = usePartners({ isOfficial: false });
 
-  if (error)
-    return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  if (isLoading)
-    return (
-      <p className="text-title-xl text-center uppercase">Chargement ...</p>
-    );
+  // if (error)
+  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
+  // if (isLoading)
+  //   return (
+  //     <p className="text-title-xl text-center uppercase">Chargement ...</p>
+  //   );
 
   return (
     <section
       className={cn(
         "flex flex-col items-center justify-center gap-[60px] overflow-hidden py-[185px] xl:gap-[100px] 2xl:gap-[171px]",
-        backgroundColor == "popover"
-          ? "bg-popover text-foreground"
-          : "bg-foreground text-popover"
+        backgroundColor == "primary"
+          ? "bg-primary text-foreground"
+          : "bg-foreground text-primary"
       )}
     >
       <article className="3xl:w-[1656px] 3xl:gap-34.75 flex flex-col items-center justify-between gap-10 max-2xl:w-[90%] xl:flex-row xl:gap-10">
@@ -60,7 +61,14 @@ export default function OtherPartnersSection({
       <figure className="flex overflow-hidden">
         <OtherPartnersCarousel
           backgroundColor="foreground"
-          partners={[...partners, ...partners, ...partners]}
+          // partners={[...partners, ...partners, ...partners]}
+          partners={
+            [
+              ...MOCK_PARTNERS_DATA,
+              ...MOCK_PARTNERS_DATA,
+              ...MOCK_PARTNERS_DATA,
+            ] as any
+          }
           isInfinite
         />
       </figure>

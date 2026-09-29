@@ -14,14 +14,14 @@ export default function DiasporAlbumPage() {
     page: 1,
   };
 
-  const { album, error, isLoading } = useAblum(params);
+  // const { album, error, isLoading } = useAblum(params);
 
-  if (error)
-    return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  if (isLoading)
-    return (
-      <p className="text-title-xl text-center uppercase">Chargement ...</p>
-    );
+  // if (error)
+  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
+  // if (isLoading)
+  //   return (
+  //     <p className="text-title-xl text-center uppercase">Chargement ...</p>
+  //   );
 
   return (
     <div className="flex w-full flex-col">
@@ -43,9 +43,13 @@ export default function DiasporAlbumPage() {
       </section>
 
       <section className="bg-foreground flex items-center justify-center overflow-hidden pt-50 pb-50">
-        <AlbumSection album={album} showCTAButton={false} />
+        {/* <AlbumSection album={album} showCTAButton={false} />
 
-        <AlbumCarouselMobile album={album} />
+        <AlbumCarouselMobile album={album} /> */}
+
+        <AlbumSection />
+
+        <AlbumCarouselMobile />
       </section>
 
       <OtherPartnersSection />

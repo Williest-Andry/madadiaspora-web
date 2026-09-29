@@ -1,5 +1,6 @@
 import { usePartners } from "@/hooks/partners/use-partners";
 import OfficialPartnersCarousel from "./official-partners-carousel";
+import { MOCK_OFFICIAL_PARTNERS_DATA } from "@/constant/partners/data";
 
 export default function PartnersSection() {
   const { partners, error, isLoading } = usePartners({ isOfficial: true });
@@ -23,7 +24,8 @@ export default function PartnersSection() {
 
       <figure className="flex w-[50%] items-center justify-center">
         <OfficialPartnersCarousel
-          partners={partners}
+          // partners={partners}
+          partners={MOCK_OFFICIAL_PARTNERS_DATA as any}
           isInfinite={false}
           itemClassName="max-xs:basis-[180px] max-sm:basis-[218px]"
         />

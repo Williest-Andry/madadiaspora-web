@@ -5,9 +5,9 @@ import { getAlbumFallback } from "@/lib/get-image-url";
 import { cn } from "@/lib/utils";
 
 type AlbumCenterProps = {
-  leftUpImage: Album;
-  rightUpImage: Album;
-  centerDownImage: Album;
+  leftUpImage?: Album;
+  rightUpImage?: Album;
+  centerDownImage?: Album;
   showCTAButton?: boolean;
 };
 
@@ -35,8 +35,10 @@ export default function AlbumCenter({
       <figure className="flex gap-[20px]">
         <div className={IMAGE_CONTAINER_STYLE}>
           <Image
-            src={getAlbumFallback(leftUpImage).image}
-            alt={getAlbumFallback(leftUpImage).alt}
+            // src={getAlbumFallback(leftUpImage).image}
+            // alt={getAlbumFallback(leftUpImage).alt}
+            src={"/album-road.jpg"}
+            alt={"mock road image"}
             fill
             className={IMAGE_STYLE}
           />
@@ -44,8 +46,10 @@ export default function AlbumCenter({
 
         <div className={IMAGE_CONTAINER_STYLE}>
           <Image
-            src={getAlbumFallback(rightUpImage).image}
-            alt={getAlbumFallback(rightUpImage).alt}
+            // src={getAlbumFallback(rightUpImage).image}
+            // alt={getAlbumFallback(rightUpImage).alt}
+            src={"/album-sea.jpg"}
+            alt={"mock album image"}
             fill
             className={IMAGE_STYLE}
           />
@@ -61,8 +65,10 @@ export default function AlbumCenter({
         )}
       >
         <Image
-          src={getAlbumFallback(centerDownImage).image}
-          alt={getAlbumFallback(centerDownImage).alt}
+          // src={getAlbumFallback(centerDownImage).image}
+          // alt={getAlbumFallback(centerDownImage).alt}
+          src={"/album-sunset.jpg"}
+          alt={"mock sunset image"}
           fill
           className={IMAGE_STYLE}
         />

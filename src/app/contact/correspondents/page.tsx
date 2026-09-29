@@ -15,7 +15,7 @@ export default function CorrespondentsPage() {
         <article className="mt-[30px] mb-[110px] flex w-full flex-col items-center justify-center gap-[17px] lg:mt-[77px]">
           <h1 className="max-xs:w-[70%] text-title-sm sm:text-title-md lg:text-title-xl text-center leading-[110%] font-bold tracking-normal">
             {"Nos"} <span className="text-secondary">{"correspondants"}</span>{" "}
-            {"à travers le"}
+            {"à travers le"} &nbsp;
             <span className="text-secondary">{"monde"}</span>
           </h1>
           <p className="text-muted-foreground text-p-sm sm:text-p-md lg:text-p-xl w-[60%] text-center leading-[32px] tracking-normal">

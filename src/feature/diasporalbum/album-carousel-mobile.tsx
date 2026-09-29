@@ -10,12 +10,22 @@ import CarouselAlbumItem from "./album-item";
 import { Album } from "@/interfaces/album/album-types";
 
 type AlbumCarouselMobileProps = {
-  album: Album[];
+  album?: Album[];
 };
 
 export default function AlbumCarouselMobile({
   album,
 }: AlbumCarouselMobileProps) {
+  const MOCK_DATA = [
+    "/maki.jpg",
+    "/album-baoba-taxi.jpg",
+    "/album-road.jpg",
+    "/album-sea.jpg",
+    "/album-sunset.jpg",
+    "/album-baobab.jpg",
+    "/album-womens-children.jpg",
+  ];
+
   return (
     <Carousel
       opts={{ loop: true, dragFree: true }}
@@ -29,7 +39,7 @@ export default function AlbumCarouselMobile({
       ]}
     >
       <CarouselContent className="flex gap-30 xl:mt-0 xl:hidden">
-        {album.map((image, index) => (
+        {MOCK_DATA.map((image, index) => (
           <CarouselItem key={index} className="basis-65 first:ml-30">
             <CarouselAlbumItem image={image} />
           </CarouselItem>

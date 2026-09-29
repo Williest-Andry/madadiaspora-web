@@ -18,7 +18,8 @@ export default function CustomCarouselItem({
   return (
     <figure className="relative h-72.5 w-64.25 rounded-[27px]">
       <Image
-        src={getImageUrl(image.url)}
+        // src={getImageUrl(image.url)}
+        src={image.url}
         alt={image.name}
         fill
         className="rounded-[27px] object-cover"
