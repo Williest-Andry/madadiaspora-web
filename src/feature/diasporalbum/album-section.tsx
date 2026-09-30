@@ -37,7 +37,6 @@ export default function AlbumSection({
         // leftUpImage={centerImages.leftUpImage}
         // rightUpImage={centerImages.rightUpImage}
         // centerDownImage={centerImages.centerDownImage}
-      
       />
       {/* <AlbumSide upImage={rightImages.up} downImage={rightImages.down} /> */}
       <AlbumSide

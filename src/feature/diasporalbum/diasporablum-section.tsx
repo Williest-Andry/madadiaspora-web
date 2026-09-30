@@ -49,11 +49,11 @@ export default function DiasporalbumSection() {
         <p className="text-p-sm md:text-p-md 3xl:text-p-xl w-[90%] text-center leading-8 sm:text-[17px]">{`Découvrez en images les événements, rencontres et instants marquants qui rassemblent notre communauté. Revivez et partagez les souvenirs qui renforcent les liens de la diaspora.`}</p>
       </article>
 
-      <AlbumSection  />
+      <AlbumSection />
 
       <MobileCTAButton className="mb-[60px] flex xl:hidden" />
 
-      <AlbumCarouselMobile  />
+      <AlbumCarouselMobile />
     </section>
   );
 }
