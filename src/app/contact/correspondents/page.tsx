@@ -1,17 +1,25 @@
 "use client";
 
+import { DataPagination } from "@/components/data-pagination";
 import PersonCard from "@/components/person-card";
 import SearchBarWithCountry from "@/components/search-bar-with-country";
 import ToggleGroupDemo from "@/components/shadcn-space/toggle-group/toggle-group-01";
 import OtherPartnersSection from "@/feature/other-partners/other-partners-section";
 import { useCorrespondents } from "@/hooks/correspondent/use-correspondent";
+import { Meta } from "@/interfaces/global";
 import { getCountryOptions } from "@/lib/countries";
 import { useState } from "react";
 
 const COUNTRIES = getCountryOptions();
 
+const MOCK_META: Meta = {
+  limit: 10,
+  page: 1,
+  total: 50,
+};
+
 export default function CorrespondentsPage() {
-  // const { correspondents, error, isLoading } = useCorrespondents();
+  // const { correspondents, data, error, isLoading } = useCorrespondents();
 
   const [searchFilters, setSearchFilters] = useState("");
 
@@ -51,8 +59,8 @@ export default function CorrespondentsPage() {
         </div>
       </section>
 
-      <section className="bg-foreground flex w-full items-center justify-center py-30">
-        <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
+      <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
+        <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
           <PersonCard />
           <PersonCard />
           <PersonCard />
@@ -61,6 +69,8 @@ export default function CorrespondentsPage() {
           <PersonCard />
           <PersonCard />
         </div>
+
+        <DataPagination meta={MOCK_META} basePath="/contact/correspondents" />
       </section>
 
       <OtherPartnersSection />
