@@ -9,16 +9,21 @@ import {
 import CustomCarouselItem from "./carousel-item";
 import { useNews } from "@/hooks/news/use-news";
 import { eventsData } from "@/constant/events-carousel/data";
+import EventsCarouselLoader from "./events-carousel-loader";
+import GenericErrorSection from "@/components/generic-error-section";
 
 export function InfiniteCarousel() {
-  // const { news, error, isLoading } = useNews();
+  const { news, error, isLoading, refetch, isFetching } = useNews();
 
-  // console.log("news ", news);
-
-  // if (error)
-  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  // if (isLoading)
-  //   return <p className="text-title-xl text-center uppercase">Chargement...</p>;
+  if (error)
+    return (
+      <GenericErrorSection
+        message="Impossible de charger les événements"
+        refetch={refetch}
+        isFetching={isFetching}
+      />
+    );
+  if (isLoading) return <EventsCarouselLoader />;
 
   const MOCK_DATA = [...eventsData, ...eventsData];
 
