@@ -4,6 +4,8 @@ import AlbumCarouselMobile from "./album-carousel-mobile";
 import MobileCTAButton from "@/components/mobile-cta-button";
 import { useAblum } from "@/hooks/album/use-album";
 import { AlbumParams } from "@/interfaces/album/album-types";
+import GenericErrorSection from "@/components/generic-error-section";
+import DiasporalbumLoader from "./diasporalbum-loader";
 
 export default function DiasporalbumSection() {
   const params: AlbumParams = {
@@ -11,14 +13,20 @@ export default function DiasporalbumSection() {
     page: 1,
   };
 
-  // const { album, error, isLoading } = useAblum(params);
+  const { album, error, isLoading, refetch, isFetching } = useAblum(params);
 
-  // if (error)
-  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  // if (isLoading)
-  //   return (
-  //     <p className="text-title-xl text-center uppercase">Chargement ...</p>
-  //   );
+  if (isLoading) return <DiasporalbumLoader />;
+
+  if (error)
+    return (
+      <GenericErrorSection
+        message="Impossible de charger les photos de la Diaspor'album"
+        refetch={refetch}
+        isFetching={isFetching}
+        className="h-[800px]"
+        backgroundColor="foreground"
+      />
+    );
 
   return (
     <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px] pb-[197px]">
