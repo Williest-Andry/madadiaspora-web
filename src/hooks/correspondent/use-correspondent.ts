@@ -5,6 +5,7 @@ export function useCorrespondents() {
   const query = useQuery({
     queryKey: ["correspondents"],
     queryFn: () => correspondentServices.getAll(),
+    retry: false,
   });
 
   return { ...query, correspondents: query.data?.data ?? [] };
