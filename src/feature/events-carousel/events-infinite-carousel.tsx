@@ -13,6 +13,8 @@ import { eventsData } from "@/constant/events-carousel/data";
 export function InfiniteCarousel() {
   // const { news, error, isLoading } = useNews();
 
+  // console.log("news ", news);
+
   // if (error)
   //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
   // if (isLoading)

@@ -1,11 +1,11 @@
-import { ApiResponse } from "@/interfaces/global";
+import { ApiResponse, Meta } from "@/interfaces/global";
 import { catchError, prodApi } from "@/lib/axios";
 import { AxiosRequestConfig, AxiosResponse } from "axios";
 
 export async function genericGetList<T, TParams = AxiosRequestConfig["params"]>(
   url: string,
   params?: TParams
-): Promise<{ data: T[] } | undefined> {
+): Promise<{ data: T[]; meta: Meta | undefined } | undefined> {
   try {
     const response: AxiosResponse<ApiResponse<T[]>> = await prodApi.get(url, {
       params: params,
@@ -13,6 +13,7 @@ export async function genericGetList<T, TParams = AxiosRequestConfig["params"]>(
 
     return {
       data: response.data.data,
+      meta: response.data.meta,
     };
   } catch (e) {
     catchError(e);
