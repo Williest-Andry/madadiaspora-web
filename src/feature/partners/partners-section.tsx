@@ -1,9 +1,25 @@
 import { usePartners } from "@/hooks/partners/use-partners";
 import OfficialPartnersCarousel from "./official-partners-carousel";
 import { MOCK_OFFICIAL_PARTNERS_DATA } from "@/constant/partners/data";
+import GenericErrorSection from "@/components/generic-error-section";
+import PartnersLoaderSection from "./partners-loader-section";
 
 export default function PartnersSection() {
-  const { partners, error, isLoading } = usePartners({ isOfficial: true });
+  const { partners, error, isLoading, refetch, isFetching } = usePartners({
+    isOfficial: true,
+  });
+
+  if (isLoading) return <PartnersLoaderSection />;
+
+  if (error)
+    return (
+      <GenericErrorSection
+        message="Impossible de charger les partenaires officiels"
+        refetch={refetch}
+        isFetching={isFetching}
+        className="mb-10"
+      />
+    );
 
   return (
     <section className="mt-45.25 mb-40.75 flex flex-col items-center justify-around gap-10">

@@ -1,7 +1,9 @@
 "use client";
 
 import { DataPagination } from "@/components/data-pagination";
+import GenericErrorSection from "@/components/generic-error-section";
 import PersonCard from "@/components/person-card";
+import PersonCardLoader from "@/components/person-card-loader";
 import SearchBarWithCountry from "@/components/search-bar-with-country";
 import ToggleGroupDemo from "@/components/shadcn-space/toggle-group/toggle-group-01";
 import OtherPartnersSection from "@/feature/other-partners/other-partners-section";
@@ -19,7 +21,8 @@ const MOCK_META: Meta = {
 };
 
 export default function CorrespondentsPage() {
-  // const { correspondents, data, error, isLoading } = useCorrespondents();
+  const { correspondents, data, error, isLoading, refetch, isFetching } =
+    useCorrespondents();
 
   const [searchFilters, setSearchFilters] = useState("");
 
@@ -59,19 +62,45 @@ export default function CorrespondentsPage() {
         </div>
       </section>
 
-      <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
-        <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-          <PersonCard />
-        </div>
+      {isLoading && (
+        <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
+          <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
+            {Array(8)
+              .fill(0)
+              .map((e) => (
+                <PersonCardLoader />
+              ))}
+          </div>
+        </section>
+      )}
 
-        <DataPagination meta={MOCK_META} basePath="/contact/correspondents" />
-      </section>
+      {correspondents.length > 0 && (
+        <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
+          <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+            <PersonCard />
+          </div>
+
+          <DataPagination meta={MOCK_META} basePath="/contact/correspondents" />
+        </section>
+      )}
+
+      {error && (
+        <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
+          <GenericErrorSection
+            message="Impossible de charger les autres partenaires"
+            refetch={refetch}
+            className="h-[800px] w-full"
+            isFetching={isFetching}
+            backgroundColor="foreground"
+          />
+        </section>
+      )}
 
       <OtherPartnersSection />
     </div>

@@ -5,6 +5,8 @@ import { usePartners } from "@/hooks/partners/use-partners";
 import OtherPartnersCarousel from "./other-partners-carousel";
 import { cn } from "@/lib/utils";
 import { MOCK_PARTNERS_DATA } from "@/constant/partners/data";
+import OtherPartnersLoader from "./other-partners-loader";
+import GenericErrorSection from "@/components/generic-error-section";
 
 type OtherPartnersSectionProps = {
   backgroundColor?: "primary" | "foreground";
@@ -13,14 +15,9 @@ type OtherPartnersSectionProps = {
 export default function OtherPartnersSection({
   backgroundColor = "primary",
 }: OtherPartnersSectionProps) {
-  // const { partners, error, isLoading } = usePartners({ isOfficial: false });
-
-  // if (error)
-  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  // if (isLoading)
-  //   return (
-  //     <p className="text-title-xl text-center uppercase">Chargement ...</p>
-  //   );
+  const { partners, error, isLoading, refetch, isFetching } = usePartners({
+    isOfficial: false,
+  });
 
   return (
     <section
@@ -58,20 +55,40 @@ export default function OtherPartnersSection({
         </p>
       </article>
 
-      <figure className="flex overflow-hidden">
-        <OtherPartnersCarousel
-          backgroundColor="foreground"
-          // partners={[...partners, ...partners, ...partners]}
-          partners={
-            [
-              ...MOCK_PARTNERS_DATA,
-              ...MOCK_PARTNERS_DATA,
-              ...MOCK_PARTNERS_DATA,
-            ] as any
-          }
-          isInfinite
-        />
-      </figure>
+      {partners.length > 0 && (
+        <figure className="flex overflow-hidden">
+          <OtherPartnersCarousel
+            backgroundColor="foreground"
+            // partners={[...partners, ...partners, ...partners]}
+            partners={
+              [
+                ...MOCK_PARTNERS_DATA,
+                ...MOCK_PARTNERS_DATA,
+                ...MOCK_PARTNERS_DATA,
+              ] as any
+            }
+            isInfinite
+          />
+        </figure>
+      )}
+
+      {error && (
+        <figure className="flex w-full overflow-hidden">
+          <GenericErrorSection
+            message="Impossible de charger les autres partenaires"
+            refetch={refetch}
+            className="w-full!"
+            isFetching={isFetching}
+            backgroundColor={backgroundColor}
+          />
+        </figure>
+      )}
+
+      {isLoading && (
+        <figure className="flex overflow-hidden">
+          <OtherPartnersLoader />
+        </figure>
+      )}
     </section>
   );
 }

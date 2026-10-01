@@ -1,9 +1,11 @@
 "use client";
 
 import CustomMainTitleSection from "@/components/custom-main-title-section";
+import GenericErrorSection from "@/components/generic-error-section";
 import ToggleGroupDemo from "@/components/shadcn-space/toggle-group/toggle-group-01";
 import AlbumCarouselMobile from "@/feature/diasporalbum/album-carousel-mobile";
 import AlbumSection from "@/feature/diasporalbum/album-section";
+import DiasporalbumLoader from "@/feature/diasporalbum/diasporalbum-loader";
 import OtherPartnersSection from "@/feature/other-partners/other-partners-section";
 import { useAblum } from "@/hooks/album/use-album";
 import { AlbumParams } from "@/interfaces/album/album-types";
@@ -14,14 +16,7 @@ export default function DiasporAlbumPage() {
     page: 1,
   };
 
-  // const { album, error, isLoading } = useAblum(params);
-
-  // if (error)
-  //   return <p className="text-title-xl text-center uppercase">ERREUR</p>;
-  // if (isLoading)
-  //   return (
-  //     <p className="text-title-xl text-center uppercase">Chargement ...</p>
-  //   );
+  const { album, error, isLoading, refetch, isFetching } = useAblum(params);
 
   return (
     <div className="flex w-full flex-col">
@@ -42,15 +37,29 @@ export default function DiasporAlbumPage() {
         </div>
       </section>
 
-      <section className="bg-foreground flex items-center justify-center overflow-hidden pt-50 pb-50">
-        {/* <AlbumSection album={album} showCTAButton={false} />
+      {album.length > 0 && (
+        <section className="bg-foreground flex items-center justify-center overflow-hidden pt-50 pb-50">
+          {/* <AlbumSection album={album} showCTAButton={false} />
 
         <AlbumCarouselMobile album={album} /> */}
 
-        <AlbumSection />
+          <AlbumSection />
 
-        <AlbumCarouselMobile />
-      </section>
+          <AlbumCarouselMobile />
+        </section>
+      )}
+
+      {isLoading && <DiasporalbumLoader showText={false} />}
+
+      {error && (
+        <GenericErrorSection
+          message="Impossible de charger les photos de la Diaspor'album"
+          refetch={refetch}
+          isFetching={isFetching}
+          className="h-[800px]"
+          backgroundColor="foreground"
+        />
+      )}
 
       <OtherPartnersSection />
     </div>
