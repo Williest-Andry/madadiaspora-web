@@ -6,6 +6,7 @@ export function usePartners(params?: PartnerParams) {
   const query = useQuery({
     queryKey: ["partners", params],
     queryFn: () => partnersServices.getAll(params),
+    retry: false,
   });
 
   return { ...query, partners: query.data?.data ?? [] };
