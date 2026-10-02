@@ -40,7 +40,7 @@ export function InfiniteCarousel() {
         }),
       ]}
     >
-      <CarouselContent className="mt-20 flex gap-4 xl:mt-0">
+      <CarouselContent className="mt-4 flex gap-4 xl:mt-0">
         {MOCK_DATA.map((event, index) => (
           <CarouselItem key={index} className="basis-65 first:ml-4">
             <CustomCarouselItem

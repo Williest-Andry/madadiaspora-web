@@ -54,8 +54,8 @@
   --color-footer-bg: oklch(17.6% 0.034 232.6);
 
   /* custom global breakpoints */
-  --breakpoint-3xl: 106.25rem; /* 1700px */
   --breakpoint-xs: 26.875rem; /* 430px */
+  --breakpoint-3xl: 106.25rem; /* 1700px */
   --breakpoint-globe-huge: 150rem; /* 2400px */
   --breakpoint-globe-small: 37.5rem; /* 600px */
 
