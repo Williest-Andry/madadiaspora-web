@@ -58,6 +58,7 @@
   --breakpoint-3xl: 106.25rem; /* 1700px */
   --breakpoint-globe-huge: 150rem; /* 2400px */
   --breakpoint-globe-small: 37.5rem; /* 600px */
+  --breakpoint-globe-extra: 187.5rem; /* 3000px */
 
   /* custom correspondent grid breakpoints */
   --breakpoint-grid-2xl: 103.563rem; /* 1657px */

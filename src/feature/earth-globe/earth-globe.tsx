@@ -93,7 +93,7 @@ export default function EarthGlobe({
         ref={globeRef}
 
         className={cn(
-          "globe-huge:justify-end z-100 flex h-full w-full items-center max-xl:justify-center",
+          "globe-extra:justify-start globe-huge:justify-end z-100 flex h-full w-full items-center max-xl:justify-center",
           className
         )}
       />
