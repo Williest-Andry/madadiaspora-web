@@ -4,8 +4,9 @@ import { useEffect, useRef } from "react";
 import Globe from "globe.gl";
 import {
   getEarthGlobeOffset,
+  getEarthGlobeOffsetForFooter,
   getEarthGlobeSize,
-} from "@/lib/get-earth-globe-breakpoints";
+} from "@/lib/earth-globe-size-and-offset";
 import { locations } from "@/constant/earth-globe/data";
 import { LocationData } from "@/constant/earth-globe/type";
 import { cn } from "@/lib/utils";
@@ -16,12 +17,14 @@ type EarthGlobeProps = {
   className?: string;
   onReady?: () => void;
   backgroundColor?: "primary" | "footer-bg";
+  section?: "hero" | "footer";
 };
 
 export default function EarthGlobe({
   className,
   onReady,
   backgroundColor = "primary",
+  section = "hero",
 }: EarthGlobeProps) {
   const GLOBE_PROPERTIES = {
     IMAGE: "/earth-night.webp",
@@ -39,7 +42,10 @@ export default function EarthGlobe({
     if (!globeRef.current) return;
 
     const initialSize = getEarthGlobeSize(window.innerWidth);
-    const initialOffset = getEarthGlobeOffset(window.innerWidth);
+    const initialOffset =
+      section == "hero"
+        ? getEarthGlobeOffset(window.innerWidth)
+        : getEarthGlobeOffsetForFooter(window.innerWidth);
 
     const globe = new Globe(globeRef.current);
 
@@ -71,7 +77,10 @@ export default function EarthGlobe({
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         const newSize = getEarthGlobeSize(window.innerWidth);
-        const newOffset = getEarthGlobeOffset(window.innerWidth);
+        const newOffset =
+          section == "hero"
+            ? getEarthGlobeOffset(window.innerWidth)
+            : getEarthGlobeOffsetForFooter(window.innerWidth);
         globe.width(newSize).height(newSize).globeOffset(newOffset);
       }, 150);
     };
@@ -101,13 +110,13 @@ export default function EarthGlobe({
       {backgroundColor == "primary" ? (
         <div
           className={
-            "via-primary/70 to-primary pointer-events-none absolute inset-x-0 bottom-0 z-100 h-40 bg-linear-to-b from-transparent max-sm:bottom-0"
+            "via-primary/70 to-primary pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-linear-to-b from-transparent max-sm:bottom-0"
           }
         />
       ) : (
         <div
           className={
-            "via-footer-bg/70 to-footer-bg pointer-events-none absolute inset-x-0 bottom-0 z-100 h-40 bg-linear-to-b from-transparent"
+            "via-footer-bg/70 to-footer-bg pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-linear-to-b from-transparent max-sm:bottom-0"
           }
         />
       )}

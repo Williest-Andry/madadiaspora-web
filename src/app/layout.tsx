@@ -36,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <NavBar />
           <TooltipProvider>
             <main>{children}</main>
-            {/* <Footer /> */}
+            <Footer />
           </TooltipProvider>
         </QueryProvider>
       </body>

@@ -27,7 +27,7 @@ export default function HeroSection() {
         />
       </article>
 
-      <figure className="relative h-full w-full xl:flex-1">
+      <figure className="relative h-full w-full overflow-hidden xl:flex-1">
         <GlobeWithLoader />
       </figure>
     </section>

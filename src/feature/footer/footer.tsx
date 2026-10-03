@@ -15,11 +15,14 @@ import { GlobeWithLoader } from "../earth-globe/globe-with-loader";
 export default function Footer() {
   return (
     <footer className="bg-footer-bg flex w-full flex-col items-center justify-center">
-      <div className="bg-footer-bg relative mb-33 flex h-[1450px] w-[99vw] flex-col gap-10 sm:h-[1500px] lg:h-[850px] xl:h-[1000px]">
-        <GlobeWithLoader
-          backgroundColor="footer-bg"
-          className="globe-huge:absolute globe-huge:top-55! globe-huge:left-100! xl:top-125! xl:left-300! 2xl:w-full! min-[125rem]:left-400! min-[187.5rem]:top-55! min-[187.5rem]:left-100!"
-        />
+      <div className="bg-footer-bg globe-small:h-[1450px] relative mb-12 flex h-[1350px] w-[99vw] flex-col gap-10 sm:h-[1500px] lg:mb-33 lg:h-[850px] xl:h-[1000px]">
+        <div className="h-[1000px] w-full overflow-hidden">
+          <GlobeWithLoader
+            backgroundColor="footer-bg"
+            className="justify-center!"
+            section={"footer"}
+          />
+        </div>
 
         <article className="flex flex-col items-center justify-center gap-10">
           <article className="flex flex-col items-center gap-[40px] lg:flex-row lg:items-start lg:gap-[10px] xl:gap-[25px] 2xl:gap-[55px]">
