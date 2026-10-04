@@ -38,7 +38,9 @@ export default function SideDrawer() {
               <BrandLogo />
             </div>
           </DrawerHeader>
-          <div className={"z-1000 mt-10 flex flex-col gap-10 pl-4 overflow-y-auto"}>
+          <div
+            className={"z-1000 mt-10 flex flex-col gap-10 overflow-y-auto pl-4"}
+          >
             <SideMenuLink />
           </div>
           <DrawerFooter className="z-1000 flex flex-col items-center justify-center gap-4">
