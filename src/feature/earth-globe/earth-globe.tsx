@@ -12,6 +12,7 @@ import { LocationData } from "@/constant/earth-globe/type";
 import { cn } from "@/lib/utils";
 import { createRoot } from "react-dom/client";
 import { GlobeMarker } from "@/feature/earth-globe/globe-marker";
+import * as THREE from "three";
 
 type EarthGlobeProps = {
   className?: string;
@@ -27,7 +28,7 @@ export default function EarthGlobe({
   section = "hero",
 }: EarthGlobeProps) {
   const GLOBE_PROPERTIES = {
-    IMAGE: "/earth-night.webp",
+    IMAGE: "/earth-night.jpg",
     BACKGROUND_COLOR: backgroundColor == "primary" ? "#021D2C" : "#01131D",
     POINTS_COLOR: "#FBB03B",
     INITAL_POINT_OF_VIEW: {
@@ -62,15 +63,25 @@ export default function EarthGlobe({
       .htmlElement((data) => {
         const element = document.createElement("div");
         element.style.pointerEvents = "auto";
+        element.onmouseenter = () => {
+          globe.controls().autoRotate = false;
+        };
+        element.onmouseleave = () => {
+          globe.controls().autoRotate = true;
+        };
         createRoot(element).render(<GlobeMarker data={data as LocationData} />);
 
         return element;
       })
-      .onGlobeReady(() => onReady?.());
+      .onGlobeReady(() => onReady?.())
+      .lights()
+      .forEach((light) => {
+        light.intensity *= 1.5;
+      });
 
     globe.controls().enableZoom = false;
     globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 0.5;
+    globe.controls().autoRotateSpeed = 3;
 
     let resizeTimeout: ReturnType<typeof setTimeout>;
     const handleResize = () => {

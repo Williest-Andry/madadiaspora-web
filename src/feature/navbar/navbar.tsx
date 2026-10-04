@@ -15,7 +15,7 @@ import AuthButton from "./auth-button";
 
 export default function NavBar() {
   return (
-    <nav className="bg-primary/80 sticky top-0 z-10 flex items-center justify-between px-5 py-3 backdrop-blur-[8px] xl:px-33">
+    <nav className="bg-primary/80 sticky top-0 z-1000 flex items-center justify-between px-5 py-3 backdrop-blur-[8px] xl:px-33">
       <BrandLogo />
 
       <div className="hidden items-center gap-8 text-[14px] font-bold lg:flex">
