@@ -6,15 +6,20 @@ export const ABOUT_LINK: DataLinkType[] = [
 ];
 
 export const RUBRIK_LINK: DataLinkType[] = [
-  { title: "Actualité", link: "#" },
-  { title: "Boîte à projet", link: "#" },
-  { title: "Bonne à savoir", link: "#" },
+  { title: "Actualités", link: "#" },
+  { title: "Boîte à projets", link: "#" },
+  { title: "Bon à savoir", link: "#" },
   { title: "Diaspor'album", link: "/diasporalbum" },
-  { title: "Evènement", link: "#" },
-  { title: "Opportunité & Business", link: "#" },
+  {
+    title: "Evènements",
+    link: "#",
+    collapsibleLinks: [{ title: "Calendrier des évènements", link: "#" }],
+  },
+  { title: "Opportunités & Business", link: "#" },
+  { title: "Rencontre avec la Diaspora", link: "#" },
 ];
 
 export const DIRECTORY_LINK: DataLinkType[] = [
   { title: "Diaspora", link: "/directory" },
-  { title: "Professionnel Madagascar", link: "#" },
+  { title: "Professionnels à Madagascar", link: "#" },
 ];

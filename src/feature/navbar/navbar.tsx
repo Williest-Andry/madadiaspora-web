@@ -24,7 +24,11 @@ export default function NavBar() {
         <NavigationMenu>
           <NavigationMenuList className={"flex gap-6"}>
             <MenuLink data={ABOUT_LINK} triggerTitle={"À propos"} />
-            <MenuLink data={RUBRIK_LINK} triggerTitle={"Rubrique"} />
+            <MenuLink
+              data={RUBRIK_LINK}
+              triggerTitle={"Rubrique"}
+              className="w-[250px]"
+            />
             <MenuLink data={DIRECTORY_LINK} triggerTitle={"Annuaire"} />
           </NavigationMenuList>
         </NavigationMenu>

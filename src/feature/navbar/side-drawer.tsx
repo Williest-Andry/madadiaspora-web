@@ -21,7 +21,7 @@ export default function SideDrawer() {
         <DrawerTrigger render={<Button variant="secondary" />}>
           <Menu />
         </DrawerTrigger>
-        <DrawerContent className={"z-1000 w-70"}>
+        <DrawerContent className={"z-1000 h-full w-70"}>
           <DrawerHeader className="relative z-1000">
             <DrawerClose
               className={"flex items-center justify-end"}
@@ -37,11 +37,10 @@ export default function SideDrawer() {
             <div className="mt-10">
               <BrandLogo />
             </div>
-
-            <DrawerTitle className={"z-1000 mt-10 flex flex-col gap-10"}>
-              <SideMenuLink />
-            </DrawerTitle>
           </DrawerHeader>
+          <div className={"z-1000 mt-10 flex flex-col gap-10 pl-4 overflow-y-auto"}>
+            <SideMenuLink />
+          </div>
           <DrawerFooter className="z-1000 flex flex-col items-center justify-center gap-4">
             <Separator />
             <AuthButton className="w-full" />

@@ -8,8 +8,8 @@ export default function PlatformPage() {
     <div>
       <CustomMainTitleSection
         primaryTitle="À propos de"
-        secondaryTitle="MadaDiaspora"
-        description="Découvrez la vision, la mission et les valeurs qui font de MadaDiaspora un lien entre les Malagasy du monde et Madagascar."
+        secondaryTitle="Madadiaspora"
+        description="Découvrez la vision, la mission et les valeurs qui font de Madadiaspora un lien entre les Malagasy du monde et Madagascar."
       />
 
       <OurIdentitySection />

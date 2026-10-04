@@ -32,13 +32,13 @@ export default function WhoAreWeSection() {
           <div className="flex flex-col gap-10 xl:gap-20">
             <p className="text-popover 3xl:text-p-xl text-p-sm sm:text-p-md -mt-[17px] text-center leading-8 max-sm:w-full xl:text-justify">
               {
-                "MadaDiaspora est une initiative conçue par des Malagasy, pour les Malagasy. Mise en œuvre par Phenix Agency, la plateforme a pour objectif de connecter les Malagasy à travers le monde et de favoriser les échanges et la solidarité au sein de la communauté. Basée à Antananarivo, Phenix Agency est une société privée malagasy spécialisée dans le conseil en communication et en développement, ainsi que dans l’organisation événementielle."
+                "Madadiaspora est une initiative conçue par des Malagasy, pour les Malagasy. Mise en œuvre par Phenix Agency, la plateforme a pour objectif de connecter les Malagasy à travers le monde et de favoriser les échanges et la solidarité au sein de la communauté. Basée à Antananarivo, Phenix Agency est une société privée malagasy spécialisée dans le conseil en communication et en développement, ainsi que dans l’organisation événementielle."
               }
             </p>
 
             <p className="text-popover 3xl:text-p-xl text-p-sm sm:text-p-md -mt-[17px] text-center leading-8 max-sm:w-full xl:text-justify">
               {
-                "Notre ambition est de faire de MadaDiaspora un réseau de référence pour connecter les Malagasy à travers le monde."
+                "Notre ambition est de faire de Madadiaspora un réseau de référence pour connecter les Malagasy à travers le monde."
               }
             </p>
           </div>

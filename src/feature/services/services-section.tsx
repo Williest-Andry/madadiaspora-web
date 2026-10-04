@@ -30,7 +30,7 @@ export default function ServicesSection() {
             <h2>{"Phares !"}</h2>
           </figure>
         </article>
-        <p className="text-p-sm sm:text-p-md md:text-p-md 3xl:text-p-xl 3xl:w-203 w-[90%] text-center leading-8 xl:text-start 2xl:w-120">{`Découvrez les principales rubriques de MadaDiaspora et accédez rapidement aux informations, services et opportunités qui répondent à vos besoins.`}</p>
+        <p className="text-p-sm sm:text-p-md md:text-p-md 3xl:text-p-xl 3xl:w-203 w-[90%] text-center leading-8 xl:text-start 2xl:w-120">{`Découvrez les principales rubriques de Madadiaspora et accédez rapidement aux informations, services et opportunités qui répondent à vos besoins.`}</p>
       </article>
 
       <figure className="mt-11 grid grid-cols-1 gap-5 xl:grid-cols-3">

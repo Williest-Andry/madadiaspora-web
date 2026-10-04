@@ -32,7 +32,7 @@ export default function CommunitySection() {
 
           <p className="text-popover 3xl:text-p-xl text-p-sm sm:text-p-md w-[85%] text-center leading-8 max-sm:w-full xl:text-justify">
             {
-              "Rejoignez-nous, engagez-vous et faisons ensemble de MadaDiaspora un espace de solidarité, de partage et de connexion entre les Malagasy du monde."
+              "Rejoignez-nous, engagez-vous et faisons ensemble de Madadiaspora un espace de solidarité, de partage et de connexion entre les Malagasy du monde."
             }
           </p>
         </article>

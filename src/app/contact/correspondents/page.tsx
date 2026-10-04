@@ -39,7 +39,7 @@ export default function CorrespondentsPage() {
           </h1>
           <p className="text-muted-foreground text-p-sm sm:text-p-md lg:text-p-xl w-[60%] text-center leading-[32px] tracking-normal">
             {
-              "Retrouvez un correspondant MadaDiaspora présent dans votre pays ou votre région."
+              "Retrouvez un correspondant Madadiaspora présent dans votre pays ou votre région."
             }
           </p>
         </article>

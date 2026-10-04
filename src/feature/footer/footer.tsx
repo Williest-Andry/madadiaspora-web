@@ -37,7 +37,7 @@ export default function Footer() {
               </div>
               <p className="text-[18px text-justify leading-[100%] lg:text-start">
                 {
-                  "MadaDiaspora est une plateforme dédiée à connecter, informer et rassembler la diaspora autour d'un espace de confiance et de partage."
+                  "Madadiaspora est une plateforme dédiée à connecter, informer et rassembler la diaspora autour d'un espace de confiance et de partage."
                 }
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function Footer() {
           <Separator className={"w-[88%]!"} />
 
           <article className="tracking-0 flex w-[88%] flex-col justify-between gap-6 text-[16px] leading-[100%] lg:flex-row lg:gap-0">
-            <p>{`© ${new Date().getFullYear()} MadaDiaspora — Tous droits réservés.`}</p>
+            <p>{`© ${new Date().getFullYear()} Madadiaspora — Tous droits réservés.`}</p>
             <p>
               Powered by{" "}
               <Link

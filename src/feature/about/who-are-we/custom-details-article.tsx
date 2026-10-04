@@ -75,7 +75,7 @@ export default function CustomDetailsArticle({
             )}
           >
             {
-              "Notre ambition est de faire de MadaDiaspora un réseau de référence pour connecter les Malagasy à travers le monde."
+              "Notre ambition est de faire de Madadiaspora un réseau de référence pour connecter les Malagasy à travers le monde."
             }
           </p>
         )}

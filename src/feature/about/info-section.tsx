@@ -26,7 +26,7 @@ export default function InfoSection() {
             <h2 className="text-secondary">{"importants à savoir !"}</h2>
           </figure>
         </article>
-        <p className="text-popover text-p-sm sm:text-p-md 3xl:w-203 3xl:text-p-xl w-[90%] text-center leading-8 sm:w-140 lg:w-200 xl:text-justify 2xl:w-120">{`MadaDiaspora met à votre disposition un espace sécurisé où les membres peuvent échanger, développer leur réseau et partager des opportunités dans un cadre de confiance.`}</p>
+        <p className="text-popover text-p-sm sm:text-p-md 3xl:w-203 3xl:text-p-xl w-[90%] text-center leading-8 sm:w-140 lg:w-200 xl:text-justify 2xl:w-120">{`Madadiaspora met à votre disposition un espace sécurisé où les membres peuvent échanger, développer leur réseau et partager des opportunités dans un cadre de confiance.`}</p>
       </article>
 
       <article className="grid grid-cols-1 gap-4.75 lg:grid-cols-2 min-[109.375rem]:grid-cols-4">

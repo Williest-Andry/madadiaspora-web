@@ -10,7 +10,7 @@ export default function ContactPage() {
           className="w-[90%]!"
           primaryTitle="Contact & "
           secondaryTitle="correspondants"
-          description="Contactez l’équipe MadaDiaspora ou trouvez un correspondant proche de chez vous."
+          description="Contactez l’équipe Madadiaspora ou trouvez un correspondant proche de chez vous."
         />
 
         <div className="mb-[36px]">

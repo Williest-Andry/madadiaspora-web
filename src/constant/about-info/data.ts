@@ -11,7 +11,7 @@ export const INFO_DATA: InfoData[] = [
     icon: "/infos-eye.png",
     title: "Accès à l'annuaire",
     description:
-      "La plateforme MadaDiaspora est administrée de manière sécurisée afin de garantir la confidentialité et la protection des données de ses utilisateurs.",
+      "La plateforme Madadiaspora est administrée de manière sécurisée afin de garantir la confidentialité et la protection des données de ses utilisateurs.",
   },
   {
     icon: "/infos-valid.png",

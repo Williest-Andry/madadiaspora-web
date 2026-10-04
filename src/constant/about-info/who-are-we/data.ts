@@ -27,7 +27,7 @@ export const HISTORY_DETAILS_DATA: HistoryDetails[] = [
     date: "NOTRE VISION",
     title: "Construire des connexions durables",
     firstParagraph:
-      "À travers des initiatives comme MadaDiaspora, Phenix Agency met son expérience et son savoir-faire au service de projets capables de rapprocher les personnes, de valoriser Madagascar et de renforcer les liens entre les Malagasy du monde.",
+      "À travers des initiatives comme Madadiaspora, Phenix Agency met son expérience et son savoir-faire au service de projets capables de rapprocher les personnes, de valoriser Madagascar et de renforcer les liens entre les Malagasy du monde.",
   },
 ];
 

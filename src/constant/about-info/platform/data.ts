@@ -6,19 +6,19 @@ export const ABOUT_PLATFORM_DATA: InfoData[] = [
     icon: "/infos-community.png",
     title: "Une plateforme d’épanouissement",
     description:
-      "MadaDiaspora crée des espaces d’échange social et contribue à bâtir un réseau de communication solide à l’échelle mondiale. Elle favorise les relations fraternelles, professionnelles et amicales, ainsi que les partenariats bénéfiques.",
+      "Madadiaspora crée des espaces d’échange social et contribue à bâtir un réseau de communication solide à l’échelle mondiale. Elle favorise les relations fraternelles, professionnelles et amicales, ainsi que les partenariats bénéfiques.",
   },
   {
     icon: "/platform-earth.png",
     title: "Une vitrine internationale",
     description:
-      "MadaDiaspora souhaite promouvoir une image positive de solidarité et d’entraide à l’international grâce aux différentes rubriques proposées sur la plateforme, tout en renforçant la visibilité de Madagascar.",
+      "Madadiaspora souhaite promouvoir une image positive de solidarité et d’entraide à l’international grâce aux différentes rubriques proposées sur la plateforme, tout en renforçant la visibilité de Madagascar.",
   },
   {
     icon: "/platform-handshake.png",
     title: "Un appel à la solidarité",
     description:
-      "MadaDiaspora souhaite raviver l’esprit patriotique au sein de la diaspora malagasy, renforcer ses liens avec Madagascar et réunir les idées et les efforts pour contribuer à son développement social et économique.",
+      "Madadiaspora souhaite raviver l’esprit patriotique au sein de la diaspora malagasy, renforcer ses liens avec Madagascar et réunir les idées et les efforts pour contribuer à son développement social et économique.",
   },
 ];
 
@@ -31,7 +31,7 @@ export const SERVICES_PLATFORM_DATA_ROW_1: ServicesData[] = [
   },
   {
     image: "/services-projets.jpg",
-    title: "Boite a projets",
+    title: "Boite à projets",
     description:
       "Découvrez des initiatives solidaires et participez au développement de Madagascar.",
   },

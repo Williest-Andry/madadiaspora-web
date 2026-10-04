@@ -9,7 +9,7 @@ export const SERVICES_DATA_ROW_1: ServicesData[] = [
   },
   {
     image: "/services-projets.jpg",
-    title: "Boite a projets",
+    title: "Boite à projets",
     description:
       "Un véritable réservoir d'idées pour vous inspirer à agir avec générosité et créativité.",
   },

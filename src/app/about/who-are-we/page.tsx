@@ -10,7 +10,7 @@ export default function WhoAreWePage() {
       <CustomMainTitleSection
         primaryTitle="Malagasy et"
         secondaryTitle="fier(e) de l’être !"
-        description="Dans un monde toujours plus connecté, MadaDiaspora nous invite à célébrer notre culture, à affirmer notre identité et à renforcer les liens entre les Malagasy du monde."
+        description="Dans un monde toujours plus connecté, Madadiaspora nous invite à célébrer notre culture, à affirmer notre identité et à renforcer les liens entre les Malagasy du monde."
       />
 
       <section className="bg-foreground flex w-full flex-col items-center justify-center pb-20">

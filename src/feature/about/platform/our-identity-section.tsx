@@ -11,7 +11,7 @@ export default function OurIdentitySection() {
         rightImage={"/platform-mg-latern.png"}
         span="NOTRE IDENTITÉ"
         primaryTitle="Pourquoi "
-        secondaryTitle="MadaDiaspora ?"
+        secondaryTitle="Madadiaspora ?"
         paragraph="La culture malagasy repose sur le principe du Fihavanana, qui incarne l'entraide, la solidarité et le respect mutuel. Cependant, ce lien peut être mis à l'épreuve par les défis quotidiens. La valeur du 'Fihavanana' a le potentiel de favoriser le développement individuel et national, à condition d'être bien exploitée. C'est dans ce contexte que le site web Madadiaspora a été créé par Phenix Agency. Cette plateforme numérique a pour vocation de restaurer cet esprit de solidarité, en offrant un espace où les malagasy à l’étranger et la communauté malagasy de par le monde peuvent se connecter, se retrouver, échanger, partager et se soutenir."
         gapParagraphButton={10}
       />

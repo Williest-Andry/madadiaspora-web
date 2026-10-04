@@ -86,7 +86,7 @@ export default function DirectoryPage() {
         <CustomTitleSection
           primaryTitle="Découvrir"
           secondaryTitle="davantage"
-          paragraph="Découvrez les principales rubriques de MadaDiaspora et accédez rapidement aux informations, services et opportunités qui répondent à vos besoins."
+          paragraph="Découvrez les principales rubriques de Madadiaspora et accédez rapidement aux informations, services et opportunités qui répondent à vos besoins."
         />
 
         <figure className="mt-[88px] grid grid-cols-1 gap-5 xl:grid-cols-3">
