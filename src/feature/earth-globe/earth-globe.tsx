@@ -4,8 +4,9 @@ import { useEffect, useRef } from "react";
 import Globe from "globe.gl";
 import {
   getEarthGlobeOffset,
+  getEarthGlobeOffsetForFooter,
   getEarthGlobeSize,
-} from "@/lib/get-earth-globe-breakpoints";
+} from "@/lib/earth-globe-size-and-offset";
 import { locations } from "@/constant/earth-globe/data";
 import { LocationData } from "@/constant/earth-globe/type";
 import { cn } from "@/lib/utils";
@@ -16,12 +17,14 @@ type EarthGlobeProps = {
   className?: string;
   onReady?: () => void;
   backgroundColor?: "primary" | "footer-bg";
+  section?: "hero" | "footer";
 };
 
 export default function EarthGlobe({
   className,
   onReady,
   backgroundColor = "primary",
+  section = "hero",
 }: EarthGlobeProps) {
   const GLOBE_PROPERTIES = {
     IMAGE: "/earth-night.webp",
@@ -39,7 +42,10 @@ export default function EarthGlobe({
     if (!globeRef.current) return;
 
     const initialSize = getEarthGlobeSize(window.innerWidth);
-    const initialOffset = getEarthGlobeOffset(window.innerWidth);
+    const initialOffset =
+      section == "hero"
+        ? getEarthGlobeOffset(window.innerWidth)
+        : getEarthGlobeOffsetForFooter(window.innerWidth);
 
     const globe = new Globe(globeRef.current);
 
@@ -71,7 +77,10 @@ export default function EarthGlobe({
       clearTimeout(resizeTimeout);
       resizeTimeout = setTimeout(() => {
         const newSize = getEarthGlobeSize(window.innerWidth);
-        const newOffset = getEarthGlobeOffset(window.innerWidth);
+        const newOffset =
+          section == "hero"
+            ? getEarthGlobeOffset(window.innerWidth)
+            : getEarthGlobeOffsetForFooter(window.innerWidth);
         globe.width(newSize).height(newSize).globeOffset(newOffset);
       }, 150);
     };
@@ -88,11 +97,12 @@ export default function EarthGlobe({
   }, []);
 
   return (
-    <section className="relative h-[450px] w-full items-center justify-center overflow-hidden xl:h-full">
+    <section className="globe-small:h-[350px] relative h-[250px] w-full items-center justify-center overflow-hidden sm:h-[450px] xl:h-full">
       <section
         ref={globeRef}
+
         className={cn(
-          "globe-huge:top-190 globe-huge:left-350 max-globe-huge:absolute max-globe-huge:top-1/2 max-globe-huge:left-1/2 max-globe-huge:-translate-x-1/2 max-globe-huge:-translate-y-1/2 globe-huge:w-[50%] globe-huge:items-center globe-huge:justify-center globe-huge:mt-100 m-auto flex h-full xl:top-125 xl:left-220 2xl:left-130 2xl:w-full min-[112.5rem]:left-180 min-[131.25rem]:top-160 min-[131.25rem]:left-250",
+          "globe-extra:justify-start globe-huge:justify-end z-100 flex h-full w-full items-center max-xl:justify-center",
           className
         )}
       />
@@ -100,13 +110,13 @@ export default function EarthGlobe({
       {backgroundColor == "primary" ? (
         <div
           className={
-            "via-primary/70 to-primary pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent"
+            "via-primary/70 to-primary pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-linear-to-b from-transparent max-sm:bottom-0"
           }
         />
       ) : (
         <div
           className={
-            "via-footer-bg/70 to-footer-bg pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-linear-to-b from-transparent"
+            "via-footer-bg/70 to-footer-bg pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-linear-to-b from-transparent max-sm:bottom-0"
           }
         />
       )}

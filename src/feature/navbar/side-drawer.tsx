@@ -16,13 +16,13 @@ import AuthButton from "./auth-button";
 
 export default function SideDrawer() {
   return (
-    <div className="flex lg:hidden">
+    <div className="z-1000 flex lg:hidden">
       <Drawer swipeDirection="left">
         <DrawerTrigger render={<Button variant="secondary" />}>
           <Menu />
         </DrawerTrigger>
-        <DrawerContent className={"w-70"}>
-          <DrawerHeader className="relative">
+        <DrawerContent className={"z-1000 w-70"}>
+          <DrawerHeader className="relative z-1000">
             <DrawerClose
               className={"flex items-center justify-end"}
               render={
@@ -38,11 +38,11 @@ export default function SideDrawer() {
               <BrandLogo />
             </div>
 
-            <DrawerTitle className={"mt-10 flex flex-col gap-10"}>
+            <DrawerTitle className={"z-1000 mt-10 flex flex-col gap-10"}>
               <SideMenuLink />
             </DrawerTitle>
           </DrawerHeader>
-          <DrawerFooter className="flex flex-col items-center justify-center gap-4">
+          <DrawerFooter className="z-1000 flex flex-col items-center justify-center gap-4">
             <Separator />
             <AuthButton className="w-full" />
           </DrawerFooter>

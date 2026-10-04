@@ -15,11 +15,13 @@ const Globe = dynamic(
 type GlobeWithLoaderProps = {
   className?: string;
   backgroundColor?: "primary" | "footer-bg";
+  section?: "hero" | "footer";
 };
 
 export function GlobeWithLoader({
   className,
   backgroundColor,
+  section,
 }: GlobeWithLoaderProps) {
   const [isGlobeReady, setIsGlobeReady] = useState(false);
 
@@ -29,6 +31,7 @@ export function GlobeWithLoader({
         className={className}
         onReady={() => setIsGlobeReady(true)}
         backgroundColor={backgroundColor}
+        section={section}
       />
 
       <div

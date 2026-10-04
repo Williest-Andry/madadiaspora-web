@@ -8,7 +8,7 @@ import CollapsibleLink from "./collapsible-link";
 
 export default function SideMenuLink() {
   return (
-    <div className="flex flex-col gap-6 pl-2 text-xl font-bold">
+    <div className="z-1000 flex flex-col gap-6 pl-2 text-xl font-bold">
       <Link href={"/"}>Accueil</Link>
       <Link href={"#"}>Contact</Link>
       <CollapsibleLink data={ABOUT_LINK} triggerTitle={"À propos"} />
