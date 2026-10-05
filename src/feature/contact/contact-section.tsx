@@ -43,7 +43,7 @@ export default function ContactSection() {
                 <span className="text-secondary">{"à votre écoute"}</span>
               </h2>
             </div>
-            <p className="text-p-sm 3xl:text-title-sm sm:text-p-md text-center leading-[32px] xl:text-left">
+            <p className="text-p-sm 3xl:text-p-xl sm:text-p-md text-center leading-[32px] xl:text-left">
               {
                 "Une question, une suggestion ou besoin d'informations ? Notre équipe est disponible pour vous accompagner et répondre à vos demandes."
               }

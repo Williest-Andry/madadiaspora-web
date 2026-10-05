@@ -28,7 +28,9 @@ export default function MenuLink({
           {triggerTitle}
         </NavigationMenuTrigger>
 
-        <NavigationMenuContent className={cn("rounded-[18px] p-5", className)}>
+        <NavigationMenuContent
+          className={cn("z-10000 rounded-[18px] p-5", className)}
+        >
           {data.map((element, index) => {
             if (element.collapsibleLinks) {
               return (

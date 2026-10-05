@@ -15,7 +15,7 @@ export default function ApprouvedText({ text }: ApprouvedTextProps) {
         />
       </div>
 
-      <p className="text-p-sm sm:text-p-md 3xl:text-title-sm flex-1 leading-[100%]">
+      <p className="text-p-sm sm:text-p-md 3xl:text-p-xl flex-1 leading-[100%]">
         {text}
       </p>
     </article>

@@ -65,11 +65,18 @@
   --breakpoint-grid-xl: 80rem; /* 1280px */
 
   /* custom fonts */
-  --text-title-xl: 64px;
+  /* --text-title-xl: 64px;
   --text-title-md: 34px;
+  --text-title-sm: 24px; */
+  --text-title-xl: 50px;
+  --text-title-md: 30px;
   --text-title-sm: 24px;
 
-  --text-p-xl: 28px;
+  /* --text-p-xl: 28px;
+  --text-p-md: 18px;
+  --text-p-sm: 15px;
+  --text-p-xs: 12px; */
+  --text-p-xl: 22px;
   --text-p-md: 18px;
   --text-p-sm: 15px;
   --text-p-xs: 12px;
