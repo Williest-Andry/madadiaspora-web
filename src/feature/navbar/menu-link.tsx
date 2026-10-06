@@ -21,15 +21,15 @@ export default function MenuLink({
 }: MenuLinkProps) {
   return (
     <>
-      <NavigationMenuItem>
+      <NavigationMenuItem className={"z-100"}>
         <NavigationMenuTrigger
-          className={"text-[14px] font-bold hover:bg-transparent!"}
+          className={"z-100 text-[14px] font-bold hover:bg-transparent!"}
         >
           {triggerTitle}
         </NavigationMenuTrigger>
 
         <NavigationMenuContent
-          className={cn("z-10000 rounded-[18px] p-5", className)}
+          className={cn("z-100 rounded-[18px] p-5", className)}
         >
           {data.map((element, index) => {
             if (element.collapsibleLinks) {
@@ -38,14 +38,14 @@ export default function MenuLink({
                   key={index}
                   triggerTitle={element.title}
                   data={element.collapsibleLinks}
-                  triggerClassName="text-[14px]! pl-4! font-semibold!"
+                  triggerClassName="text-[14px]! pl-4! font-semibold! z-100"
                 />
               );
             }
 
             return (
               <NavigationMenuLink
-                className={"text-[14px] font-semibold"}
+                className={"z-100 text-[14px] font-semibold"}
                 key={element.title}
                 href={element.link}
               >
