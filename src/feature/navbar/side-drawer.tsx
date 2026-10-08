@@ -1,10 +1,11 @@
+"use client";
+
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
   DrawerFooter,
   DrawerHeader,
-  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { CircleX, Menu } from "lucide-react";
@@ -13,11 +14,14 @@ import BrandLogo from "./brand-logo";
 import { Separator } from "@/components/ui/separator";
 import SideMenuLink from "./side-menu-link";
 import AuthButton from "./auth-button";
+import { useState } from "react";
 
 export default function SideDrawer() {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="z-1000 flex lg:hidden">
-      <Drawer swipeDirection="left">
+      <Drawer swipeDirection="left" open={open} onOpenChange={setOpen}>
         <DrawerTrigger render={<Button variant="secondary" />}>
           <Menu />
         </DrawerTrigger>
@@ -40,6 +44,11 @@ export default function SideDrawer() {
           </DrawerHeader>
           <div
             className={"z-1000 mt-10 flex flex-col gap-10 overflow-y-auto pl-4"}
+            onClick={(e) => {
+              if ((e.target as HTMLElement).closest("a")) {
+                setOpen(false);
+              }
+            }}
           >
             <SideMenuLink />
           </div>

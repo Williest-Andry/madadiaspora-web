@@ -16,6 +16,7 @@ export default function AboutSection() {
                 src={"/yellow-globe.png"}
                 alt="little yellow globe image"
                 fill
+                className="object-contain"
               />
             </div>
             <span className="text-popover text-[14px] leading-5 font-semibold">
