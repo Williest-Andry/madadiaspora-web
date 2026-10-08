@@ -19,17 +19,22 @@ export default function PartnerLogo({
     <Link
       target={href ? "_blank" : "_self"}
       href={href ?? "#"}
+      draggable={false}
       className={cn(
-        "bg-primary-foreground flex h-[250px] w-[300px] items-center justify-center rounded-[38px] border-[3px] lg:h-[300px] lg:w-[400px]",
+        "bg-primary-foreground flex h-[250px] w-[300px] items-center justify-center rounded-[38px] border-[3px] select-none lg:h-[300px] lg:w-[400px]",
         className
       )}
     >
-      <figure className="relative h-[60%] w-[60%] object-cover">
+      <figure className="relative h-[70%] w-[70%]">
         <Image
           // src={getImageUrl(partner.logo.url)}
           src={partner.logo.url}
           alt={partner.logo.name}
           fill
+          sizes="(min-width: 1024px) 240px, 180px"
+          loading="eager"
+          draggable={false}
+          className="object-contain"
         />
       </figure>
     </Link>

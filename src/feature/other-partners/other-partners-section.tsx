@@ -56,17 +56,11 @@ export default function OtherPartnersSection({
       </article>
 
       {partners.length > 0 && (
-        <figure className="flex overflow-hidden">
+        <figure className="w-[85%] min-w-0 overflow-hidden">
           <OtherPartnersCarousel
             backgroundColor="foreground"
             // partners={[...partners, ...partners, ...partners]}
-            partners={
-              [
-                ...MOCK_PARTNERS_DATA,
-                ...MOCK_PARTNERS_DATA,
-                ...MOCK_PARTNERS_DATA,
-              ] as any
-            }
+            partners={[...MOCK_PARTNERS_DATA, ...MOCK_PARTNERS_DATA] as any}
             isInfinite
           />
         </figure>

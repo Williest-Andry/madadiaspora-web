@@ -40,7 +40,7 @@ export default function ServicesSection() {
       </figure>
 
       <div className="3xl:w-[1656px] max-2xl:w-[90%] 2xl:w-[1400px]">
-        <h2 className="text-title-sm sm:text-title-md 3xl:text-title-xl mt-11 mb-4.25 w-full leading-[110%] font-bold xl:w-186.25 xl:text-left">
+        <h2 className="text-title-sm sm:text-title-md 3xl:text-title-xl mt-11 mb-4.25 w-full text-center leading-[110%] font-bold xl:w-186.25 xl:text-left">
           Et Bien <span className="text-secondary">Plus Encore !</span>
         </h2>
       </div>
