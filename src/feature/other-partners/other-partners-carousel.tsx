@@ -25,17 +25,16 @@ export default function OtherPartnersCarousel({
 }: OtherPartnersCarouselProps) {
   return (
     <Carousel
-      opts={{ loop: isInfinite, watchDrag: isInfinite }}
+      opts={{ loop: isInfinite, watchDrag: isInfinite, dragFree: isInfinite }}
       plugins={[
         AutoScroll({
           speed: 2,
-          direction: isInfinite ? "forward" : undefined,
+          direction: "forward",
           stopOnInteraction: false,
           stopOnMouseEnter: true,
           startDelay: 0,
         }),
       ]}
-      draggable={isInfinite}
       className="relative w-full"
     >
       <CarouselContent className="flex">
@@ -49,7 +48,7 @@ export default function OtherPartnersCarousel({
         ))}
       </CarouselContent>
 
-      {backgroundColor == "popover" ? (
+      {/* {backgroundColor == "popover" ? (
         <>
           <div className="from-primary pointer-events-none absolute inset-0 z-10 h-full w-[40%] bg-linear-to-r from-80% to-transparent"></div>
 
@@ -61,7 +60,7 @@ export default function OtherPartnersCarousel({
 
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 h-full w-[40%] bg-linear-to-l from-black/40 from-80% to-transparent" />
         </>
-      )}
+      )} */}
     </Carousel>
   );
 }
