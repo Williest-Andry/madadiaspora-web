@@ -11,7 +11,7 @@ export default function CTAButton({ title, className }: CTAButtonProps) {
   return (
     <Button
       className={cn(
-        "bg-secondary text-secondary-foreground hover:bg-secondary text-p-md flex h-14.5 w-93 rounded-[50px] p-1 pl-6 leading-5 font-semibold",
+        "bg-secondary text-secondary-foreground hover:bg-secondary text-p-md flex h-14.5 w-93 cursor-pointer rounded-[50px] p-1 pl-6 leading-5 font-semibold",
         className
       )}
     >

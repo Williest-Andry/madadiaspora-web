@@ -1,11 +1,17 @@
-import CTAButton from "@/components/cta-button";
 import AboutImagesFigure from "./about-images-figure";
 import Image from "next/image";
 import MobileCTAButton from "@/components/mobile-cta-button";
+import { motion } from "motion/react";
 
 export default function AboutSection() {
   return (
-    <section className="bg-foreground 3xl:w-[1656px] relative flex w-full flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ amount: 0.5, once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-foreground 3xl:w-[1656px] relative flex w-full flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5"
+    >
       <AboutImagesFigure />
 
       <article className="3xl:w-204 flex w-full flex-col items-center gap-15 max-sm:gap-8 md:w-150 xl:items-start xl:gap-25.5">
@@ -34,6 +40,6 @@ export default function AboutSection() {
 
         <MobileCTAButton />
       </article>
-    </section>
+    </motion.section>
   );
 }
