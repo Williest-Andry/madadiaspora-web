@@ -28,13 +28,14 @@ export default function AlbumCarouselMobile({
 
   return (
     <Carousel
-      opts={{ loop: true, dragFree: true }}
+      opts={{ loop: true, dragFree: true, watchDrag: true }}
       plugins={[
         AutoScroll({
           speed: 2,
           direction: "backward",
           stopOnInteraction: false,
           stopOnMouseEnter: true,
+          startDelay: 0,
         }),
       ]}
     >

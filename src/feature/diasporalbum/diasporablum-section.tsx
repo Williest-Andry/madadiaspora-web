@@ -17,16 +17,16 @@ export default function DiasporalbumSection() {
 
   if (isLoading) return <DiasporalbumLoader />;
 
-  if (error)
-    return (
-      <GenericErrorSection
-        message="Impossible de charger les photos de la Diaspor'album"
-        refetch={refetch}
-        isFetching={isFetching}
-        className="h-[800px]"
-        backgroundColor="foreground"
-      />
-    );
+  // if (error)
+  //   return (
+  //     <GenericErrorSection
+  //       message="Impossible de charger les photos de la Diaspor'album"
+  //       refetch={refetch}
+  //       isFetching={isFetching}
+  //       className="h-[800px]"
+  //       backgroundColor="foreground"
+  //     />
+  //   );
 
   return (
     <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px] pb-[197px]">
@@ -61,7 +61,9 @@ export default function DiasporalbumSection() {
 
       <MobileCTAButton className="mb-[60px] flex xl:hidden" />
 
-      <AlbumCarouselMobile />
+      <div className="w-[90%] overflow-hidden">
+        <AlbumCarouselMobile />
+      </div>
     </section>
   );
 }
