@@ -6,7 +6,7 @@ import ExpertiseCard from "./expertise-card";
 export default function OurExpertiseSection() {
   return (
     <section className="bg-foreground flex w-full flex-col items-center justify-center pt-30 pb-30 max-xl:gap-20 xl:flex-row xl:items-start">
-      <div className="xl:sticky xl:top-30 flex w-full flex-col gap-[50px] max-xl:items-center sm:w-[40%] xl:gap-[166px]">
+      <div className="flex w-full flex-col gap-[50px] max-xl:items-center sm:w-[40%] xl:sticky xl:top-30 xl:gap-[166px]">
         <CustomDetailsArticle
           span="NOTRE SAVOIR-FAIRE"
           primaryTitle="Les expériences de"

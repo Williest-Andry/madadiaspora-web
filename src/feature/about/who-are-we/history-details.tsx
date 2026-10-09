@@ -14,7 +14,7 @@ export default function HistoryDetails({
   secondParagraph,
 }: HistoryDetailsProps) {
   return (
-    <article className="flex flex-col items-center gap-[17px] max-md:w-[90vw] md:max-xl:w-[70vw] xl:items-start">
+    <article className="sticky -top-80 flex flex-col items-center gap-[17px] max-md:w-[90vw] sm:-top-50 md:max-xl:w-[70vw] xl:items-start">
       <figure className="flex gap-2.25">
         <span
           className={cn(

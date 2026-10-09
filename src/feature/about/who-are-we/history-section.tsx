@@ -1,10 +1,12 @@
+"use client";
+
 import ChronologicalHistorySection from "./chronological-history-section";
 import CustomDetailsArticle from "./custom-details-article";
 
 export default function HistorySection() {
   return (
     <section className="mt-[144px] mb-20 flex flex-col items-start justify-center gap-30 xl:flex-row min-xl:px-[132px]">
-      <article className="w-full xl:w-[50%]">
+      <article className="sticky w-full xl:top-40 xl:w-[50%]">
         <CustomDetailsArticle
           span="NOTRE HISTOIRE"
           primaryTitle="De Media Consulting à"
