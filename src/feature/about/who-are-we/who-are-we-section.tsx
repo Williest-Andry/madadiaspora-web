@@ -1,10 +1,18 @@
-import CustomAboutImagesFigure from "@/components/custom-about-images-figure";
+"use client";
+
 import Image from "next/image";
 import CustomWhoAreWeImagesFigure from "./custom-who-are-we-images-figure";
+import { motion } from "motion/react";
 
 export default function WhoAreWeSection() {
   return (
-    <section className="bg-foreground 3xl:w-[1656px] relative flex w-full flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ amount: "some", once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-foreground 3xl:w-[1656px] relative flex w-full flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5"
+    >
       <CustomWhoAreWeImagesFigure />
 
       <article
@@ -44,6 +52,6 @@ export default function WhoAreWeSection() {
           </div>
         </article>
       </article>
-    </section>
+    </motion.section>
   );
 }

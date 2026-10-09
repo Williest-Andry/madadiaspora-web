@@ -1,6 +1,9 @@
+"use client";
+
 import CustomAboutImagesFigure from "./custom-about-images-figure";
 import Image from "next/image";
 import MobileCTAButton from "./mobile-cta-button";
+import { motion } from "motion/react";
 
 type CustomAboutSectionProps = {
   mainImage: string;
@@ -24,7 +27,13 @@ export default function CustomAboutSection({
   gapParagraphButton = 25.5,
 }: CustomAboutSectionProps) {
   return (
-    <section className="bg-foreground 3xl:w-[1656px] relative flex w-full flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5">
+    <motion.section
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ amount: "some", once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-foreground 3xl:w-[1656px] relative flex w-full flex-col items-center justify-between gap-10 pt-23.5 md:w-185 xl:w-305 xl:flex-row xl:gap-0 2xl:w-357.5"
+    >
       <CustomAboutImagesFigure
         mainImage={mainImage}
         leftImage={leftImage}
@@ -60,6 +69,6 @@ export default function CustomAboutSection({
 
         <MobileCTAButton />
       </article>
-    </section>
+    </motion.section>
   );
 }
