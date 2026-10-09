@@ -56,7 +56,7 @@ export default function DirectoryPage() {
       )}
 
       {correspondents.length > 0 && (
-        <section className="bg-foreground flex w-full items-center justify-center py-30">
+        <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
           <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
             <PersonCard />
             <PersonCard />
