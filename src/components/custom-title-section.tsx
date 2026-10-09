@@ -72,6 +72,7 @@ export default function CustomTitleSection({
             text={secondaryTitle}
             className={cn(
               TEXT_COLOR[textColor],
+              "pb-[0.2em]",
               titleBlock ? "block" : "inline"
             )}
             colors={["#fbb03c"]}
