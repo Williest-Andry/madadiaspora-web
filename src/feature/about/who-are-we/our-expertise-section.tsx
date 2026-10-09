@@ -6,7 +6,7 @@ import ExpertiseCard from "./expertise-card";
 export default function OurExpertiseSection() {
   return (
     <section className="bg-foreground flex w-full flex-col items-center justify-center pt-30 pb-30 max-xl:gap-20 xl:flex-row xl:items-start">
-      <div className="flex w-full flex-col gap-[50px] max-xl:items-center sm:w-[40%] xl:gap-[166px]">
+      <div className="xl:sticky xl:top-30 flex w-full flex-col gap-[50px] max-xl:items-center sm:w-[40%] xl:gap-[166px]">
         <CustomDetailsArticle
           span="NOTRE SAVOIR-FAIRE"
           primaryTitle="Les expériences de"
@@ -22,7 +22,7 @@ export default function OurExpertiseSection() {
       <div className="grid grid-cols-1 gap-[28px] lg:grid-cols-2 xl:grid-cols-1">
         {EXPERTISE_DATA.map((expertise, index) => (
           <ExpertiseCard
-            className="3xl:h-148.75 3xl:w-[818px] xs:w-97.25 relative h-100 w-78 rounded-[38px]"
+            className="3xl:h-148.75 3xl:w-[818px] xs:w-97.25 h-100 w-78 rounded-[38px]"
             key={index}
             data={expertise}
             buttonLabel={expertise.actionLabel}
