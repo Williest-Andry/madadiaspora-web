@@ -18,7 +18,7 @@ export default function ExpertiseCard({
   return (
     <article
       className={cn(
-        "3xl:h-148.75 3xl:w-134.75 xs:w-97.25 relative h-100 w-78 rounded-[38px]",
+        "3xl:h-148.75 3xl:w-134.75 xs:w-97.25 sticky top-30 h-100 w-78 rounded-[38px]",
         className
       )}
     >

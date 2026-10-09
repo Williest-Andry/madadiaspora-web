@@ -31,6 +31,7 @@ export default function GenericErrorSection({
         onClick={() => refetch()}
         disabled={isFetching}
         variant={"secondary"}
+        className={"cursor-pointer"}
       >
         {isFetching ? "Nouvelle tentative..." : "Réessayer"}
       </Button>
