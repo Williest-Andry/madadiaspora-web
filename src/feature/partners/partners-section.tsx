@@ -27,8 +27,9 @@ export default function PartnersSection() {
         <article className="flex w-full flex-col items-center sm:w-126.25 xl:items-start 2xl:w-[819.5px]">
           <figure className="text-title-sm sm:text-title-md 3xl:text-title-xl mb-4.25 w-full text-center leading-[110%] font-bold xl:w-186.25 xl:text-left">
             <h2>
-              Nos <span className="text-secondary">partenaires</span> officiels
+              Nos <span className="text-secondary">partenaires</span> 
             </h2>
+            <h2>officiels</h2>
           </figure>
         </article>
         <p className="text-p-sm sm:text-p-md md:text-p-md 3xl:text-p-xl 3xl:w-203 w-[90%] text-center leading-8 xl:text-start 2xl:w-120">
