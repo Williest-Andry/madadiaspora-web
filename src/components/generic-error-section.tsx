@@ -20,7 +20,7 @@ export default function GenericErrorSection({
   return (
     <div
       className={cn(
-        "mt-20 flex h-72.5 flex-col items-center justify-center gap-3 rounded-lg border-2 border-dotted border-red-400 p-6 text-center",
+        "mt-20 flex h-72.5 flex-col items-center justify-center gap-3 rounded-lg p-6 text-center",
         className,
         backgroundColor == "primary" ? "bg-primary" : "bg-foreground"
       )}
