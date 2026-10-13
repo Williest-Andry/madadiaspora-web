@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import { preload } from "react-dom";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,6 +15,12 @@ const outfit = Outfit({
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "Réseau de la Diaspora Malagasy",
   description:
@@ -27,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${outfit.variable} h-full antialiased`}
+      className={`${plusJakartaSans.variable} ${outfit.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-hidden">
         <QueryProvider>
