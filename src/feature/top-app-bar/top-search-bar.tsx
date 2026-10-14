@@ -10,7 +10,7 @@ export default function TopSearchBar({ className }: TopSearchBarProps) {
   return (
     <div
       className={cn(
-        "flex h-[48px] w-[40%] items-center justify-center gap-[8px] rounded-[33px] bg-[#E6E6E6] px-[16px] py-[8px] xl:w-[636px] 2xl:w-[736px]",
+        "flex h-[48px] w-[40%] items-center justify-center gap-[8px] rounded-[33px] bg-[#E6E6E6] px-[16px] py-[8px] xl:w-[636px] 2xl:w-[60%]",
         className
       )}
     >

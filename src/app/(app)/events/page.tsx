@@ -1,3 +1,3 @@
 export default function EventsPage() {
-  return <div>EventsPage</div>;
+  return <div className="border border-red-500">EventsPage</div>;
 }

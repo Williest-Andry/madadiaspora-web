@@ -6,6 +6,7 @@ import ProfileBadge from "./profile-badge";
 import TopSearchBar from "./top-search-bar";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { SideAppBar } from "@/feature/rubric-side-bar/side-app-bar";
 
 export default function TopAppBar() {
   const [isClicked, setIsClicked] = useState(false);
@@ -28,12 +29,12 @@ export default function TopAppBar() {
 
   return (
     <>
-      <nav className="xs:px-[40px] flex w-full items-center justify-between px-2 pt-[24px] sm:justify-around">
+      <nav className="xs:px-[60px] flex w-full items-center justify-between px-2 pt-[24px]">
         <BrandLogo />
 
         <TopSearchBar className="max-sm:hidden" />
 
-        <div className="xs:gap-10 flex gap-4">
+        <div className="xs:gap-10 flex items-center gap-4">
           {isClicked == false && (
             <Search
               className="sm:hidden"
@@ -48,6 +49,8 @@ export default function TopAppBar() {
               onClick={() => setIsClicked(!isClicked)}
             />
           )}
+          <SideAppBar />
+
           <ProfileBadge />
         </div>
       </nav>
