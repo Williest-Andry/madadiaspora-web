@@ -36,13 +36,17 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
 
   return (
     <Pagination className="bg-foreground text-primary">
-      <PaginationContent>
+      <PaginationContent className="flex gap-[21px]">
         <PaginationItem>
           <PaginationPrevious
             href={hrefFor(Math.max(page - 1, 1))}
             aria-disabled={isFirst}
             tabIndex={isFirst ? -1 : undefined}
-            className={cn(isFirst && disabledClass, "hover:text-primary")}
+            className={cn(
+              isFirst && disabledClass,
+              "hover:text-primary",
+              "text-p-md font-sans font-[500]"
+            )}
             text="Précédent"
           />
         </PaginationItem>
@@ -52,6 +56,7 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
             <PaginationLink
               href={hrefFor(start - 1)}
               aria-label={`Aller à la page ${start - 1}`}
+              
             >
               <PaginationEllipsis />
             </PaginationLink>
@@ -65,8 +70,8 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
               isActive={p === page}
               className={
                 p === page
-                  ? "bg-secondary hover:text-primary!"
-                  : "hover:text-primary!"
+                  ? "bg-secondary hover:text-primary! text-p-md font-sans font-[500] rounded-[173.71px] py-[35.09px] px-[52.64px] "
+                  : "hover:text-primary! text-p-md font-sans font-[500]"
               }
             >
               {p}
@@ -74,7 +79,7 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
           </PaginationItem>
         ))}
 
-        {hasNextWindow && (
+        {/* {hasNextWindow && (
           <PaginationItem>
             <PaginationLink
               href={hrefFor(end + 1)}
@@ -83,14 +88,18 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
               <PaginationEllipsis />
             </PaginationLink>
           </PaginationItem>
-        )}
+        )} */}
 
         <PaginationItem>
           <PaginationNext
             href={hrefFor(Math.min(page + 1, totalPages))}
             aria-disabled={isLast}
             tabIndex={isLast ? -1 : undefined}
-            className={cn(isLast && disabledClass, "hover:text-primary")}
+            className={cn(
+              isLast && disabledClass,
+              "hover:text-primary",
+              "text-p-md font-sans font-[500]"
+            )}
             text="Suivant"
           />
         </PaginationItem>
