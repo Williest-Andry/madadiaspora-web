@@ -17,7 +17,7 @@ export function SideAppBar() {
         render={
           <Button
             variant="default"
-            className={"bg-foreground hover:bg-foreground block lg:hidden"}
+            className={"bg-foreground hover:bg-foreground block xl:hidden"}
           >
             <Menu color="var(--color-layout-black)" />
           </Button>

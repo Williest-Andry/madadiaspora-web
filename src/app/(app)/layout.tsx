@@ -6,11 +6,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     <div className="bg-foreground text-primary font-poppins relative min-h-screen w-full">
       <TopAppBar />
 
-      <div className="bg-foreground w-full pr-[410px] pl-[390px]">
+      <div className="bg-foreground w-full xl:pr-[410px] xl:pl-[390px]">
         {children}
       </div>
 
-      <div className="absolute top-[115px] right-0 h-screen w-100 pr-[40px]">
+      <div className="absolute bottom-0 xl:top-[115px] max-xl:left-0 xl:right-0 min-h-screen w-100 pr-[40px]">
         <EventsCalendarAndPreviewsContainer />
       </div>
     </div>
