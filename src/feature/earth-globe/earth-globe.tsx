@@ -12,7 +12,6 @@ import { LocationData } from "@/constant/earth-globe/type";
 import { cn } from "@/lib/utils";
 import { createRoot } from "react-dom/client";
 import { GlobeMarker } from "@/feature/earth-globe/globe-marker";
-import * as THREE from "three";
 
 type EarthGlobeProps = {
   className?: string;

@@ -53,6 +53,14 @@
   --color-bg-gray: oklch(98.5% 0 0);
   --color-footer-bg: oklch(17.6% 0.034 232.6);
 
+  /* rubric*/
+  --color-layout-black: oklch(21.8% 0 0);
+  --color-layout-muted: oklch(55.2% 0 0);
+  --text-rubric-text-xs: 10px;
+  --text-rubric-text-sm: 14px;
+  --text-rubric-text-md: 16px;
+  --font-poppins: var(--font-poppins);
+
   /* custom global breakpoints */
   --breakpoint-xs: 26.875rem; /* 430px */
   --breakpoint-3xl: 106.25rem; /* 1700px */
