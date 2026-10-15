@@ -25,7 +25,9 @@ export function SideAppBar() {
       />
       <DrawerContent
         draggable={"false"}
-        className={"bg-foreground text-primary mt-[115px] border-none pl-[60px]"}
+        className={
+          "bg-foreground text-primary sticky top-0 mt-[115px] border-none pl-[60px]"
+        }
       >
         <LinkMenu />
 
