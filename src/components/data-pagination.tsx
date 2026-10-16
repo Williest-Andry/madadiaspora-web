@@ -56,7 +56,6 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
             <PaginationLink
               href={hrefFor(start - 1)}
               aria-label={`Aller à la page ${start - 1}`}
-              
             >
               <PaginationEllipsis />
             </PaginationLink>
@@ -70,7 +69,7 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
               isActive={p === page}
               className={
                 p === page
-                  ? "bg-secondary hover:text-primary! text-p-md font-sans font-[500] rounded-[173.71px] py-[35.09px] px-[52.64px] "
+                  ? "bg-secondary hover:text-primary! text-p-md rounded-[173.71px] px-[52.64px] py-[35.09px] font-sans font-[500]"
                   : "hover:text-primary! text-p-md font-sans font-[500]"
               }
             >

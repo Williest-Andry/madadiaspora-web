@@ -12,7 +12,7 @@ export default function EventCard({ event }: EventCardProps) {
   return (
     <Link
       href={"#"}
-      className="relative flex flex-col gap-0 rounded-[32px] border-[1px] p-[12px]"
+      className="relative flex flex-col gap-0 rounded-[32px] border-[1px] p-[12px] max-sm:h-[600px]"
     >
       <div className="relative h-[593px] w-full rounded-t-[29px] pt-[12px]">
         <Image
@@ -30,7 +30,7 @@ export default function EventCard({ event }: EventCardProps) {
           </p>
         </div>
 
-        <div className="bg-foreground absolute top-[24px] right-[24px] flex h-[34px] items-center gap-[8px] rounded-[17px] p-[10px]">
+        <div className="bg-foreground xs:top-[24px] max-xs:left-[24px] xs:right-[24px] absolute top-[74px] flex h-[34px] items-center gap-[8px] rounded-[17px] p-[10px]">
           <CalendarDays color="var(--secondary)" />
           <p className="text-p-xs font-sans font-semibold">
             {formatDateFr(event.startDate)}
