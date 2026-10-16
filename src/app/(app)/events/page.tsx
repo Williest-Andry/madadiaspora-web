@@ -93,9 +93,9 @@ export default function EventsPage() {
           <EventCardLoader key={index} />
         ))}
       </div> */}
-      <div className="w-full">
+      {/* <div className="w-full">
         <DataPagination meta={MOCK_META} basePath="/events" />
-      </div>
+      </div> */}
     </div>
   );
 }

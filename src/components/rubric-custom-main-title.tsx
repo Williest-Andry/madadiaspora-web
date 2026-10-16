@@ -22,17 +22,19 @@ export default function RubricCustomMainTitle({
   return (
     <section className="bg-primary flex flex-col items-center justify-center gap-[53px] rounded-[54px] p-[30px]">
       <div className="text-foreground flex flex-col gap-[17px] text-center">
-        <p className="text-title-xl font-[700]">{title}</p>
-        <p className="text-p-xl font-[400] opacity-[0.6]">{description}</p>
+        <p className="text-title-sm xs:text-title-md lg:text-title-xl font-[700]">{title}</p>
+        <p className="text-p-sm xs:text-p-md lg:text-p-xl font-[400] opacity-[0.6]">{description}</p>
       </div>
 
-      <ToggleGroupDemo
-        leftLabel={leftLabel}
-        leftLink={leftLink}
-        rightLabel={rightLabel}
-        rightLink={rightLink}
-        defaultActive={defaultActive}
-      />
+      <div>
+        <ToggleGroupDemo
+          leftLabel={leftLabel}
+          leftLink={leftLink}
+          rightLabel={rightLabel}
+          rightLink={rightLink}
+          defaultActive={defaultActive}
+        />
+      </div>
     </section>
   );
 }
