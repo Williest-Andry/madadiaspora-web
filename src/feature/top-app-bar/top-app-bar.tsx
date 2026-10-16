@@ -34,7 +34,7 @@ export default function TopAppBar() {
 
         <TopSearchBar className="max-sm:hidden" />
 
-        <div className="sm:gap-10 flex items-center gap-4">
+        <div className="flex items-center gap-4 sm:gap-10">
           {isClicked == false && (
             <Search
               className="sm:hidden"
