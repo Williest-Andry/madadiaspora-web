@@ -22,4 +22,6 @@ export interface GoodToKnow {
 
 export interface GoodToKnowParams extends GenericParams {
   search?: string;
+  country?: string[];
+  sortCreated?: string;
 }

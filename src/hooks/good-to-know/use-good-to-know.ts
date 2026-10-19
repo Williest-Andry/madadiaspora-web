@@ -6,6 +6,7 @@ export function useGoodToKnow(params?: GoodToKnowParams) {
   const query = useQuery({
     queryKey: ["good-to-know", params],
     queryFn: () => goodToKnowServices.getAll(params),
+    retry: 0,
   });
 
   return { ...query, goodToKnow: query.data?.data ?? [] };

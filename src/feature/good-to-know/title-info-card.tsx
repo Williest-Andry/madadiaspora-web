@@ -12,7 +12,7 @@ export default function TitleInfoCard({
   description,
 }: TitleInfoCardProps) {
   return (
-    <article className="relative flex h-[357px] w-full xs:w-[195px] flex-col items-center justify-end rounded-[12px] border-[1px] border-[#ECFAFE1A]/10 p-[20px]">
+    <article className="xs:w-[195px] relative flex h-[357px] w-full flex-col items-center justify-end rounded-[12px] border-[1px] border-[#ECFAFE1A]/10 p-[20px]">
       <Image
         src={image}
         alt={image}

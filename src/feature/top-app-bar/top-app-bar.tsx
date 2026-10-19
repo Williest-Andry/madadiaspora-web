@@ -7,9 +7,12 @@ import TopSearchBar from "./top-search-bar";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { SideAppBar } from "@/feature/rubric-side-bar/side-app-bar";
+import { useSearchParam } from "@/hooks/use-search-param";
 
 export default function TopAppBar() {
   const [isClicked, setIsClicked] = useState(false);
+
+  const { value: searchValue, setValue: setSearchValue } = useSearchParam();
 
   useEffect(() => {
     let resizeTimeout: ReturnType<typeof setTimeout>;
@@ -32,7 +35,11 @@ export default function TopAppBar() {
       <nav className="bg-foreground xs:px-[60px] sticky top-0 z-10 flex w-full items-center justify-between px-2 pt-[24px]">
         <BrandLogo />
 
-        <TopSearchBar className="max-sm:hidden" />
+        <TopSearchBar
+          className="max-sm:hidden"
+          value={searchValue}
+          onChange={setSearchValue}
+        />
 
         <div className="flex items-center gap-4 sm:gap-10">
           {isClicked == false && (
@@ -62,7 +69,11 @@ export default function TopAppBar() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <TopSearchBar className="w-full" />
+          <TopSearchBar
+            className="w-full"
+            value={searchValue}
+            onChange={setSearchValue}
+          />
         </motion.div>
       )}
     </>

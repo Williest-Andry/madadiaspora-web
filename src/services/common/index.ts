@@ -9,6 +9,9 @@ export async function genericGetList<T, TParams = AxiosRequestConfig["params"]>(
   try {
     const response: AxiosResponse<ApiResponse<T[]>> = await prodApi.get(url, {
       params: params,
+      paramsSerializer: {
+        indexes: null,
+      },
     });
 
     return {
