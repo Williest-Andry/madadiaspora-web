@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: "**",
         pathname: "/**",
       },
+      {
+        protocol: "http",
+        hostname: "**",
+        pathname: "/**",
+      },
     ],
   },
   allowedDevOrigins: ["192.168.50.143", "10.231.125.44"],

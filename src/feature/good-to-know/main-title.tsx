@@ -2,7 +2,7 @@ import DiscoverySection from "./discovery-section";
 
 export function MainTitle() {
   return (
-    <section className="bg-primary flex flex-col gap-[53px] overflow-x-auto rounded-[54px] p-[30px]">
+    <section className="bg-primary flex flex-col gap-[53px] overflow-x-auto rounded-[54px] sm:max-xl:pl-4 p-[30px]">
       <div className="text-foreground flex flex-col gap-[17px] text-center">
         <p className="text-title-sm xs:text-title-md lg:text-title-xl font-[700]">
           {"Bon à "}

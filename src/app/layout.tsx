@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  preload("/earth-night.webp", { as: "image" });
+  preload("/earth-night.jpg", { as: "image" });
 
   return (
     <html

@@ -21,15 +21,15 @@ const INFO_DATA = [
 
 export default function DiscoverySection() {
   return (
-    <section className="flex w-full justify-center gap-[16px] max-[111.25rem]:items-center xl:max-[111.25rem]:flex-col">
+    <section className="flex flex-col lg:flex-row w-full justify-center gap-[16px] max-[111.25rem]:items-center xl:max-[111.25rem]:flex-col">
       <DiscoveryCard
         title="Explorez nos rubriques"
         description="Retrouvez des informations et conseils autour de Madagascar, de sa culture et de la vie quotidienne."
         buttonLabel="En savoir plus"
-        className="xl:max-[111.25rem]:rounded-[38px]"
+        className="max-lg:rounded-[38px] xl:max-[111.25rem]:rounded-[38px] max-sm:h-[300px]"
       />
 
-      <div className="flex gap-[16px]">
+      <div className="flex flex-col xs:flex-row gap-[16px]">
         {INFO_DATA.map((info, index) => (
           <TitleInfoCard
             key={index}
