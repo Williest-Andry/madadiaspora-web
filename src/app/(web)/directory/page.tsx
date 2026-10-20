@@ -66,7 +66,7 @@ export default function DirectoryPage() {
             <PersonCard />
             <PersonCard />
           </div>
-          <DataPagination meta={MOCK_META} basePath="/contact/correspondents" />
+          <DataPagination meta={MOCK_META} />
         </section>
       )}
 
