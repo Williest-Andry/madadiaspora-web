@@ -9,5 +9,9 @@ export function useGoodToKnow(params?: GoodToKnowParams) {
     retry: 0,
   });
 
-  return { ...query, goodToKnow: query.data?.data ?? [] };
+  return {
+    ...query,
+    goodToKnow: query.data?.data ?? [],
+    meta: query.data?.meta,
+  };
 }
