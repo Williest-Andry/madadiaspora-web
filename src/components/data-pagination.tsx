@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Pagination,
   PaginationContent,
@@ -7,17 +9,34 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { usePageParam } from "@/hooks/use-page-param";
 import { Meta } from "@/interfaces/global";
 import { getPageWindow } from "@/lib/pagination";
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 interface DataPaginationProps {
   meta?: Meta;
-  basePath: string;
 }
 
-export function DataPagination({ meta, basePath }: DataPaginationProps) {
-  const page = meta?.page ?? 1;
+const DESKTOP_QUERY = "(min-width: 1536px)";
+
+export function DataPagination({ meta }: DataPaginationProps) {
+  const [showNavigationText, setShowNavigationText] = useState(true);
+  const { page, setPage } = usePageParam();
+
+  useEffect(() => {
+    const mql = window.matchMedia(DESKTOP_QUERY);
+    setShowNavigationText(mql.matches);
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      setShowNavigationText(e.matches);
+    };
+    mql.addEventListener("change", handleChange);
+
+    return () => mql.removeEventListener("change", handleChange);
+  }, []);
+
   const limit = meta?.limit ?? 10;
   const total = meta?.total ?? 0;
   const totalPages = Math.ceil(total / limit);
@@ -29,33 +48,35 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
     totalPages
   );
 
-  const hrefFor = (p: number) => `${basePath}?page=${p}`;
   const isFirst = page <= 1;
   const isLast = page >= totalPages;
   const disabledClass = "pointer-events-none opacity-50";
+  const clickableClass = "cursor-pointer";
 
   return (
-    <Pagination className="bg-foreground text-primary">
-      <PaginationContent className="flex gap-[21px]">
+    <Pagination className="bg-foreground text-primary flex">
+      <PaginationContent className="flex gap-0 2xl:gap-[21px]">
         <PaginationItem>
           <PaginationPrevious
-            href={hrefFor(Math.max(page - 1, 1))}
             aria-disabled={isFirst}
             tabIndex={isFirst ? -1 : undefined}
             className={cn(
+              clickableClass,
               isFirst && disabledClass,
               "hover:text-primary",
-              "text-p-md font-sans font-[500]"
+              "text-p-xs 2xl:text-p-md font-sans font-[500]"
             )}
-            text="Précédent"
+            text={showNavigationText ? "Précédent" : ""}
+            onClick={() => !isFirst && setPage(page - 1)}
           />
         </PaginationItem>
 
         {hasPrevWindow && (
           <PaginationItem>
             <PaginationLink
-              href={hrefFor(start - 1)}
               aria-label={`Aller à la page ${start - 1}`}
+              className={clickableClass}
+              onClick={() => setPage(start - 1)}
             >
               <PaginationEllipsis />
             </PaginationLink>
@@ -65,41 +86,44 @@ export function DataPagination({ meta, basePath }: DataPaginationProps) {
         {pages.map((p) => (
           <PaginationItem key={p}>
             <PaginationLink
-              href={hrefFor(p)}
               isActive={p === page}
-              className={
+              className={cn(
+                clickableClass,
                 p === page
-                  ? "bg-secondary hover:text-primary! text-p-md rounded-[173.71px] px-[52.64px] py-[35.09px] font-sans font-[500]"
-                  : "hover:text-primary! text-p-md font-sans font-[500]"
-              }
+                  ? "bg-secondary hover:text-primary! text-p-sm 2xl:text-p-md rounded-[173.71px] px-6 py-6 font-sans font-[500] 2xl:px-[52.64px] 2xl:py-[35.09px]"
+                  : "hover:text-primary! text-p-sm 2xl:text-p-md font-sans font-[500]"
+              )}
+              onClick={() => setPage(p)}
             >
               {p}
             </PaginationLink>
           </PaginationItem>
         ))}
 
-        {/* {hasNextWindow && (
+        {hasNextWindow && (
           <PaginationItem>
             <PaginationLink
-              href={hrefFor(end + 1)}
               aria-label={`Aller à la page ${end + 1}`}
+              className={clickableClass}
+              onClick={() => setPage(end + 1)}
             >
               <PaginationEllipsis />
             </PaginationLink>
           </PaginationItem>
-        )} */}
+        )}
 
         <PaginationItem>
           <PaginationNext
-            href={hrefFor(Math.min(page + 1, totalPages))}
             aria-disabled={isLast}
             tabIndex={isLast ? -1 : undefined}
             className={cn(
+              clickableClass,
               isLast && disabledClass,
               "hover:text-primary",
-              "text-p-md font-sans font-[500]"
+              "text-p-xs 2xl:text-p-md font-sans font-[500]"
             )}
-            text="Suivant"
+            text={showNavigationText ? "Suivant" : ""}
+            onClick={() => !isLast && setPage(page + 1)}
           />
         </PaginationItem>
       </PaginationContent>

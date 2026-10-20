@@ -4,9 +4,15 @@ import Image from "next/image";
 
 type TopSearchBarProps = {
   className?: string;
+  value: string;
+  onChange: (newValue: string) => void;
 };
 
-export default function TopSearchBar({ className }: TopSearchBarProps) {
+export default function TopSearchBar({
+  className,
+  value,
+  onChange,
+}: TopSearchBarProps) {
   return (
     <div
       className={cn(
@@ -20,6 +26,8 @@ export default function TopSearchBar({ className }: TopSearchBarProps) {
       <Input
         placeholder="Rechercher quelque chose..."
         className="text-[12px]!"
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
       />
     </div>
   );
