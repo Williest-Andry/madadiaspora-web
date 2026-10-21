@@ -24,6 +24,20 @@ export interface ImageType {
   size?: number;
 }
 
+export interface AddressType {
+  street: string;
+  city: string;
+  country: string;
+  state: string;
+  postalCode: string;
+}
+
+export interface ContactType {
+  tel: string[];
+  otherEmail: string[];
+  isPublic: boolean;
+}
+
 export type ImageExtension = ".jpeg";
 export type ContentType =
   "image/jpeg" | "application/json" | "multipart/form-data";
