@@ -1,29 +1,43 @@
 "use client";
 
 import { DataPagination } from "@/components/data-pagination";
+import EmptyResult from "@/components/empty-result";
 import GenericErrorSection from "@/components/generic-error-section";
 import { MultiSelect } from "@/components/multi-select";
 import PersonCard from "@/components/person-card";
 import PersonCardLoader from "@/components/person-card-loader";
 import RubricCustomMainTitle from "@/components/rubric-custom-main-title";
 import { useDirectories } from "@/hooks/directory/use-directory";
-import { Meta } from "@/interfaces/global";
+import { usePageParam } from "@/hooks/use-page-param";
 import { getCountryOptions } from "@/lib/countries";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
-
-const MOCK_META: Meta = {
-  limit: 10,
-  page: 1,
-  total: 50,
-};
 
 const COUNTRIES = getCountryOptions();
 
+const LIMIT = 9;
+
 export default function DirectoryPage() {
-  const { directories, meta, isLoading, refetch, isFetching, isError } =
-    useDirectories();
+  const { page, resetPage } = usePageParam();
 
   const [countries, setCountries] = useState<string[]>();
+
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search") ?? "";
+
+  const handleCountryChange = (countries: string[]) => {
+    setCountries(countries);
+    resetPage();
+  };
+
+  const { directories, meta, isLoading, refetch, isFetching, isError } =
+    useDirectories({
+      limit: LIMIT,
+      page: page,
+      notCountry: ["Madagascar"],
+      country: countries,
+      search: search,
+    });
 
   return (
     <div className="flex flex-col items-center justify-center overflow-hidden">
@@ -42,7 +56,7 @@ export default function DirectoryPage() {
 
       <MultiSelect
         options={COUNTRIES}
-        onValueChange={setCountries}
+        onValueChange={handleCountryChange}
         placeholder="Sélectionner un pays"
         variant="secondary"
         maxCount={1}
@@ -52,23 +66,12 @@ export default function DirectoryPage() {
       {isLoading && (
         <section className="bg-foreground flex w-full flex-col items-center justify-center gap-10 py-30">
           <div className="3xl:grid-cols-3 grid w-full grid-cols-1 justify-items-center gap-[20px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-2">
-            {Array(8)
+            {Array(LIMIT)
               .fill(0)
               .map((e, index) => (
                 <PersonCardLoader key={index} />
               ))}
           </div>
-        </section>
-      )}
-
-      {directories.length > 0 && isLoading === false && (
-        <section className="bg-foreground flex w-full flex-col items-center justify-center gap-10 py-30">
-          <div className="3xl:grid-cols-3 grid w-full grid-cols-1 justify-items-center gap-[20px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-2">
-            {directories.map((directory) => (
-              <PersonCard directory={directory} key={directory.id} />
-            ))}
-          </div>
-          <DataPagination meta={MOCK_META} />
         </section>
       )}
 
@@ -82,6 +85,21 @@ export default function DirectoryPage() {
             backgroundColor="foreground"
           />
         </section>
+      )}
+
+      {directories.length > 0 && isLoading === false && (
+        <section className="bg-foreground flex w-full flex-col items-center justify-center gap-10 py-30">
+          <div className="3xl:grid-cols-3 grid w-full grid-cols-1 justify-items-center gap-[20px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-2">
+            {directories.map((directory) => (
+              <PersonCard directory={directory} key={directory.id} />
+            ))}
+          </div>
+          <DataPagination meta={meta} />
+        </section>
+      )}
+
+      {directories.length === 0 && isLoading == false && isError == false && (
+        <EmptyResult />
       )}
     </div>
   );

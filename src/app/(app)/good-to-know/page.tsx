@@ -1,6 +1,7 @@
 "use client";
 
 import { DataPagination } from "@/components/data-pagination";
+import EmptyResult from "@/components/empty-result";
 import GenericErrorSection from "@/components/generic-error-section";
 import { MultiSelect } from "@/components/multi-select";
 import GoodToKnowCard from "@/feature/good-to-know/good-to-know-card";
@@ -73,11 +74,7 @@ export default function GoodToKnowPage() {
       )}
 
       {goodToKnow.length === 0 && isLoading == false && isError == false && (
-        <div className="flex h-screen items-start justify-center">
-          <p className="text-muted-foreground text-p-md font-extralight italic">
-            {"Aucun résultat"}
-          </p>
-        </div>
+        <EmptyResult />
       )}
 
       {meta && <DataPagination meta={meta} />}

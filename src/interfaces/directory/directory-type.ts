@@ -36,4 +36,5 @@ export interface DirectoryParams extends GenericParams {
   search?: string;
   subscriptionType?: Type;
   country?: string[];
+  notCountry?: string[];
 }
