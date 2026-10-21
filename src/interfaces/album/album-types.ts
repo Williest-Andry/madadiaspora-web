@@ -6,13 +6,13 @@ export interface Info {
   description: string;
 }
 
-export interface Adress {
+export interface Address {
   country: string;
 }
 
 export interface Album {
   info: Info;
-  adress: Adress;
+  address: Address;
   startDate: Date;
   endDate: Date;
   cover: ImageType;
