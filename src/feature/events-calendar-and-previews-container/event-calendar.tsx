@@ -31,7 +31,7 @@ export default function EventCalendar() {
         weekday:
           "text-p-xs text-layout-black text-center space-10 flex-1 rounded-(--cell-radius) font-bold uppercase select-none",
         day_button:
-          "hover:bg-popover hover:text-layout-black data-[selected-single=true]:bg-popover data-[selected-single=true]:text-layout-black",
+          "hover:bg-popover hover:text-foreground data-[selected-single=true]:bg-popover data-[selected-single=true]:text-foreground",
         today: "bg-transparent text-layout-black",
       }}
       locale={fr}

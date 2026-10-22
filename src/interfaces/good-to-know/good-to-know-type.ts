@@ -1,16 +1,8 @@
-import { GenericParams, ImageType } from "../global";
-
-interface Info {
-  title: string;
-  summary: string;
-  description: string;
-}
+import { AddressType, GenericParams, ImageType, Info } from "../global";
 
 export interface GoodToKnow {
   info: Info;
-  address: {
-    country: string;
-  };
+  address: AddressType;
   cover: ImageType;
   images: ImageType[];
   attachments: string[];

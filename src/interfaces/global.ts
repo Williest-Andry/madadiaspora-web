@@ -25,17 +25,23 @@ export interface ImageType {
 }
 
 export interface AddressType {
-  street: string;
-  city: string;
+  street?: string;
+  city?: string;
   country: string;
-  state: string;
-  postalCode: string;
+  state?: string;
+  postalCode?: string;
 }
 
 export interface ContactType {
   tel: string[];
   otherEmail: string[];
   isPublic: boolean;
+}
+
+export interface Info {
+  title: string;
+  summary: string;
+  description: string;
 }
 
 export type ImageExtension = ".jpeg";
