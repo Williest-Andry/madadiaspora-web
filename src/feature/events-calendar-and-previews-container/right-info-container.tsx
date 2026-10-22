@@ -1,14 +1,12 @@
 import EventCalendar from "./event-calendar";
-import PreviewInfoCard from "./preview-info-card";
+import PreviewsContainer from "./previews-container";
 
 export default function EventsCalendarAndPreviewsContainer() {
   return (
-    <div className="flex flex-col gap-[30px] max-lg:w-[80%] max-lg:items-center lg:flex-row xl:flex-col">
+    <div className="flex flex-col justify-center gap-[30px] max-xl:w-[80%] max-xl:items-center">
       <EventCalendar />
 
-      <PreviewInfoCard />
-      <PreviewInfoCard />
-      <PreviewInfoCard />
+      <PreviewsContainer />
     </div>
   );
 }

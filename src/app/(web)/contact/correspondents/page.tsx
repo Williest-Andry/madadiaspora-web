@@ -74,21 +74,15 @@ export default function CorrespondentsPage() {
         </section>
       )}
 
-      {correspondents.length > 0 && (
+      {/* {correspondents.length > 0 && (
         <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
           <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
-            <PersonCard />
-            <PersonCard />
-            <PersonCard />
-            <PersonCard />
-            <PersonCard />
-            <PersonCard />
-            <PersonCard />
+            {"À REMPLACER PAR LES VRAIES DONNÉES"}
           </div>
 
           <DataPagination meta={MOCK_META} />
         </section>
-      )}
+      )} */}
 
       {error && (
         <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
@@ -101,6 +95,8 @@ export default function CorrespondentsPage() {
           />
         </section>
       )}
+
+      {"À REMPLACER PAR LES VRAIES DONNÉES"}
 
       <OtherPartnersSection />
     </div>

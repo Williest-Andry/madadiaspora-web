@@ -1,4 +1,4 @@
-import { newsServices } from "@/services/news/news-services";
+import { actualityServices, newsServices } from "@/services/news/news-services";
 import { useQuery } from "@tanstack/react-query";
 
 export function useNews() {
@@ -9,4 +9,14 @@ export function useNews() {
   });
 
   return { ...query, news: query.data?.data ?? [] };
+}
+
+export function useActuality() {
+  const query = useQuery({
+    queryKey: ["actuality"],
+    queryFn: () => actualityServices.getAll(),
+    retry: false,
+  });
+
+  return { ...query, actuality: query.data?.data ?? [] };
 }

@@ -32,7 +32,7 @@ export default function TopAppBar() {
 
   return (
     <>
-      <nav className="bg-foreground xs:px-[60px] sticky top-0 z-10 flex w-full items-center justify-between px-2 pt-[24px]">
+      <nav className="bg-foreground xs:px-[60px] sticky top-0 z-100 flex w-full items-center justify-between px-2 pt-[24px] pb-[10px]">
         <BrandLogo />
 
         <TopSearchBar

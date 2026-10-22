@@ -13,7 +13,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <Suspense fallback={null}>{children}</Suspense>
       </div>
 
-      <div className="bg-foreground absolute w-100 max-xl:left-0 max-xl:w-full max-xl:p-10 max-xl:pt-20 max-lg:flex max-lg:justify-center xl:top-[115px] xl:right-0 xl:min-h-screen xl:pr-[40px]">
+      <div className="bg-foreground flex w-100 justify-center max-xl:w-full max-xl:p-10 max-xl:pt-20 max-lg:flex max-lg:justify-center xl:absolute xl:top-[115px] xl:right-0 xl:min-h-screen xl:pr-[40px]">
         <EventsCalendarAndPreviewsContainer />
       </div>
     </div>
