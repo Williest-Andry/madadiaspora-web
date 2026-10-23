@@ -6,7 +6,7 @@ import {
   Info,
 } from "../global";
 
-type OpportunityType =
+export type OpportunityType =
   | "REQUEST_JOB"
   | "OFFER_JOB"
   | "REQUEST_SERVICE"
@@ -30,4 +30,7 @@ export interface Opportunity {
   isDeleted: boolean;
 }
 
-export interface OpportunityParams extends GenericParams {}
+export interface OpportunityParams extends GenericParams {
+  search?: string;
+  country?: string[];
+}

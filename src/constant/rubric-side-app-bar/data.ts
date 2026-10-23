@@ -17,7 +17,7 @@ export const SIDE_APP_BAR_LINK_DATA: SideAppBarLinkType[] = [
     icon: "/side-opportunities-busines.svg",
     label: "Opportunités & Business",
     alt: "opportunities & business icon",
-    link: "/opportunities-and-business",
+    link: "/opportunities-and-business/investment",
   },
   {
     icon: "/side-projects-box.svg",

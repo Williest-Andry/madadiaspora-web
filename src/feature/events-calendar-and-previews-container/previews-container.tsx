@@ -115,7 +115,9 @@ export default function PreviewsContainer() {
     },
   ];
 
-  const previews = previewsData.filter((preview) => preview.path != pathName);
+  const previews = previewsData.filter(
+    (preview) => !preview.path.includes(pathName)
+  );
 
   return (
     <div className="grid grid-cols-1 gap-[30px] max-xl:justify-items-center md:grid-cols-2 xl:grid-cols-1">
