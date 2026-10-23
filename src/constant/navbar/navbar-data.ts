@@ -18,7 +18,7 @@ export const RUBRIK_LINK: DataLinkType[] = [
       { title: "Calendrier des évènements", link: "/events-calendar" },
     ],
   },
-  { title: "Opportunités & Business", link: "/opportunities-and-business" },
+  { title: "Opportunités & Business", link: "/opportunities-and-business/investment" },
   { title: "Rencontre avec la Diaspora", link: "/meeting-with-the-diaspora" },
 ];
 
