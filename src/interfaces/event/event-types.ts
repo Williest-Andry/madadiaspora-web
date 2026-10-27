@@ -20,4 +20,7 @@ export interface EventData {
 
 export interface EventParams extends GenericParams {
   search?: string;
+  country?: string[];
+  sortCreated?: boolean;
+  category?: string[];
 }

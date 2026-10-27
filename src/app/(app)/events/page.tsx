@@ -6,14 +6,22 @@ import GenericErrorSection from "@/components/generic-error-section";
 import RubricCustomMainTitle from "@/components/rubric-custom-main-title";
 import EventCard from "@/feature/event/event-card";
 import EventCardLoader from "@/feature/event/event-card-loader";
+import FiltersSection from "@/feature/opportunities-and-business/filters-section";
 import { useEvents } from "@/hooks/event/use-event";
 import { usePageParam } from "@/hooks/use-page-param";
 import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 const LIMIT = 6;
 
 export default function EventsPage() {
-  const { page } = usePageParam();
+  const [sortCreated, setSortCreated] = useState(false);
+
+  const [countries, setCountries] = useState<string[]>();
+
+  const [categories, setCategories] = useState<string[]>([]);
+
+  const { page, resetPage } = usePageParam();
 
   const search = useSearchParams().get("search") ?? "";
 
@@ -21,7 +29,15 @@ export default function EventsPage() {
     limit: LIMIT,
     page: page,
     search: search,
+    country: countries,
+    sortCreated: sortCreated,
+    category: categories,
   });
+
+  const handleChangeCountry = (newCountries: string[]) => {
+    resetPage();
+    setCountries(newCountries);
+  };
 
   return (
     <div className="bg-foreground flex flex-col gap-[54px]">
@@ -33,6 +49,15 @@ export default function EventsPage() {
         rightLabel="Événements"
         rightLink="#"
         defaultActive="Événements"
+      />
+
+      <FiltersSection
+        title="Évènements"
+        onChangeCountries={handleChangeCountry}
+        sortDateValue={sortCreated}
+        onChangeSortDate={setSortCreated}
+        categoryValue={categories}
+        onChangeCategory={setCategories}
       />
 
       {isError && (
