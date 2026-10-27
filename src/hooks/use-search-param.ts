@@ -23,7 +23,9 @@ export function useSearchParam() {
     const timeout = setTimeout(() => {
       const params = new URLSearchParams(searchParams.toString());
 
-      if (value) params.set("search", value);
+      const realValue = value.trim();
+
+      if (realValue) params.set("search", realValue);
       else params.delete("search");
 
       const query = params.toString();

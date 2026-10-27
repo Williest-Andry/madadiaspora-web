@@ -17,7 +17,11 @@ export const BASE_PATHNAME = "/opportunities-and-business";
 const LIMIT = 5;
 
 export default function InvestmentPage() {
+  const [sortCreated, setSortCreated] = useState(false);
+
   const [countries, setCountries] = useState<string[]>();
+
+  const [categories, setCategories] = useState<string[]>([]);
 
   const { page, resetPage } = usePageParam();
 
@@ -30,6 +34,8 @@ export default function InvestmentPage() {
       limit: LIMIT,
       search: search,
       country: countries,
+      sortCreated: sortCreated,
+      category: categories,
     });
 
   const handleChangeCountry = (newCountries: string[]) => {
@@ -54,6 +60,10 @@ export default function InvestmentPage() {
       <FiltersSection
         title="Opportunités à saisir"
         onChangeCountries={handleChangeCountry}
+        sortDateValue={sortCreated}
+        onChangeSortDate={setSortCreated}
+        categoryValue={categories}
+        onChangeCategory={setCategories}
       />
 
       {isLoading &&
