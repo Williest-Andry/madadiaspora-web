@@ -5,7 +5,7 @@ import Link from "next/link";
 type RubricCTAButtonProps = {
   title: string;
   className?: string;
-  href: string;
+  href?: string;
 };
 
 export default function RubricCTAButton({
