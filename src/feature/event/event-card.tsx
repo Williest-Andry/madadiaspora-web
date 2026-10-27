@@ -1,14 +1,17 @@
+import { EventData } from "@/interfaces/event/event-types";
 import { formatDateFr } from "@/lib/date-format";
-import { getImageUrl } from "@/lib/get-image-url";
+import { getImageOrFallback, getImageUrl } from "@/lib/get-image-url";
 import { CalendarDays, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 type EventCardProps = {
-  event: any;
+  event: EventData;
 };
 
 export default function EventCard({ event }: EventCardProps) {
+  const eventImage = getImageOrFallback(event.cover);
+
   return (
     <Link
       href={"#"}
@@ -16,9 +19,8 @@ export default function EventCard({ event }: EventCardProps) {
     >
       <div className="relative h-[593px] w-full rounded-t-[29px] pt-[12px]">
         <Image
-          // src={getImageUrl(event.cover.url)}
-          src={event.cover.url}
-          alt={event.cover.name}
+          src={eventImage.image}
+          alt={eventImage.alt}
           fill
           className="rounded-t-[29px] object-cover"
         />
@@ -33,7 +35,7 @@ export default function EventCard({ event }: EventCardProps) {
         <div className="bg-foreground xs:top-[24px] max-xs:left-[24px] xs:right-[24px] absolute top-[74px] flex h-[34px] items-center gap-[8px] rounded-[17px] p-[10px]">
           <CalendarDays color="var(--secondary)" />
           <p className="text-p-xs font-sans font-semibold">
-            {formatDateFr(event.startDate)}
+            {formatDateFr(event.startDate.toString())}
           </p>
         </div>
       </div>

@@ -1,75 +1,28 @@
+"use client";
+
 import { DataPagination } from "@/components/data-pagination";
+import EmptyResult from "@/components/empty-result";
+import GenericErrorSection from "@/components/generic-error-section";
 import RubricCustomMainTitle from "@/components/rubric-custom-main-title";
 import EventCard from "@/feature/event/event-card";
 import EventCardLoader from "@/feature/event/event-card-loader";
-import { Meta } from "@/interfaces/global";
+import { useEvents } from "@/hooks/event/use-event";
+import { usePageParam } from "@/hooks/use-page-param";
+import { useSearchParams } from "next/navigation";
 
-const MOCK_EVENT = [
-  {
-    cover: {
-      url: "/mock-miss.png",
-      name: "mock miss image",
-    },
-    address: {
-      country: "Madagascar",
-    },
-    startDate: "2026-12-19T00:00:00Z",
-    fr: {
-      summary:
-        "Miss Madagascar 2026 - Flavie Riaka défend les couleurs de la diaspora",
-    },
-  },
-  {
-    cover: {
-      url: "/mock-boys.png",
-      name: "mock boys image",
-    },
-    address: {
-      country: "Russie",
-    },
-    startDate: "2026-09-16T00:00:00Z",
-    fr: {
-      summary:
-        "Cultures urbaines - Cinq talents malgaches à la conquête du concours international KARDO",
-    },
-  },
-  {
-    cover: {
-      url: "/mock-miss.png",
-      name: "mock miss image",
-    },
-    address: {
-      country: "Madagascar",
-    },
-    startDate: "2026-12-19T00:00:00Z",
-    fr: {
-      summary:
-        "Miss Madagascar 2026 - Flavie Riaka défend les couleurs de la diaspora",
-    },
-  },
-  {
-    cover: {
-      url: "/mock-boys.png",
-      name: "mock boys image",
-    },
-    address: {
-      country: "Russie",
-    },
-    startDate: "2026-09-16T00:00:00Z",
-    fr: {
-      summary:
-        "Cultures urbaines - Cinq talents malgaches à la conquête du concours international KARDO",
-    },
-  },
-];
-
-const MOCK_META: Meta = {
-  limit: 10,
-  page: 1,
-  total: 900,
-};
+const LIMIT = 6;
 
 export default function EventsPage() {
+  const { page } = usePageParam();
+
+  const search = useSearchParams().get("search") ?? "";
+
+  const { events, meta, isLoading, isError, refetch, isFetching } = useEvents({
+    limit: LIMIT,
+    page: page,
+    search: search,
+  });
+
   return (
     <div className="bg-foreground flex flex-col gap-[54px]">
       <RubricCustomMainTitle
@@ -82,20 +35,33 @@ export default function EventsPage() {
         defaultActive="Événements"
       />
 
-      <div className="flex flex-col gap-[22px]">
-        {MOCK_EVENT.map((event, index) => (
-          <EventCard event={event} key={index} />
-        ))}
-      </div>
+      {isError && (
+        <GenericErrorSection
+          isFetching={isFetching}
+          message="Impossible de charger les évènements"
+          refetch={refetch}
+          backgroundColor="foreground"
+          className="h-screen"
+        />
+      )}
 
-      {/* <div className="flex flex-col gap-[22px]">
-        {new Array(5).fill(0).map((s, index) => (
-          <EventCardLoader key={index} />
-        ))}
-      </div> */}
-      {/* <div className="w-full">
-        <DataPagination meta={MOCK_META} basePath="/events" />
-      </div> */}
+      {isLoading &&
+        new Array(LIMIT)
+          .fill(0)
+          .map((l, index) => <EventCardLoader key={index} />)}
+
+      {events.length > 0 && (
+        <div className="flex flex-col gap-[32px]">
+          {events.map((event) => (
+            <EventCard event={event} key={event.id} />
+          ))}
+          <DataPagination meta={meta} />
+        </div>
+      )}
+
+      {events.length === 0 && isError === false && isLoading === false && (
+        <EmptyResult />
+      )}
     </div>
   );
 }

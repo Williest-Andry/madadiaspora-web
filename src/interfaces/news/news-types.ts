@@ -1,4 +1,4 @@
-import { AddressType, ImageType, Info } from "../global";
+import { AddressType, GenericParams, ImageType, Info } from "../global";
 
 type NewsType = "NEWS" | "EVENTS";
 
@@ -22,3 +22,5 @@ export interface Actuality {
   updatedAt: Date;
   isDeleted: boolean;
 }
+
+export interface ActualityParams extends GenericParams {}
