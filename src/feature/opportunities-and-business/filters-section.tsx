@@ -28,7 +28,7 @@ export default function FiltersSection({
     <section className="flex flex-col gap-[36px] px-10">
       <h2 className="text-title-md font-[700]">{title}</h2>
 
-      <div className="flex items-center gap-10">
+      <div className="flex flex-col min-[68.125rem]:flex-row xl:flex-col min-[112.5rem]:flex-row items-center gap-10">
         <MultiSelect
           options={COUNTRIES}
           onValueChange={onChangeCountries}
