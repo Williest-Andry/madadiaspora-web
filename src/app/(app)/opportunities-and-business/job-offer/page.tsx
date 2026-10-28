@@ -35,7 +35,7 @@ export default function JobOfferPage() {
       country: countries,
       sortCreated: sortCreated,
       category: categories,
-      //   type: "PARTNERSHIP",
+      type: "OFFER_JOB",
     });
 
   const handleChangeCountry = (newCountries: string[]) => {
@@ -93,7 +93,7 @@ export default function JobOfferPage() {
       {opportunities.length === 0 &&
         isError === false &&
         isLoading === false && (
-          <EmptyResult message="Il n'y a pas encore d'offres d'emploi en ce moment, merci !" />
+          <EmptyResult message="Aucun résultat pour les offres d'emploi en ce moment, merci !" />
         )}
     </div>
   );

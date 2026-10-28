@@ -94,7 +94,7 @@ export default function InvestmentPage() {
       {opportunities.length === 0 &&
         isError === false &&
         isLoading === false && (
-          <EmptyResult message="Il n'y a pas encore de demande d'investissement en ce moment, merci !" />
+          <EmptyResult message="Aucun résultat pour les demandes d'investissement en ce moment, merci !" />
         )}
     </div>
   );

@@ -31,7 +31,7 @@ export default function JobOfferCard({ data }: JobOfferCardProps) {
           <h2 className="text-p-md sm:text-title-sm text-popover line-clamp-1 w-full font-sans font-[600] sm:w-[70%]">
             {info.title}
           </h2>
-          <p className="text-p-sm sm:text-p-md text-muted-job-offer font-sans font-[300] truncate">
+          <p className="text-p-sm sm:text-p-md text-muted-job-offer truncate font-sans font-[300]">
             {contact.otherEmail[0]}
           </p>
         </div>

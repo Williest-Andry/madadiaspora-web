@@ -93,7 +93,7 @@ export default function PartnershipPage() {
       {opportunities.length === 0 &&
         isError === false &&
         isLoading === false && (
-          <EmptyResult message="Il n'y a pas encore de proposition de partenariat en ce moment, merci !" />
+          <EmptyResult message="Aucun résultat pour les propositions de partenariat en ce moment, merci !" />
         )}
     </div>
   );
