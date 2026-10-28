@@ -1,7 +1,6 @@
 import Image from "next/image";
 import MobileCTAButton from "@/components/mobile-cta-button";
 import { Album } from "@/interfaces/album/album-types";
-import { getAlbumFallback } from "@/lib/get-image-url";
 import { cn } from "@/lib/utils";
 
 type AlbumCenterProps = {
