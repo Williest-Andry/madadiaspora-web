@@ -1,3 +1,4 @@
+import { GenericParams } from "@/interfaces/global";
 import { actualityServices, newsServices } from "@/services/news/news-services";
 import { useQuery } from "@tanstack/react-query";
 
@@ -11,10 +12,10 @@ export function useNews() {
   return { ...query, news: query.data?.data ?? [] };
 }
 
-export function useActuality() {
+export function useActuality(params?: GenericParams) {
   const query = useQuery({
     queryKey: ["actuality"],
-    queryFn: () => actualityServices.getAll(),
+    queryFn: () => actualityServices.getAll(params),
     retry: false,
   });
 

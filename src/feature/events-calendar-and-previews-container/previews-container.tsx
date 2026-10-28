@@ -28,6 +28,11 @@ export type PreviewData = {
   refetch: () => void;
 };
 
+const OPTIMIZED_PARAMS = {
+  limit: 3,
+  page: 1,
+};
+
 export default function PreviewsContainer() {
   const {
     goodToKnow,
@@ -35,35 +40,35 @@ export default function PreviewsContainer() {
     isError: goodToKnowError,
     isRefetching: goodToKnowRefetching,
     refetch: goodToKnowRefecth,
-  } = useGoodToKnow();
+  } = useGoodToKnow(OPTIMIZED_PARAMS);
   const {
     actuality,
     isLoading: actualityLoading,
     isError: actualityError,
     isRefetching: actualityRefetching,
     refetch: actualityRefetch,
-  } = useActuality();
+  } = useActuality(OPTIMIZED_PARAMS);
   const {
     opportunities,
     isLoading: opportunitiesLoading,
     isError: opportunitiesError,
     isRefetching: opportunitiesRefetching,
     refetch: opportunitiesRefetch,
-  } = useOpportunities();
+  } = useOpportunities(OPTIMIZED_PARAMS);
   const {
     projects,
     isLoading: projectsLoading,
     isError: projectsError,
     isRefetching: projectsRefetching,
     refetch: projectsRefetch,
-  } = useProjects();
+  } = useProjects(OPTIMIZED_PARAMS);
   const {
     events,
     isLoading: eventsLoading,
     isError: eventsError,
     isRefetching: eventsRefetching,
     refetch: eventsRefetch,
-  } = useEvents();
+  } = useEvents(OPTIMIZED_PARAMS);
 
   const pathName = usePathname();
 

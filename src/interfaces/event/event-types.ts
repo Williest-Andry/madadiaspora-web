@@ -1,17 +1,26 @@
 import { AddressType, GenericParams, ImageType, Info } from "../global";
 
 export interface EventData {
-  info: Info;
-  cover: ImageType;
+  fr: Info;
+  en: Info;
+  address: AddressType;
   startDate: Date;
   endDate: Date;
-  address: AddressType;
+  cover: ImageType;
   images: ImageType[];
   attachments: string[];
+  likeCount: number;
+  interestCount: number;
+  isFavorite: true;
   id: string;
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
 }
 
-export interface EventParams extends GenericParams {}
+export interface EventParams extends GenericParams {
+  search?: string;
+  country?: string[];
+  sortCreated?: boolean;
+  category?: string[];
+}

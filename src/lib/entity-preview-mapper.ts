@@ -13,7 +13,7 @@ export type Preview = {
 };
 
 export function mapEntityToPreview(
-  item: GoodToKnow | Actuality | Opportunity | Project | EventData
+  item: GoodToKnow | Actuality | Opportunity | Project
 ): Preview {
   return {
     id: item.id,
@@ -23,11 +23,11 @@ export function mapEntityToPreview(
   };
 }
 
-export function mapEvent(item: EventData): Preview {
+export function mapEvent(event: EventData): Preview {
   return {
-    id: item.id,
-    title: item.info.title,
-    image: item.cover,
-    date: item.createdAt,
+    id: event.id,
+    title: event.fr.title,
+    image: event.cover,
+    date: event.createdAt,
   };
 }

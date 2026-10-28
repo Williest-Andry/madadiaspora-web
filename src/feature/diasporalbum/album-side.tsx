@@ -1,5 +1,3 @@
-import { Album } from "@/interfaces/album/album-types";
-import { getAlbumFallback } from "@/lib/get-image-url";
 import Image from "next/image";
 
 type AlbumSideProps = {
