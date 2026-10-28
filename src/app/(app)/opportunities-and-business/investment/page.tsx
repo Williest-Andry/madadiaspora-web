@@ -36,6 +36,7 @@ export default function InvestmentPage() {
       country: countries,
       sortCreated: sortCreated,
       category: categories,
+      type: "INVESTMENT",
     });
 
   const handleChangeCountry = (newCountries: string[]) => {
@@ -92,7 +93,9 @@ export default function InvestmentPage() {
 
       {opportunities.length === 0 &&
         isError === false &&
-        isLoading === false && <EmptyResult />}
+        isLoading === false && (
+          <EmptyResult message="Il n'y a pas encore de demande d'investissement en ce moment, merci !" />
+        )}
     </div>
   );
 }

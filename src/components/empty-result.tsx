@@ -1,8 +1,14 @@
-export default function EmptyResult() {
+type EmptyResultProps = {
+  message?: string;
+};
+
+export default function EmptyResult({
+  message = "Aucun résultat",
+}: EmptyResultProps) {
   return (
     <div className="flex h-screen items-start justify-center pt-30">
       <p className="text-muted-foreground text-p-md font-extralight italic">
-        {"Aucun résultat"}
+        {message}
       </p>
     </div>
   );
