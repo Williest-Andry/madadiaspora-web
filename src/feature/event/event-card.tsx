@@ -1,6 +1,7 @@
 import { EventData } from "@/interfaces/event/event-types";
 import { formatDateFr } from "@/lib/date-format";
-import { getImageOrFallback, getImageUrl } from "@/lib/get-image-url";
+import { getImageOrFallback } from "@/lib/get-image-url";
+import { formatRelativeDate } from "@/lib/get-relative-date";
 import { CalendarDays, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,7 +43,7 @@ export default function EventCard({ event }: EventCardProps) {
 
       <div className="flex flex-col gap-[10px] rounded-b-[32px] px-[16px] pt-[19px] pb-[17px]">
         <p className="text-p-sm text-secondary font-[700] uppercase">
-          {"DANS TROIS MOIS"}
+          {formatRelativeDate(event.startDate)}
         </p>
         <p className="text-title-sm text-popover line-clamp-2 w-[75%] font-[600] font-semibold">
           {event.fr.summary}
