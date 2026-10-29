@@ -46,7 +46,7 @@ export function SideAppBar() {
       <DrawerContent
         draggable={"false"}
         className={
-          "bg-foreground text-primary sticky top-0 mt-[93px] h-full border-none max-sm:px-6 sm:pl-[60px] sm:max-xl:pr-4 xl:mt-[115px]"
+          "bg-foreground text-primary sticky top-0 mt-[102px] h-full border-none max-sm:px-6 sm:pl-[60px] sm:max-xl:pr-4 xl:mt-[115px]"
         }
       >
         <div className="h-hull w-full overflow-y-auto">

@@ -83,7 +83,7 @@ export default function OpportunitiesNavigation() {
 
   return (
     <nav className="mb-12 flex w-full flex-col gap-4 px-[35px]">
-      <p className="text-primary text-title-sm font-bold">
+      <p className="text-primary text-p-md lg:text-title-sm font-bold">
         {"Découvrir davantage"}
       </p>
       <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
@@ -93,7 +93,10 @@ export default function OpportunitiesNavigation() {
             key={index}
             className="hover:bg-popover hover:text-secondary h-11 justify-center px-4 py-2 text-center transition-transform hover:scale-105 sm:w-auto"
           >
-            <Link href={link.href} className="text-p-sm block w-full">
+            <Link
+              href={link.href}
+              className="text-p-xs lg:text-p-sm block w-full"
+            >
               {link.label}
             </Link>
           </Badge>

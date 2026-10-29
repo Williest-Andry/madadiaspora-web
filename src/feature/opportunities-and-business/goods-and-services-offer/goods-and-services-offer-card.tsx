@@ -13,7 +13,7 @@ type GoodsAndServicesOfferCardProps = {
 export default function GoodsAndServicesOfferCard({
   data,
 }: GoodsAndServicesOfferCardProps) {
-  const { cover, info, contact, address, createdAt, endDate } = data;
+  const { cover, info, contact, address } = data;
 
   const jobOfferImage = getImageOrFallback(cover);
 

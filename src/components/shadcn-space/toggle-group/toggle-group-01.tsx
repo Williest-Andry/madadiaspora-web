@@ -48,7 +48,7 @@ const ToggleGroupDemo = ({
                 href={item.href}
               >
                 {/* <item.icon className="size-4" /> */}
-                <span className="text-p-sm lg:text-p-md font-light">
+                <span className="text-p-sm lg:text-p-md xs:max-sm:w-25 xs:max-sm:truncate font-light">
                   {item.label}
                 </span>
               </Link>
