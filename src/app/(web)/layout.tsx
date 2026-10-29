@@ -6,7 +6,7 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
     <div>
       <NavBar />
       {children}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
