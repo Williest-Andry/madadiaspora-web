@@ -7,7 +7,7 @@ export default function EmptyResult({
 }: EmptyResultProps) {
   return (
     <div className="flex h-screen items-start justify-center pt-30">
-      <p className="text-muted-foreground text-p-md font-extralight italic">
+      <p className="text-muted-foreground text-p-md text-center font-extralight italic">
         {message}
       </p>
     </div>

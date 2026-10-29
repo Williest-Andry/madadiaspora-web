@@ -16,7 +16,7 @@ export default function JobOfferCard({ data }: JobOfferCardProps) {
   const jobOfferImage = getImageOrFallback(cover);
 
   return (
-    <article className="xs:p-[20px] flex gap-[27px] border-[1px] p-2">
+    <article className="xs:p-[20px] xs:w-[90%] flex w-full gap-[27px] border-[1px] p-2">
       <div className="xs:h-[93px] xs:w-[93px] relative h-[80px] w-[80px] rounded-[4px]">
         <Image
           src={jobOfferImage.image}
@@ -28,7 +28,7 @@ export default function JobOfferCard({ data }: JobOfferCardProps) {
 
       <div className="max-xs:w-[75%] xs:flex-1 flex flex-col gap-[15px]">
         <div className="flex flex-col gap-[6px]">
-          <h2 className="text-p-md sm:text-title-sm text-popover line-clamp-1 w-full font-sans font-[600] sm:w-[70%]">
+          <h2 className="text-p-md sm:text-title-sm text-popover line-clamp-1 w-full font-sans font-[600] sm:w-full">
             {info.title}
           </h2>
           <p className="text-p-sm sm:text-p-md text-muted-job-offer truncate font-sans font-[300]">
@@ -64,7 +64,7 @@ export default function JobOfferCard({ data }: JobOfferCardProps) {
         </div>
 
         <RubricCTAButton
-          title="Postulé"
+          title="Postuler"
           href="#"
           className="bg-popover/80 hover:bg-popover"
         />

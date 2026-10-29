@@ -9,8 +9,8 @@ type OpportunityPage =
   | "Partenariat"
   | "Offres d'emploi"
   | "Demandes d'emploi"
-  | "Offres de biens et services"
-  | "Demandes de biens et services";
+  | "Offres de bien et service"
+  | "Demandes de bien et service";
 
 type OpportunityPathName =
   | "investment"
@@ -55,16 +55,16 @@ const opportunitiesLink: OpportinityLink[] = [
     associatedPage: "Offres d'emploi",
   },
   {
-    label: "Offres de biens et services",
+    label: "Offres de bien et service",
     pathName: "goods-and-services-offer",
     href: `${BASE_PATHNAME}/goods-and-services-offer`,
-    associatedPage: "Demandes de biens et services",
+    associatedPage: "Demandes de bien et service",
   },
   {
-    label: "Demandes de biens et services",
+    label: "Demandes de bien et service",
     pathName: "goods-and-services-demand",
     href: `${BASE_PATHNAME}/goods-and-services-demand`,
-    associatedPage: "Offres de biens et services",
+    associatedPage: "Offres de bien et service",
   },
 ];
 

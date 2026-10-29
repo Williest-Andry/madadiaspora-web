@@ -64,7 +64,7 @@ export default function TopAppBar() {
 
       {isClicked && (
         <motion.div
-          className="mt-2 w-full px-4"
+          className="sticky top-26 z-100 mt-2 w-full px-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}

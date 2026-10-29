@@ -45,7 +45,7 @@ export default function JobOfferPage() {
   };
 
   return (
-    <div className="flex flex-col gap-[39px]">
+    <div className="flex flex-col items-center gap-[39px]">
       <CustomMainTitle
         leftLabel="Offres d’emploi"
         leftLink={`${BASE_PATHNAME}/job-offer`}
@@ -85,7 +85,7 @@ export default function JobOfferPage() {
       )}
 
       {opportunities.length > 0 && (
-        <div className="flex flex-col gap-[70px]">
+        <div className="flex flex-col items-center gap-[70px]">
           {opportunities.map((opportunity) => (
             <JobOfferCard data={opportunity} key={opportunity.id} />
           ))}

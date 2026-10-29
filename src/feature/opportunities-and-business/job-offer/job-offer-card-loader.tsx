@@ -2,7 +2,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function JobOfferCardLoader() {
   return (
-    <Skeleton className="bg-muted-foreground/40 xs:p-[20px] flex w-full gap-[27px] border-[1px] p-2">
+    <Skeleton className="bg-muted-foreground/40 xs:p-[20px] xs:w-[80%] flex w-full gap-[27px] border-[1px] p-2">
       <Skeleton className="bg-muted-foreground xs:h-[93px] xs:w-[93px] h-[80px] w-[80px] rounded-[4px]" />
 
       <div className="flex w-full flex-col gap-[15px]">
