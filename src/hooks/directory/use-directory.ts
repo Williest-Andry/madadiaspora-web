@@ -6,6 +6,7 @@ export function useDirectories(params?: DirectoryParams) {
   const query = useQuery({
     queryKey: ["directories", params],
     queryFn: () => directoryServices.getAll(params),
+    staleTime: 60 * 60 * 1000,
   });
 
   return {

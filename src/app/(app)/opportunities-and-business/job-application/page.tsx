@@ -12,6 +12,7 @@ import GenericErrorSection from "@/components/generic-error-section";
 import FiltersSection from "@/feature/opportunities-and-business/filters-section";
 import { DataPagination } from "@/components/data-pagination";
 import EmptyResult from "@/components/empty-result";
+import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
 
 const LIMIT = 6;
 
@@ -56,6 +57,8 @@ export default function JobApplicationPage() {
         secondTitle="Demandes d’emploi"
         secondDescription="Publiez ou consultez des offres d'emploi, qu'il s'agisse de missions temporaires ou de postes à long terme, à Madagascar ou à l'international."
       />
+
+      <OpportunitiesNavigation />
 
       <FiltersSection
         title=" Nos candidatures disponibles"

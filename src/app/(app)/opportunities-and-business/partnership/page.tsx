@@ -12,6 +12,7 @@ import { usePageParam } from "@/hooks/use-page-param";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BASE_PATHNAME } from "../investment/page";
+import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
 
 const LIMIT = 5;
 
@@ -56,6 +57,8 @@ export default function PartnershipPage() {
         secondTitle="Partenariat"
         secondDescription="Recherchez ou proposez des biens et services, favorisant ainsi la coopération entre les membres de la diaspora et les acteurs locaux."
       />
+
+      <OpportunitiesNavigation />
 
       <FiltersSection
         title="Opportunités à saisir"

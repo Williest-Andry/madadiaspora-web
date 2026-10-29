@@ -7,6 +7,7 @@ import CustomMainTitle from "@/feature/opportunities-and-business/custom-main-ti
 import FiltersSection from "@/feature/opportunities-and-business/filters-section";
 import OpportunityCard from "@/feature/opportunities-and-business/investment-partnership/opportunity-card";
 import OpportunityCardLoader from "@/feature/opportunities-and-business/investment-partnership/opportunity-card-loader";
+import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
 import { useOpportunities } from "@/hooks/opportunity/use-opportunity";
 import { usePageParam } from "@/hooks/use-page-param";
 import { useSearchParams } from "next/navigation";
@@ -57,6 +58,8 @@ export default function InvestmentPage() {
         secondTitle="Partenariat"
         secondDescription="Recherchez ou proposez des biens et services, favorisant ainsi la coopération entre les membres de la diaspora et les acteurs locaux."
       />
+
+      <OpportunitiesNavigation />
 
       <FiltersSection
         title="Opportunités à saisir"

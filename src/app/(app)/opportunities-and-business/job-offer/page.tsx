@@ -12,6 +12,7 @@ import JobOfferCard from "@/feature/opportunities-and-business/job-offer/job-off
 import GenericErrorSection from "@/components/generic-error-section";
 import JobOfferCardLoader from "@/feature/opportunities-and-business/job-offer/job-offer-card-loader";
 import EmptyResult from "@/components/empty-result";
+import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
 
 const LIMIT = 5;
 
@@ -56,6 +57,8 @@ export default function JobOfferPage() {
         secondTitle="Demandes d’emploi"
         secondDescription="Publiez ou consultez des offres d'emploi, qu'il s'agisse de missions temporaires ou de postes à long terme, à Madagascar ou à l'international."
       />
+
+      <OpportunitiesNavigation />
 
       <FiltersSection
         title="Toutes nos offres d’emploi"
