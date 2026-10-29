@@ -6,11 +6,11 @@ export function getImageUrl(url: string) {
 
 export const FALLBACK_IMAGE = "/fallback-image.jpeg";
 
-export function getImageOrFallback(album: ImageType) {
-  return album?.url && album?.name
+export function getImageOrFallback(image: ImageType) {
+  return image?.url && image?.name
     ? {
-        image: getImageUrl(album.url),
-        alt: album.name,
+        image: getImageUrl(image.url),
+        alt: image.name,
       }
     : {
         image: FALLBACK_IMAGE,

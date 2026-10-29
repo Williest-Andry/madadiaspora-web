@@ -35,4 +35,5 @@ export interface OpportunityParams extends GenericParams {
   country?: string[];
   sortCreated?: boolean;
   category?: string[];
+  type?: OpportunityType;
 }

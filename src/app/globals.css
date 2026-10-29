@@ -60,6 +60,7 @@
   --text-rubric-text-sm: 14px;
   --text-rubric-text-md: 16px;
   --font-poppins: var(--font-poppins);
+  --color-muted-job-offer: oklch(35.6% 0 0);
 
   /* custom global breakpoints */
   --breakpoint-xs: 26.875rem; /* 430px */
