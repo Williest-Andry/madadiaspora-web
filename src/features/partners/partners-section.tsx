@@ -1,12 +1,12 @@
 import { usePartners } from "@/hooks/partners/use-partners";
 import OfficialPartnersCarousel from "./official-partners-carousel";
-import { MOCK_OFFICIAL_PARTNERS_DATA } from "@/constants/partners/data";
 import GenericErrorSection from "@/components/generic-error-section";
 import PartnersLoaderSection from "./partners-loader-section";
 
 export default function PartnersSection() {
   const { partners, error, isLoading, refetch, isFetching } = usePartners({
     isOfficial: true,
+    limit: 2,
   });
 
   if (isLoading) return <PartnersLoaderSection />;
@@ -41,8 +41,7 @@ export default function PartnersSection() {
 
       <figure className="flex w-[50%] items-center justify-center">
         <OfficialPartnersCarousel
-          // partners={partners}
-          partners={MOCK_OFFICIAL_PARTNERS_DATA as any}
+          partners={partners}
           isInfinite={false}
           itemClassName="max-xs:basis-[180px] max-sm:basis-[218px]"
         />
