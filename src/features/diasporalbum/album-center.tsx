@@ -2,11 +2,12 @@ import Image from "next/image";
 import MobileCTAButton from "@/components/mobile-cta-button";
 import { Album } from "@/interfaces/album/album-types";
 import { cn } from "@/lib/utils";
+import { getImageOrFallback } from "@/lib/get-image-url";
 
 type AlbumCenterProps = {
-  leftUpImage?: Album;
-  rightUpImage?: Album;
-  centerDownImage?: Album;
+  leftUpImage: Album;
+  rightUpImage: Album;
+  centerDownImage: Album;
   showCTAButton?: boolean;
 };
 
@@ -16,6 +17,10 @@ export default function AlbumCenter({
   centerDownImage,
   showCTAButton = true,
 }: AlbumCenterProps) {
+  const leftUp = getImageOrFallback(leftUpImage.cover);
+  const rightUp = getImageOrFallback(rightUpImage.cover);
+  const centerDown = getImageOrFallback(centerDownImage.cover);
+
   const IMAGE_CONTAINER_STYLE = cn(
     "relative w-[280px] rounded-[48px] min-[109.375rem]:w-[399px]",
     showCTAButton
@@ -34,10 +39,8 @@ export default function AlbumCenter({
       <figure className="flex gap-[20px]">
         <div className={IMAGE_CONTAINER_STYLE}>
           <Image
-            // src={getAlbumFallback(leftUpImage).image}
-            // alt={getAlbumFallback(leftUpImage).alt}
-            src={"/album-road.jpg"}
-            alt={"mock road image"}
+            src={leftUp.image}
+            alt={leftUp.alt}
             fill
             className={IMAGE_STYLE}
           />
@@ -45,10 +48,8 @@ export default function AlbumCenter({
 
         <div className={IMAGE_CONTAINER_STYLE}>
           <Image
-            // src={getAlbumFallback(rightUpImage).image}
-            // alt={getAlbumFallback(rightUpImage).alt}
-            src={"/album-sea.jpg"}
-            alt={"mock album image"}
+            src={centerDown.image}
+            alt={centerDown.alt}
             fill
             className={IMAGE_STYLE}
           />
@@ -64,10 +65,8 @@ export default function AlbumCenter({
         )}
       >
         <Image
-          // src={getAlbumFallback(centerDownImage).image}
-          // alt={getAlbumFallback(centerDownImage).alt}
-          src={"/album-sunset.jpg"}
-          alt={"mock sunset image"}
+          src={rightUp.image}
+          alt={rightUp.alt}
           fill
           className={IMAGE_STYLE}
         />
