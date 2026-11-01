@@ -1,5 +1,5 @@
 import { Partner } from "@/interfaces/partners/partners-types";
-import { getImageUrl } from "@/lib/get-image-url";
+import { getImageOrFallback } from "@/lib/get-image-url";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +15,8 @@ export default function PartnerLogo({
   partner,
   className,
 }: PartnerLogoProps) {
+  const partnerImage = getImageOrFallback(partner.logo);
+
   return (
     <Link
       target={href ? "_blank" : "_self"}
@@ -27,9 +29,8 @@ export default function PartnerLogo({
     >
       <figure className="relative h-[70%] w-[70%]">
         <Image
-          // src={getImageUrl(partner.logo.url)}
-          src={partner.logo.url}
-          alt={partner.logo.name}
+          src={partnerImage.image}
+          alt={partnerImage.alt}
           fill
           sizes="(min-width: 1024px) 240px, 180px"
           loading="eager"
