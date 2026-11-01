@@ -1,6 +1,5 @@
 import { Actuality, ActualityParams, News } from "@/interfaces/news/news-types";
 import { genericGetList } from "../common";
-import { GenericParams } from "@/interfaces/global";
 
 const NEWS_URL = "/News";
 const ACTUALITY_URL = "/fr/Actuality";
@@ -10,6 +9,6 @@ export const newsServices = {
 };
 
 export const actualityServices = {
-  getAll: (params?: GenericParams) =>
+  getAll: (params?: ActualityParams) =>
     genericGetList<Actuality, ActualityParams>(ACTUALITY_URL, params),
 };

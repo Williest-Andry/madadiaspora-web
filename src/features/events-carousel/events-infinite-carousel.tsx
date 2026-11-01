@@ -7,13 +7,14 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import CustomCarouselItem from "./carousel-item";
-import { useNews } from "@/hooks/news/use-news";
-import { eventsData } from "@/constants/events-carousel/data";
+import { useActuality } from "@/hooks/news/use-news";
 import EventsCarouselLoader from "./events-carousel-loader";
 import GenericErrorSection from "@/components/generic-error-section";
 
 export function InfiniteCarousel() {
-  const { news, error, isLoading, refetch, isFetching } = useNews();
+  const { actuality, error, isLoading, refetch, isFetching } = useActuality({
+    limit: 10,
+  });
 
   if (error)
     return (
@@ -24,8 +25,6 @@ export function InfiniteCarousel() {
       />
     );
   if (isLoading) return <EventsCarouselLoader />;
-
-  const MOCK_DATA = [...eventsData, ...eventsData];
 
   return (
     <Carousel
@@ -41,13 +40,13 @@ export function InfiniteCarousel() {
       ]}
     >
       <CarouselContent className="mt-4 flex gap-4 xl:mt-0">
-        {MOCK_DATA.map((event, index) => (
+        {actuality.map((event, index) => (
           <CarouselItem key={index} className="basis-65 first:ml-4">
             <CustomCarouselItem
-              title={event.title}
-              summary={event.summary}
-              country={event.country}
-              image={event.image}
+              title={event.info.title}
+              summary={event.info.summary}
+              country={event.address.country}
+              image={event.cover}
             />
           </CarouselItem>
         ))}
