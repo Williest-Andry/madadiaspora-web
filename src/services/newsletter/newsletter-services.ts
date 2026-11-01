@@ -4,5 +4,5 @@ import { newsletterResponse } from "@/interfaces/newsletter/newsletter-type";
 
 export const newsletterServices = {
   subscribe: (body: Newsletter) =>
-    genericCreate<Newsletter, newsletterResponse>("/newsletteree", body),
+    genericCreate<Newsletter, newsletterResponse>("/newsletter", body),
 };
