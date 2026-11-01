@@ -4,6 +4,7 @@ import { preload } from "react-dom";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import QueryProvider from "@/providers/query-provider";
+import { Toaster } from "@/components/ui/toast";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <QueryProvider>
           <TooltipProvider>
             <main>{children}</main>
+            <Toaster />
           </TooltipProvider>
         </QueryProvider>
       </body>

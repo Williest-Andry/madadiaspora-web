@@ -4,10 +4,10 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SendMail, sendMailSchema } from "@/schemas/contact/contact-schema";
 import { useSendMail } from "@/hooks/contact/use-contact";
-import { BaseSyntheticEvent } from "react";
 import ControlledInput from "./controlled-input";
 import ControlledTextArea from "./controlled-text-area";
 import ControlledPhoneInput from "./controlled-phone-input";
+import { toast } from "@/components/ui/toast";
 
 export default function ContactForm() {
   const { control, handleSubmit, reset, formState } = useForm<SendMail>({
@@ -22,15 +22,23 @@ export default function ContactForm() {
 
   const { mutate: sendMail, isPending } = useSendMail();
 
-  const onSubmit: SubmitHandler<SendMail> = (
-    data: SendMail,
-    event?: BaseSyntheticEvent
-  ) => {
-    if (event) event.preventDefault();
+  const onSubmit: SubmitHandler<SendMail> = (data: SendMail) => {
+    sendMail(data, {
+      onSuccess: () => {
+        toast.add({
+          type: "success",
+          description: "Votre message a été transmis avec succès",
+        });
 
-    sendMail(data);
-
-    reset();
+        reset();
+      },
+      onError: () => {
+        toast.add({
+          type: "error",
+          description: "Échec, veuillez réessayer.",
+        });
+      },
+    });
   };
 
   return (
@@ -73,10 +81,10 @@ export default function ContactForm() {
             disabled={!formState.isDirty || isPending}
             type="submit"
             className={
-              "bg-popover text-p-sm sm:text-p-md text-foreground mt-6 h-[58px] w-[139px] rounded-[50px] p-[4px] sm:w-[189px]"
+              "bg-popover text-p-sm sm:text-p-md text-foreground mt-6 h-[58px] w-[139px] rounded-[50px] p-[4px] hover:cursor-pointer sm:w-[189px]"
             }
           >
-            Envoyer
+            {isPending ? "..." : "Envoyer"}
           </Button>
         </Field>
       </FieldSet>
