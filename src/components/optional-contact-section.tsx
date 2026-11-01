@@ -1,6 +1,6 @@
 type OptionalContactSectionProps = {
   title: string;
-  contacts: string[];
+  contacts: string[] | undefined;
 };
 
 export default function OptionalContactSection({
@@ -13,7 +13,7 @@ export default function OptionalContactSection({
         {title}
       </p>
       <div className="h-[36px] w-full">
-        {contacts.length > 0 ? (
+        {contacts && contacts.length > 0 ? (
           contacts.slice(0, 2).map((contact, index) => (
             <p
               key={index}
