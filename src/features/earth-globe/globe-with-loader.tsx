@@ -3,10 +3,10 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
-import { GlobeLoader } from "@/feature/earth-globe/globe-loader";
+import { GlobeLoader } from "@/features/earth-globe/globe-loader";
 
 const Globe = dynamic(
-  () => import("@/feature/earth-globe/earth-globe").then((m) => m.default),
+  () => import("@/features/earth-globe/earth-globe").then((m) => m.default),
   {
     ssr: false,
   }

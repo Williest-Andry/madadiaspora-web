@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Field, FieldGroup, FieldSet } from "@/components/ui/field";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SendMail, sendMailSchema } from "@/schema/contact/contact-schema";
+import { SendMail, sendMailSchema } from "@/schemas/contact/contact-schema";
 import { useSendMail } from "@/hooks/contact/use-contact";
 import { BaseSyntheticEvent } from "react";
 import ControlledInput from "./controlled-input";

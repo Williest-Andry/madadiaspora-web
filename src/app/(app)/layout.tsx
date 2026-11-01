@@ -1,5 +1,5 @@
-import EventsCalendarAndPreviewsContainer from "@/feature/events-calendar-and-previews-container/right-info-container";
-import TopAppBar from "@/feature/top-app-bar/top-app-bar";
+import EventsCalendarAndPreviewsContainer from "@/features/events-calendar-and-previews-container/right-info-container";
+import TopAppBar from "@/features/top-app-bar/top-app-bar";
 import { Suspense } from "react";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {

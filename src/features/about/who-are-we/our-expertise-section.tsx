@@ -1,4 +1,4 @@
-import { EXPERTISE_DATA } from "@/constant/about-info/who-are-we/data";
+import { EXPERTISE_DATA } from "@/constants/about-info/who-are-we/data";
 import CustomDetailsArticle from "./custom-details-article";
 import QuestionsCard from "./questions-card";
 import ExpertiseCard from "./expertise-card";

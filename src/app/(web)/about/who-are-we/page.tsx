@@ -1,8 +1,8 @@
 import CustomMainTitleSection from "@/components/custom-main-title-section";
-import HistorySection from "@/feature/about/who-are-we/history-section";
-import ContactAndMapSection from "@/feature/about/who-are-we/map-section";
-import OurExpertiseSection from "@/feature/about/who-are-we/our-expertise-section";
-import WhoAreWeSection from "@/feature/about/who-are-we/who-are-we-section";
+import HistorySection from "@/features/about/who-are-we/history-section";
+import ContactAndMapSection from "@/features/about/who-are-we/map-section";
+import OurExpertiseSection from "@/features/about/who-are-we/our-expertise-section";
+import WhoAreWeSection from "@/features/about/who-are-we/who-are-we-section";
 
 export default function WhoAreWePage() {
   return (

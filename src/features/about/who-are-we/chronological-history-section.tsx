@@ -1,6 +1,6 @@
 "use client";
 
-import { HISTORY_DETAILS_DATA } from "@/constant/about-info/who-are-we/data";
+import { HISTORY_DETAILS_DATA } from "@/constants/about-info/who-are-we/data";
 import HistoryDetails from "./history-details";
 import { motion, useScroll } from "motion/react";
 import { useRef } from "react";

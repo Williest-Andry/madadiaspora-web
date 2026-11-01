@@ -1,5 +1,5 @@
 import CustomTitleSection from "@/components/custom-title-section";
-import MapSection from "@/feature/contact/map-section";
+import MapSection from "@/features/contact/map-section";
 
 export default function ContactAndMapSection() {
   return (

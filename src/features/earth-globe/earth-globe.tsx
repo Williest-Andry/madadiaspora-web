@@ -7,11 +7,11 @@ import {
   getEarthGlobeOffsetForFooter,
   getEarthGlobeSize,
 } from "@/lib/earth-globe-size-and-offset";
-import { locations } from "@/constant/earth-globe/data";
-import { LocationData } from "@/constant/earth-globe/type";
+import { locations } from "@/constants/earth-globe/data";
+import { LocationData } from "@/constants/earth-globe/type";
 import { cn } from "@/lib/utils";
 import { createRoot } from "react-dom/client";
-import { GlobeMarker } from "@/feature/earth-globe/globe-marker";
+import { GlobeMarker } from "@/features/earth-globe/globe-marker";
 
 type EarthGlobeProps = {
   className?: string;

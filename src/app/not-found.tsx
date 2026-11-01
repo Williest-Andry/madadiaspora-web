@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import Footer from "@/feature/footer/footer";
-import NavBar from "@/feature/navbar/navbar";
+import Footer from "@/features/footer/footer";
+import NavBar from "@/features/navbar/navbar";
 import { MoveLeft, ShieldX } from "lucide-react";
 import Link from "next/link";
 

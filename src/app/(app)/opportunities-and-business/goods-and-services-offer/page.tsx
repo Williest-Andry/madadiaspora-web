@@ -1,16 +1,16 @@
 "use client";
 
-import CustomMainTitle from "@/feature/opportunities-and-business/custom-main-title";
+import CustomMainTitle from "@/features/opportunities-and-business/custom-main-title";
 import { BASE_PATHNAME } from "../investment/page";
-import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
+import OpportunitiesNavigation from "@/features/opportunities-and-business/opportunities-navigation";
 import { useOpportunities } from "@/hooks/opportunity/use-opportunity";
 import { DataPagination } from "@/components/data-pagination";
-import GoodsAndServicesOfferCard from "@/feature/opportunities-and-business/goods-and-services-offer/goods-and-services-offer-card";
+import GoodsAndServicesOfferCard from "@/features/opportunities-and-business/goods-and-services-offer/goods-and-services-offer-card";
 import { usePageParam } from "@/hooks/use-page-param";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import FiltersSection from "@/feature/opportunities-and-business/filters-section";
-import GoodsAndServicesOfferLoader from "@/feature/opportunities-and-business/goods-and-services-offer/goods-and-services-offer-loader";
+import FiltersSection from "@/features/opportunities-and-business/filters-section";
+import GoodsAndServicesOfferLoader from "@/features/opportunities-and-business/goods-and-services-offer/goods-and-services-offer-loader";
 import GenericErrorSection from "@/components/generic-error-section";
 import EmptyResult from "@/components/empty-result";
 

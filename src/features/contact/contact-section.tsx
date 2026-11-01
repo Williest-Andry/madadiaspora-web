@@ -2,7 +2,7 @@ import Image from "next/image";
 import ContactForm from "./contact-form";
 import ApprouvedText from "./approuved-text";
 import SocialMediaCard from "./social-media-card";
-import { CONTACT } from "@/constant/contact/data";
+import { CONTACT } from "@/constants/contact/data";
 import ContactCard from "./contact-card";
 import MapSection from "./map-section";
 

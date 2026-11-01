@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import CustomCarouselItem from "./carousel-item";
 import { useNews } from "@/hooks/news/use-news";
-import { eventsData } from "@/constant/events-carousel/data";
+import { eventsData } from "@/constants/events-carousel/data";
 import EventsCarouselLoader from "./events-carousel-loader";
 import GenericErrorSection from "@/components/generic-error-section";
 

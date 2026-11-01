@@ -6,7 +6,7 @@ import PersonCard from "@/components/person-card";
 import PersonCardLoader from "@/components/person-card-loader";
 import SearchBarWithCountry from "@/components/search-bar-with-country";
 import ToggleGroupDemo from "@/components/shadcn-space/toggle-group/toggle-group-01";
-import OtherPartnersSection from "@/feature/other-partners/other-partners-section";
+import OtherPartnersSection from "@/features/other-partners/other-partners-section";
 import { useCorrespondents } from "@/hooks/correspondent/use-correspondent";
 import { Meta } from "@/interfaces/global";
 import { getCountryOptions } from "@/lib/countries";

@@ -3,16 +3,16 @@
 import { DataPagination } from "@/components/data-pagination";
 import EmptyResult from "@/components/empty-result";
 import GenericErrorSection from "@/components/generic-error-section";
-import CustomMainTitle from "@/feature/opportunities-and-business/custom-main-title";
-import FiltersSection from "@/feature/opportunities-and-business/filters-section";
-import OpportunityCard from "@/feature/opportunities-and-business/investment-partnership/opportunity-card";
-import OpportunityCardLoader from "@/feature/opportunities-and-business/investment-partnership/opportunity-card-loader";
+import CustomMainTitle from "@/features/opportunities-and-business/custom-main-title";
+import FiltersSection from "@/features/opportunities-and-business/filters-section";
+import OpportunityCard from "@/features/opportunities-and-business/investment-partnership/opportunity-card";
+import OpportunityCardLoader from "@/features/opportunities-and-business/investment-partnership/opportunity-card-loader";
 import { useOpportunities } from "@/hooks/opportunity/use-opportunity";
 import { usePageParam } from "@/hooks/use-page-param";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { BASE_PATHNAME } from "../investment/page";
-import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
+import OpportunitiesNavigation from "@/features/opportunities-and-business/opportunities-navigation";
 
 const LIMIT = 5;
 

@@ -1,4 +1,4 @@
-import { INFO_DATA } from "@/constant/about-info/data";
+import { INFO_DATA } from "@/constants/about-info/data";
 import InfoCard from "./info-card";
 import CustomTitleSection from "@/components/custom-title-section";
 

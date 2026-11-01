@@ -1,7 +1,7 @@
 import {
   SERVICES_DATA_ROW_1,
   SERVICES_DATA_ROW_2,
-} from "@/constant/services/data";
+} from "@/constants/services/data";
 import ServiceCard from "./service-card";
 import CustomTitleSection from "@/components/custom-title-section";
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal";

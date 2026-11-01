@@ -1,7 +1,7 @@
 import CustomMainTitleSection from "@/components/custom-main-title-section";
-import CommunitySection from "@/feature/about/platform/community-section";
-import OurIdentitySection from "@/feature/about/platform/our-identity-section";
-import ServicesDetails from "@/feature/about/platform/services-details";
+import CommunitySection from "@/features/about/platform/community-section";
+import OurIdentitySection from "@/features/about/platform/our-identity-section";
+import ServicesDetails from "@/features/about/platform/services-details";
 
 export default function PlatformPage() {
   return (

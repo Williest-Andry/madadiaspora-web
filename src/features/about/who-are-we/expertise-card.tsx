@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { MoveRight } from "lucide-react";
-import { ExpertiseData } from "@/constant/about-info/who-are-we/type";
+import { ExpertiseData } from "@/constants/about-info/who-are-we/type";
 
 type ExpertiseCardProps = {
   data: ExpertiseData;

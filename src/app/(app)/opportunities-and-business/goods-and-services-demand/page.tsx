@@ -1,20 +1,20 @@
 "use client";
 
-import CustomMainTitle from "@/feature/opportunities-and-business/custom-main-title";
+import CustomMainTitle from "@/features/opportunities-and-business/custom-main-title";
 import { BASE_PATHNAME } from "../investment/page";
-import FiltersSection from "@/feature/opportunities-and-business/filters-section";
+import FiltersSection from "@/features/opportunities-and-business/filters-section";
 import { useState } from "react";
 import { usePageParam } from "@/hooks/use-page-param";
 import { useOpportunities } from "@/hooks/opportunity/use-opportunity";
 import { useSearchParams } from "next/navigation";
 import { DataPagination } from "@/components/data-pagination";
-import JobOfferCard from "@/feature/opportunities-and-business/job-offer/job-offer-card";
+import JobOfferCard from "@/features/opportunities-and-business/job-offer/job-offer-card";
 import GenericErrorSection from "@/components/generic-error-section";
-import JobOfferCardLoader from "@/feature/opportunities-and-business/job-offer/job-offer-card-loader";
+import JobOfferCardLoader from "@/features/opportunities-and-business/job-offer/job-offer-card-loader";
 import EmptyResult from "@/components/empty-result";
-import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
-import GoodsAndServicesDemandCard from "@/feature/opportunities-and-business/goods-and-services-demand/goods-and-services-demand-card";
-import GoodsAndServicesDemandLoader from "@/feature/opportunities-and-business/goods-and-services-demand/goods-and-services-demand-loader";
+import OpportunitiesNavigation from "@/features/opportunities-and-business/opportunities-navigation";
+import GoodsAndServicesDemandCard from "@/features/opportunities-and-business/goods-and-services-demand/goods-and-services-demand-card";
+import GoodsAndServicesDemandLoader from "@/features/opportunities-and-business/goods-and-services-demand/goods-and-services-demand-loader";
 
 const LIMIT = 5;
 

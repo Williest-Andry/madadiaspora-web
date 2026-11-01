@@ -8,7 +8,7 @@ import {
   ABOUT_LINK,
   RUBRIK_LINK,
   DIRECTORY_LINK,
-} from "@/constant/navbar/navbar-data";
+} from "@/constants/navbar/navbar-data";
 import BrandLogo from "./brand-logo";
 import SideDrawer from "./side-drawer";
 import AuthButton from "./auth-button";

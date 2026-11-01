@@ -1,5 +1,5 @@
-import { ExpertiseData } from "@/constant/about-info/who-are-we/type";
-import { ServicesData } from "@/constant/services/type";
+import { ExpertiseData } from "@/constants/about-info/who-are-we/type";
+import { ServicesData } from "@/constants/services/type";
 import { cn } from "@/lib/utils";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";

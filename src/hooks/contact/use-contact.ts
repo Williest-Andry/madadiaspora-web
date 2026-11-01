@@ -1,4 +1,4 @@
-import { SendMail } from "@/schema/contact/contact-schema";
+import { SendMail } from "@/schemas/contact/contact-schema";
 import { contactServices } from "@/services/contact/contact-services";
 import { useMutation } from "@tanstack/react-query";
 

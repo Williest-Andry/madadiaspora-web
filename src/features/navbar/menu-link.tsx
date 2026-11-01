@@ -4,7 +4,7 @@ import {
   NavigationMenuLink,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { DataLinkType } from "@/constant/navbar/type";
+import { DataLinkType } from "@/constants/navbar/type";
 import CollapsibleLink from "./collapsible-link";
 import { cn } from "@/lib/utils";
 

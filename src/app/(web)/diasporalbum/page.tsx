@@ -3,10 +3,10 @@
 import CustomMainTitleSection from "@/components/custom-main-title-section";
 import GenericErrorSection from "@/components/generic-error-section";
 import ToggleGroupDemo from "@/components/shadcn-space/toggle-group/toggle-group-01";
-import AlbumCarouselMobile from "@/feature/diasporalbum/album-carousel-mobile";
-import AlbumSection from "@/feature/diasporalbum/album-section";
-import DiasporalbumLoader from "@/feature/diasporalbum/diasporalbum-loader";
-import OtherPartnersSection from "@/feature/other-partners/other-partners-section";
+import AlbumCarouselMobile from "@/features/diasporalbum/album-carousel-mobile";
+import AlbumSection from "@/features/diasporalbum/album-section";
+import DiasporalbumLoader from "@/features/diasporalbum/diasporalbum-loader";
+import OtherPartnersSection from "@/features/other-partners/other-partners-section";
 import { useAblum } from "@/hooks/album/use-album";
 import { AlbumParams } from "@/interfaces/album/album-types";
 

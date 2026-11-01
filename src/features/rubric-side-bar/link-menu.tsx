@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SIDE_APP_BAR_LINK_DATA } from "@/constant/rubric-side-app-bar/data";
+import { SIDE_APP_BAR_LINK_DATA } from "@/constants/rubric-side-app-bar/data";
 import Image from "next/image";
 
 export default function LinkMenu() {

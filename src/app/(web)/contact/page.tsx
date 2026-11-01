@@ -1,6 +1,6 @@
 import CustomMainTitleSection from "@/components/custom-main-title-section";
 import ToggleGroupDemo from "@/components/shadcn-space/toggle-group/toggle-group-01";
-import ContactDetailsAndMap from "@/feature/contact/contact-details-and-map";
+import ContactDetailsAndMap from "@/features/contact/contact-details-and-map";
 
 export default function ContactPage() {
   return (

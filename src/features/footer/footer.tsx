@@ -6,7 +6,7 @@ import {
   ABOUT_LINKS,
   RUBRICS_LINKS,
   USEFUL_LINKS,
-} from "@/constant/footer/data";
+} from "@/constants/footer/data";
 import NewsLetter from "./news-letter";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";

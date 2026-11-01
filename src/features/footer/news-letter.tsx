@@ -9,7 +9,7 @@ import { useSubscribeToNewsletter } from "@/hooks/newsletter/use-newsletter";
 import {
   Newsletter,
   newsletterSchema,
-} from "@/schema/contact/newsletter/newsletter-schema";
+} from "@/schemas/contact/newsletter/newsletter-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 

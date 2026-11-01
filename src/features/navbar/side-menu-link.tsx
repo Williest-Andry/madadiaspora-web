@@ -3,7 +3,7 @@ import {
   ABOUT_LINK,
   DIRECTORY_LINK,
   RUBRIK_LINK,
-} from "@/constant/navbar/navbar-data";
+} from "@/constants/navbar/navbar-data";
 import CollapsibleLink from "./collapsible-link";
 
 export default function SideMenuLink() {

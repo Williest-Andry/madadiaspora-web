@@ -1,4 +1,4 @@
-import { Newsletter } from "@/schema/contact/newsletter/newsletter-schema";
+import { Newsletter } from "@/schemas/contact/newsletter/newsletter-schema";
 import { newsletterServices } from "@/services/newsletter/newsletter-services";
 import { useMutation } from "@tanstack/react-query";
 

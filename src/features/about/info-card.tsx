@@ -1,4 +1,4 @@
-import { InfoData } from "@/constant/about-info/type";
+import { InfoData } from "@/constants/about-info/type";
 import { cn } from "cn";
 import Image from "next/image";
 import { ClassNameValue } from "tailwind-merge";

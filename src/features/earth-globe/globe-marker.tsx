@@ -5,7 +5,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { LocationData } from "@/constant/earth-globe/type";
+import { LocationData } from "@/constants/earth-globe/type";
 import { MapPin } from "lucide-react";
 
 type GlobeMarkerProps = {

@@ -1,4 +1,4 @@
-import { LinkData } from "@/constant/footer/type";
+import { LinkData } from "@/constants/footer/type";
 import Link from "next/link";
 
 type FooterLinksProps = {

@@ -6,7 +6,7 @@ import ProfileBadge from "./profile-badge";
 import TopSearchBar from "./top-search-bar";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import { SideAppBar } from "@/feature/rubric-side-bar/side-app-bar";
+import { SideAppBar } from "@/features/rubric-side-bar/side-app-bar";
 import { useSearchParam } from "@/hooks/use-search-param";
 
 export default function TopAppBar() {

@@ -1,6 +1,6 @@
 import CustomAboutSection from "@/components/custom-about-section";
 import InfoCard from "../info-card";
-import { ABOUT_PLATFORM_DATA } from "@/constant/about-info/platform/data";
+import { ABOUT_PLATFORM_DATA } from "@/constants/about-info/platform/data";
 
 export default function OurIdentitySection() {
   return (

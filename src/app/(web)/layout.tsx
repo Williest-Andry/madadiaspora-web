@@ -1,5 +1,5 @@
-import Footer from "@/feature/footer/footer";
-import NavBar from "@/feature/navbar/navbar";
+import Footer from "@/features/footer/footer";
+import NavBar from "@/features/navbar/navbar";
 
 export default function WebLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,6 +1,6 @@
 import { usePartners } from "@/hooks/partners/use-partners";
 import OfficialPartnersCarousel from "./official-partners-carousel";
-import { MOCK_OFFICIAL_PARTNERS_DATA } from "@/constant/partners/data";
+import { MOCK_OFFICIAL_PARTNERS_DATA } from "@/constants/partners/data";
 import GenericErrorSection from "@/components/generic-error-section";
 import PartnersLoaderSection from "./partners-loader-section";
 

@@ -3,7 +3,7 @@
 import { usePartners } from "@/hooks/partners/use-partners";
 import OtherPartnersCarousel from "./other-partners-carousel";
 import { cn } from "@/lib/utils";
-import { MOCK_PARTNERS_DATA } from "@/constant/partners/data";
+import { MOCK_PARTNERS_DATA } from "@/constants/partners/data";
 import OtherPartnersLoader from "./other-partners-loader";
 import GenericErrorSection from "@/components/generic-error-section";
 import CustomTitleSection from "@/components/custom-title-section";

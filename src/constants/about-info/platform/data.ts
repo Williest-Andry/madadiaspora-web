@@ -1,4 +1,4 @@
-import { ServicesData } from "@/constant/services/type";
+import { ServicesData } from "@/constants/services/type";
 import { InfoData } from "../type";
 
 export const ABOUT_PLATFORM_DATA: InfoData[] = [

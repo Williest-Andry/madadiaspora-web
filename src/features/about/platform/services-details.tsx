@@ -3,8 +3,8 @@ import {
   SERVICES_PLATFORM_DATA_ROW_1,
   SERVICES_PLATFORM_DATA_ROW_2,
   SERVICES_PLATFORM_DATA_ROW_3,
-} from "@/constant/about-info/platform/data";
-import ServiceCard from "@/feature/services/service-card";
+} from "@/constants/about-info/platform/data";
+import ServiceCard from "@/features/services/service-card";
 
 export default function ServicesDetails() {
   return (

@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/collapsible";
 import { ChevronDownIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { DataLinkType } from "@/constant/navbar/type";
+import { DataLinkType } from "@/constants/navbar/type";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 

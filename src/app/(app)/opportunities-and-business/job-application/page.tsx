@@ -1,18 +1,18 @@
 "use client";
 
-import CustomMainTitle from "@/feature/opportunities-and-business/custom-main-title";
+import CustomMainTitle from "@/features/opportunities-and-business/custom-main-title";
 import { BASE_PATHNAME } from "../investment/page";
 import { useOpportunities } from "@/hooks/opportunity/use-opportunity";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { usePageParam } from "@/hooks/use-page-param";
-import JobApplicationCard from "@/feature/opportunities-and-business/job-application/job-application-card";
+import JobApplicationCard from "@/features/opportunities-and-business/job-application/job-application-card";
 import PersonCardLoader from "@/components/person-card-loader";
 import GenericErrorSection from "@/components/generic-error-section";
-import FiltersSection from "@/feature/opportunities-and-business/filters-section";
+import FiltersSection from "@/features/opportunities-and-business/filters-section";
 import { DataPagination } from "@/components/data-pagination";
 import EmptyResult from "@/components/empty-result";
-import OpportunitiesNavigation from "@/feature/opportunities-and-business/opportunities-navigation";
+import OpportunitiesNavigation from "@/features/opportunities-and-business/opportunities-navigation";
 
 const LIMIT = 6;
 

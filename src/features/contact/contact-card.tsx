@@ -1,4 +1,4 @@
-import { ContactData } from "@/constant/contact/type";
+import { ContactData } from "@/constants/contact/type";
 import Image from "next/image";
 
 type ContactCardProps = {

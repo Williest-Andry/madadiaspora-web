@@ -1,4 +1,4 @@
-import { Newsletter } from "@/schema/contact/newsletter/newsletter-schema";
+import { Newsletter } from "@/schemas/contact/newsletter/newsletter-schema";
 import { genericCreate } from "../common";
 import { newsletterResponse } from "@/interfaces/newsletter/newsletter-type";
 
