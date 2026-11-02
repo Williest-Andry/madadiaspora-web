@@ -5,20 +5,22 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { useState } from "react";
 import { MultiSelect, MultiSelectOption } from "./multi-select";
+import { useSearchParam } from "@/hooks/use-search-param";
 
 type SearchBarWithCountryProps = {
-  value: string;
-  onChange: (newValue: string) => void;
+  searchValue: string;
+  onChangeSearch: (newValue: string) => void;
   countryValue: MultiSelectOption[];
   onChangeCountry: (newValue: string[]) => void;
 };
 
 export default function SearchBarWithCountry({
-  value,
-  onChange,
+  searchValue,
+  onChangeSearch,
   countryValue,
   onChangeCountry,
 }: SearchBarWithCountryProps) {
+  const { value, setValue } = useSearchParam();
   const [search, setSearch] = useState(value);
   const [countrySelected, setCountrySelected] = useState<string[]>([]);
 
@@ -46,7 +48,8 @@ export default function SearchBarWithCountry({
           "bg-secondary xs:w-[84px] xs:h-[71px] flex h-[61px] w-[64px] items-center justify-center rounded-[99px] px-[30px] py-[20px] lg:h-[51px]"
         }
         onClick={() => {
-          onChange(search);
+          setValue(search);
+          onChangeSearch(search);
           onChangeCountry(countrySelected);
         }}
       >

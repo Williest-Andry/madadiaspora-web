@@ -3,7 +3,6 @@
 import { usePartners } from "@/hooks/partners/use-partners";
 import OtherPartnersCarousel from "./other-partners-carousel";
 import { cn } from "@/lib/utils";
-import { MOCK_PARTNERS_DATA } from "@/constants/partners/data";
 import OtherPartnersLoader from "./other-partners-loader";
 import GenericErrorSection from "@/components/generic-error-section";
 import CustomTitleSection from "@/components/custom-title-section";
@@ -41,8 +40,7 @@ export default function OtherPartnersSection({
         <figure className="w-[85%] min-w-0 overflow-hidden">
           <OtherPartnersCarousel
             backgroundColor="foreground"
-            // partners={[...partners, ...partners, ...partners]}
-            partners={[...MOCK_PARTNERS_DATA, ...MOCK_PARTNERS_DATA] as any}
+            partners={partners}
             isInfinite
           />
         </figure>

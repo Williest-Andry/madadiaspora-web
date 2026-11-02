@@ -1,32 +1,41 @@
 "use client";
 
 import { DataPagination } from "@/components/data-pagination";
+import EmptyResult from "@/components/empty-result";
 import GenericErrorSection from "@/components/generic-error-section";
-import PersonCard from "@/components/person-card";
-import PersonCardLoader from "@/components/person-card-loader";
 import SearchBarWithCountry from "@/components/search-bar-with-country";
 import ToggleGroupDemo from "@/components/shadcn-space/toggle-group/toggle-group-01";
+import CorrespondentCard from "@/features/correspondent/correspondent-card";
+import CorrespondentCardLoader from "@/features/correspondent/correspondent-card-loader";
 import OtherPartnersSection from "@/features/other-partners/other-partners-section";
 import { useCorrespondents } from "@/hooks/correspondent/use-correspondent";
-import { Meta } from "@/interfaces/global";
+import { usePageParam } from "@/hooks/use-page-param";
 import { getCountryOptions } from "@/lib/countries";
 import { useState } from "react";
 
 const COUNTRIES = getCountryOptions();
 
-const MOCK_META: Meta = {
-  limit: 10,
-  page: 1,
-  total: 50,
-};
+const LIMIT = 8;
 
 export default function CorrespondentsPage() {
-  const { correspondents, data, error, isLoading, refetch, isFetching } =
-    useCorrespondents();
-
-  const [searchFilters, setSearchFilters] = useState("");
+  const { page, resetPage } = usePageParam();
 
   const [countrySelected, setCountrySelected] = useState<string[]>([]);
+
+  const [searchFilter, setSearchFilter] = useState("");
+
+  const { correspondents, meta, isError, isLoading, refetch, isFetching } =
+    useCorrespondents({
+      limit: LIMIT,
+      page: page,
+      country: countrySelected,
+      search: searchFilter,
+    });
+
+  const handleChangeCountry = (newValue: string[]) => {
+    resetPage();
+    setCountrySelected(newValue);
+  };
 
   return (
     <div className="flex w-full flex-col">
@@ -54,10 +63,10 @@ export default function CorrespondentsPage() {
           />
 
           <SearchBarWithCountry
-            value={searchFilters}
-            onChange={(newValue) => setSearchFilters(newValue)}
+            searchValue={searchFilter}
+            onChangeSearch={(newValue) => setSearchFilter(newValue)}
             countryValue={COUNTRIES}
-            onChangeCountry={(newValue) => setCountrySelected(newValue)}
+            onChangeCountry={handleChangeCountry}
           />
         </div>
       </section>
@@ -65,29 +74,19 @@ export default function CorrespondentsPage() {
       {isLoading && (
         <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
           <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
-            {Array(8)
+            {Array(LIMIT)
               .fill(0)
               .map((e, index) => (
-                <PersonCardLoader key={index} />
+                <CorrespondentCardLoader key={index} />
               ))}
           </div>
         </section>
       )}
 
-      {/* {correspondents.length > 0 && (
-        <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
-          <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
-            {"À REMPLACER PAR LES VRAIES DONNÉES"}
-          </div>
-
-          <DataPagination meta={MOCK_META} />
-        </section>
-      )} */}
-
-      {error && (
+      {isError && (
         <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
           <GenericErrorSection
-            message="Impossible de charger les autres partenaires"
+            message="Impossible de charger les correspondants"
             refetch={refetch}
             className="h-[800px] w-full"
             isFetching={isFetching}
@@ -96,7 +95,26 @@ export default function CorrespondentsPage() {
         </section>
       )}
 
-      {"À REMPLACER PAR LES VRAIES DONNÉES"}
+      {correspondents.length > 0 && (
+        <section className="bg-foreground flex w-full flex-col items-center justify-center py-30">
+          <div className="grid-2xl:w-[1657px] grid-2xl:grid-cols-4 grid-xl:w-[1280px] grid-xl:grid-cols-3 mb-10 grid w-full grid-cols-1 justify-items-center gap-[20px] lg:w-[850px] lg:grid-cols-2">
+            {correspondents.map((correspondent) => (
+              <CorrespondentCard data={correspondent} key={correspondent.id} />
+            ))}
+          </div>
+
+          <DataPagination meta={meta} />
+        </section>
+      )}
+
+      {isLoading === false &&
+        isError === false &&
+        correspondents.length < 1 && (
+          <EmptyResult
+            message={"Aucun résultat pour le moment, merci !"}
+            className="bg-foreground flex items-center"
+          />
+        )}
 
       <OtherPartnersSection />
     </div>

@@ -3,30 +3,26 @@ import AlbumSection from "./album-section";
 import AlbumCarouselMobile from "./album-carousel-mobile";
 import MobileCTAButton from "@/components/mobile-cta-button";
 import { useAblum } from "@/hooks/album/use-album";
-import { AlbumParams } from "@/interfaces/album/album-types";
 import GenericErrorSection from "@/components/generic-error-section";
 import DiasporalbumLoader from "./diasporalbum-loader";
 
 export default function DiasporalbumSection() {
-  const params: AlbumParams = {
+  const { album, error, isLoading, refetch, isFetching } = useAblum({
     limit: 10,
-    page: 1,
-  };
-
-  const { album, error, isLoading, refetch, isFetching } = useAblum(params);
+  });
 
   if (isLoading) return <DiasporalbumLoader />;
 
-  // if (error)
-  //   return (
-  //     <GenericErrorSection
-  //       message="Impossible de charger les photos de la Diaspor'album"
-  //       refetch={refetch}
-  //       isFetching={isFetching}
-  //       className="h-[800px]"
-  //       backgroundColor="foreground"
-  //     />
-  //   );
+  if (error)
+    return (
+      <GenericErrorSection
+        message="Impossible de charger les photos de la Diaspor'album"
+        refetch={refetch}
+        isFetching={isFetching}
+        className="h-[800px]"
+        backgroundColor="foreground"
+      />
+    );
 
   return (
     <section className="bg-foreground text-popover flex flex-col items-center justify-center gap-[30px] overflow-hidden pt-[162px] pb-[197px]">
@@ -57,12 +53,12 @@ export default function DiasporalbumSection() {
         <p className="text-p-sm md:text-p-md 3xl:text-p-xl w-[90%] text-center leading-8 sm:text-[17px]">{`Découvrez en images les événements, rencontres et instants marquants qui rassemblent notre communauté. Revivez et partagez les souvenirs qui renforcent les liens de la diaspora.`}</p>
       </article>
 
-      <AlbumSection />
+      <AlbumSection album={album} />
 
       <MobileCTAButton className="mb-[60px] flex xl:hidden" />
 
       <div className="w-[90%] overflow-hidden">
-        <AlbumCarouselMobile />
+        <AlbumCarouselMobile album={album} />
       </div>
     </section>
   );

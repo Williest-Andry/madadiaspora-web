@@ -1,4 +1,4 @@
-import { ImageType } from "../global";
+import { GenericParams, ImageType } from "../global";
 
 interface Identity {
   civility: number;
@@ -24,4 +24,10 @@ export interface Correspondent {
   createdAt: Date;
   updatedAt: Date;
   isDeleted: boolean;
+}
+
+export interface CorrespondantParams extends GenericParams {
+  search?: string;
+  country?: string[];
+  continent?: string[];
 }

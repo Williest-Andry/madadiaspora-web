@@ -12,6 +12,7 @@ import {
 } from "@/schemas/contact/newsletter/newsletter-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "@/components/ui/toast";
 
 export default function NewsLetter() {
   const { control, handleSubmit, reset } = useForm<Newsletter>({
@@ -24,15 +25,23 @@ export default function NewsLetter() {
   const { mutate: subscribeToNewsletter, isPending } =
     useSubscribeToNewsletter();
 
-  const onSubmit: SubmitHandler<Newsletter> = (
-    data,
-    event?: React.BaseSyntheticEvent
-  ) => {
-    if (event) event.preventDefault();
+  const onSubmit: SubmitHandler<Newsletter> = (data) => {
+    subscribeToNewsletter(data, {
+      onSuccess: () => {
+        toast.add({
+          type: "success",
+          description: "Abonnement réussi",
+        });
 
-    subscribeToNewsletter(data);
-
-    reset();
+        reset();
+      },
+      onError: () => {
+        toast.add({
+          type: "error",
+          description: "Abonnement échoué",
+        });
+      },
+    });
   };
 
   return (
