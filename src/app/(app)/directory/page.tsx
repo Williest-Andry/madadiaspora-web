@@ -47,7 +47,7 @@ export default function DirectoryPage() {
           secondaryTitle="la Diaspora"
           description="Trouvez les talents malagasy partout dans le monde Explorez les profils de professionnels, d’entreprises et d’associations issus de la diaspora malagasy."
           leftLabel="Professionnel Madagascar"
-          leftLink="#"
+          leftLink="/mada-professional-directory"
           rightLabel="Diaspora"
           rightLink="/directory"
           defaultActive="Diaspora"
@@ -60,7 +60,7 @@ export default function DirectoryPage() {
         placeholder="Sélectionner un pays"
         variant="secondary"
         maxCount={1}
-        className="max-sm:text-p-sm! bg-bg-gray text-primary h-[71px] w-[230px]! rounded-[40px] border-2 border-[#EBEBEB] p-[15px] lg:h-[51px] lg:w-[355px]!"
+        className="max-sm:text-p-sm! bg-bg-gray text-primary h-[71px] w-[1230px]! rounded-[40px] border-2 border-[#EBEBEB] p-[15px] lg:h-[51px] lg:w-[355px]!"
       />
 
       {isLoading && (
@@ -88,7 +88,7 @@ export default function DirectoryPage() {
       )}
 
       {directories.length > 0 && isLoading === false && (
-        <section className="bg-foreground flex w-full flex-col items-center justify-center gap-10 py-30">
+        <section className="bg-foreground flex w-full flex-col items-center justify-center gap-10 py-15">
           <div className="3xl:grid-cols-3 grid w-full grid-cols-1 justify-items-center gap-[20px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-2">
             {directories.map((directory) => (
               <PersonCard directory={directory} key={directory.id} />
