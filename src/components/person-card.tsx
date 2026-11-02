@@ -31,7 +31,7 @@ export default function PersonCard({ directory }: PersonCardProps) {
           {identity.firstName} {identity.lastName}
         </h3>
 
-        <div className="flex items-center gap-[8px]">
+        <div className="flex h-[45px] items-center gap-[8px]">
           <BriefcaseBusiness size={30} />
           <p className="text-p-sm text-text-badge line-clamp-2 flex-1 font-bold tracking-[0px]">
             {professional.title}{" "}
@@ -47,7 +47,7 @@ export default function PersonCard({ directory }: PersonCardProps) {
           </p>
         </div>
 
-        <div className="bg-bg-gray max-xs:gap-4 flex w-full flex-col justify-between gap-6 rounded-t-[8px] rounded-b-[24px] p-[16px]">
+        <div className="bg-bg-gray max-xs:gap-4 flex w-full flex-col justify-between gap-6 overflow-hidden rounded-t-[8px] rounded-b-[24px] p-[16px]">
           <OptionalContactSection
             contacts={contact.otherEmail}
             title="E-mail(s)"
