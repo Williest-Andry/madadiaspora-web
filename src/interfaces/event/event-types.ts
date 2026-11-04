@@ -23,4 +23,6 @@ export interface EventParams extends GenericParams {
   country?: string[];
   sortCreated?: boolean;
   category?: string[];
+  month?: number;
+  year?: number;
 }

@@ -39,13 +39,9 @@ export default function DiasporAlbumPage() {
 
       {album.length > 0 && (
         <section className="bg-foreground flex items-center justify-center overflow-hidden pt-50 pb-50">
-          {/* <AlbumSection album={album} showCTAButton={false} />
+          <AlbumSection album={album} showCTAButton={false} />
 
-        <AlbumCarouselMobile album={album} /> */}
-
-          <AlbumSection />
-
-          <AlbumCarouselMobile />
+          <AlbumCarouselMobile album={album} />
         </section>
       )}
 

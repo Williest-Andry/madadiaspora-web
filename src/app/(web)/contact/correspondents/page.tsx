@@ -58,7 +58,7 @@ export default function CorrespondentsPage() {
             leftLabel="Nous contacter"
             leftLink="/contact"
             rightLabel="Nos correspondants"
-            rightLink="/contact/correspondants"
+            rightLink="/contact/correspondents"
             defaultActive="Nos correspondants"
           />
 

@@ -15,7 +15,6 @@ type SearchBarWithCountryProps = {
 };
 
 export default function SearchBarWithCountry({
-  searchValue,
   onChangeSearch,
   countryValue,
   onChangeCountry,
