@@ -45,9 +45,9 @@ export default function EventsPage() {
         title="Événements"
         description="Les rendez-vous qui réunissent Madagascar et sa diaspora."
         leftLabel="Calendrier"
-        leftLink="#"
+        leftLink="/events-calendar"
         rightLabel="Événements"
-        rightLink="#"
+        rightLink="/events"
         defaultActive="Événements"
       />
 
