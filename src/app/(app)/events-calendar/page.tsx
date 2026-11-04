@@ -8,6 +8,7 @@ import { mapEventToFullCalendarFormat } from "@/lib/event-mapper";
 import DayCellCard from "@/features/events-calendar/day-cell-card";
 import { useRouter } from "next/navigation";
 import { Spinner } from "@/components/ui/spinner";
+import UpComingEventsList from "@/features/events-calendar/upcoming-events-list";
 
 export default function EventsCalendarPage() {
   const now = new Date();
@@ -85,6 +86,8 @@ export default function EventsCalendarPage() {
           </div>
         )}
       </div>
+
+      <UpComingEventsList />
     </div>
   );
 }
