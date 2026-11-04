@@ -7,7 +7,7 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
     <div>
       <NavBar />
       <Suspense fallback={null}>{children}</Suspense>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
