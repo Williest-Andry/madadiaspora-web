@@ -4,7 +4,7 @@ import RubricCustomMainTitle from "@/components/rubric-custom-main-title";
 import { EventCalendar } from "@/components/event-calendar";
 import { useEvents } from "@/hooks/event/use-event";
 import { useMemo, useState } from "react";
-import { mapEventToFullCalendarFormat } from "@/lib/event-mapper";
+import { mapEventToFullCalendarFormat } from "@/lib/mapper/event-mapper";
 import DayCellCard from "@/features/events-calendar/day-cell-card";
 import { useRouter } from "next/navigation";
 import { Spinner } from "@/components/ui/spinner";

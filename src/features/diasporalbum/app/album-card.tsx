@@ -2,21 +2,21 @@ import { Album } from "@/interfaces/album/album-types";
 import { getImageOrFallback } from "@/lib/get-image-url";
 import { Images, MapPin } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 type AlbumCardProps = {
   data: Album;
+  onClick: () => void;
 };
 
-export default function AlbumCard({ data }: AlbumCardProps) {
-  const { id, cover, address, images, info } = data;
+export default function AlbumCard({ data, onClick }: AlbumCardProps) {
+  const { cover, address, images, info } = data;
 
   const albumImage = getImageOrFallback(cover);
 
   return (
-    <Link
-      href={`/diasporalbum/${id}`}
-      className="relative h-[700px] w-[95%] rounded-4xl transition duration-250 hover:scale-103 sm:h-[900px]"
+    <article
+      className="relative h-[400px] w-[500px] cursor-pointer rounded-4xl transition duration-250 hover:scale-103 sm:h-[600px]"
+      onClick={onClick}
     >
       <Image
         src={albumImage.image}
@@ -42,6 +42,6 @@ export default function AlbumCard({ data }: AlbumCardProps) {
           {info.title}
         </p>
       </div>
-    </Link>
+    </article>
   );
 }

@@ -10,7 +10,10 @@ export interface Address {
   country: string;
 }
 
+export type AlbumType = "EVENT" | "TIP" | "NEWS" | "PROJECT" | "OPPORTUNITY";
+
 export interface Album {
+  type: AlbumType;
   info: Info;
   address: Address;
   startDate: Date;
@@ -21,6 +24,10 @@ export interface Album {
   id: string;
   createdAt: Date;
   isDeleted: boolean;
+}
+
+export interface AlbumImages {
+  images: ImageType[];
 }
 
 export interface AlbumParams extends GenericParams {}
