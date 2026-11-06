@@ -13,11 +13,11 @@ export interface Project {
   cover: ImageType;
   images: ImageType[];
   attachments: string[];
-  startDate: Date;
-  endDate: Date;
+  startDate: string;
+  endDate: string;
   id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   isDeleted: boolean;
 }
 

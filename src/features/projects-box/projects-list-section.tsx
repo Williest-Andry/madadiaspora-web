@@ -5,6 +5,7 @@ import { usePageParam } from "@/hooks/use-page-param";
 import { Project } from "@/interfaces/project/project-types";
 import { BoxCardProjet } from "./box-card";
 import { useProjects } from "@/hooks/project/use-project";
+import { id } from "date-fns/locale";
 
 const PAGE_SIZE = 6;
 
@@ -14,6 +15,7 @@ function toCardProps(project: Project) {
   const lieu = [address?.city, address?.state].filter(Boolean).join(", ");
 
   return {
+    id: project.id,
     lieu: lieu || address?.country || "",
     // L'API ne fournit pas de catégorie pour le moment
     type: "Projet",

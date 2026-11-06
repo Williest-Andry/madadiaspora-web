@@ -18,8 +18,8 @@ export interface Actuality {
   images: ImageType[];
   attachments: string[];
   id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: string;
+  updatedAt: string;
   isDeleted: boolean;
 }
 
