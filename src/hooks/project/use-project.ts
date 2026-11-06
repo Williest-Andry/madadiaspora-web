@@ -14,3 +14,16 @@ export function useProjects(params?: ProjectParams) {
     meta: query.data?.meta,
   };
 }
+
+export function useProjectById(id?: string) {
+  const query = useQuery({
+    queryKey: ["projects", id],
+    queryFn: () => projectServices.getById(id as string),
+    enabled: !!id,
+  });
+
+  return {
+    ...query,
+    project: query.data,
+  };
+}

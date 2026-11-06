@@ -50,3 +50,22 @@ export async function genericCreate<T, TResponse>(
     catchError(e);
   }
 }
+
+export async function genericGetOne<T>(
+  url: string,
+  id: string
+): Promise<T | undefined> {
+  try {
+    const response: AxiosResponse<ApiResponse<T>> = await prodApi.get(
+      `${url}/${id}`
+    );
+
+    if (!response.data.data) {
+      throw new Error(response.data.message || "Une erreur est survenue");
+    }
+
+    return response.data.data;
+  } catch (e) {
+    catchError(e);
+  }
+}
