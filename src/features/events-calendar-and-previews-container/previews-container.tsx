@@ -8,7 +8,7 @@ import {
   mapEntityToPreview,
   mapEvent,
   Preview,
-} from "@/lib/entity-preview-mapper";
+} from "@/lib/mapper/entity-preview-mapper";
 import { useOpportunities } from "@/hooks/opportunity/use-opportunity";
 import { useProjects } from "@/hooks/project/use-project";
 import { useEvents } from "@/hooks/event/use-event";

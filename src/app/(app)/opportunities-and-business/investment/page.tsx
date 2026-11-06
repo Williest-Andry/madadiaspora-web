@@ -37,7 +37,7 @@ export default function InvestmentPage() {
       country: countries,
       sortCreated: sortCreated,
       category: categories,
-      type: "INVESTMENT",
+      // type: "INVESTMENT",
     });
 
   const handleChangeCountry = (newCountries: string[]) => {

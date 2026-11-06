@@ -3,7 +3,7 @@ import { MapPin } from "lucide-react";
 import { Opportunity } from "@/interfaces/opportunity/opportunity-types";
 import { getImageUrl } from "@/lib/get-image-url";
 import RubricCTAButton from "@/components/rubric-cta-button";
-import { toFrenchText } from "@/lib/opportunity-type-mapper";
+import { toFrenchText } from "@/lib/mapper/opportunity-type-mapper";
 
 type OpportunityCard = {
   data: Opportunity;

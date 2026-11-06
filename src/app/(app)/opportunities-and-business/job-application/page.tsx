@@ -36,7 +36,7 @@ export default function JobApplicationPage() {
       country: countries,
       sortCreated: sortCreated,
       category: categories,
-      type: "REQUEST_JOB",
+      // type: "REQUEST_JOB",
     });
 
   const handleChangeCountry = (newCountries: string[]) => {

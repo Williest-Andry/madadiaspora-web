@@ -36,7 +36,7 @@ export default function GoodsAndServicesOfferPage() {
       country: countries,
       sortCreated: sortCreated,
       category: categories,
-      type: "OFFER_SERVICE",
+      // type: "OFFER_SERVICE",
     });
 
   const handleChangeCountry = (newCountries: string[]) => {

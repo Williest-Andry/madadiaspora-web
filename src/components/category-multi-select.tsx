@@ -1,6 +1,6 @@
 import { useCategories } from "@/hooks/category/use-category";
 import { MultiSelect } from "./multi-select";
-import { toMultiSelectOption } from "@/lib/category-mapper";
+import { toMultiSelectOption } from "@/lib/mapper/category-mapper";
 
 type CategoryMultiSelectProps = {
   value: string[];
