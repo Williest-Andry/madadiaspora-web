@@ -23,21 +23,6 @@ export async function genericGetList<T, TParams = AxiosRequestConfig["params"]>(
   }
 }
 
-export async function genericGetOne<T>(
-  id: string,
-  url: string
-): Promise<T | undefined> {
-  try {
-    const response: AxiosResponse<ApiResponse<T>> = await prodApi.get(
-      `${url}/${id}`
-    );
-
-    return response.data.data;
-  } catch (e) {
-    catchError(e);
-  }
-}
-
 export async function genericCreate<T, TResponse>(
   url: string,
   body: T

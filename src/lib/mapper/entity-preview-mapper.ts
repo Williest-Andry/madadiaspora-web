@@ -19,7 +19,7 @@ export function mapEntityToPreview(
     id: item.id,
     title: item.info.title,
     image: item.cover,
-    date: item.createdAt,
+    date: new Date(item.createdAt),
   };
 }
 
