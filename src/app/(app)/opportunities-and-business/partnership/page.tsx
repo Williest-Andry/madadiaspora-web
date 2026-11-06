@@ -36,7 +36,7 @@ export default function PartnershipPage() {
       country: countries,
       sortCreated: sortCreated,
       category: categories,
-      type: "PARTNERSHIP",
+      // type: "PARTNERSHIP",
     });
 
   const handleChangeCountry = (newCountries: string[]) => {

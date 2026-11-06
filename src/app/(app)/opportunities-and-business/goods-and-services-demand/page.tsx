@@ -38,7 +38,7 @@ export default function GoodsAndServicesDemandPage() {
       country: countries,
       sortCreated: sortCreated,
       category: categories,
-      type: "REQUEST_SERVICE",
+      // type: "REQUEST_SERVICE",
     });
 
   const handleChangeCountry = (newCountries: string[]) => {
